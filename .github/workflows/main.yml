@@ -35,6 +35,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Build the docker image with CMSIS tools 
         run: |
+           ls -la
            cd tensorflow-pack/cmsis_oss_docker
            docker build --pull --rm -f "Dockerfile" -t cmsisossdocker:latest "."
 
