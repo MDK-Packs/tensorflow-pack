@@ -26,7 +26,7 @@ jobs:
       - name: Checkout tensorflow-build 
         uses: actions/checkout@v2
 
-      - name: Checkout tensorflow-build
+      - name: Checkout tensorflow
         uses: actions/checkout@v2
         with: 
           repository: tensorflow/tensorflow
