@@ -22,10 +22,11 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout tensorflow-build 
         uses: actions/checkout@v2
-
+        with: 
+          repository: MDK-Packs/tensorflow-pack
+         
       - name: Checkout tensorflow
         uses: actions/checkout@v2
         with: 
