@@ -46,6 +46,6 @@ jobs:
            
       - name: Build PackChk
         run : |
-          docker exec build_runtime ls /workspace/host -la
+          docker exec build_runtime ls /workspace/host/tensorflow-build -la
           docker exec build_runtime python3 /workspace/host/tensorflow-build/generate_cmsis_pack.py  --tensorflow_path=/workspace/host/tensorflow --input_template=/workspace/host/tensorflow-build/template/cmsis_pack.tpl
         
