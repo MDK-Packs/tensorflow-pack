@@ -33,6 +33,7 @@ jobs:
         with: 
           repository: tensorflow/tensorflow
           path: tensorflow
+          clean: false  
 
       # Runs a single command using the runners shell
       - name: Build the docker image with CMSIS tools 
