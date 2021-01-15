@@ -23,10 +23,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-      - name: Cache
-        uses: actions/cache@v2.1.3
-        with:
-          path: .
+      # - name: Cache
+      #  uses: actions/cache@v2.1.3
+      #  with:
+      #    path: 
   
       - name: Checkout tensorflow-build 
         uses: actions/checkout@v2
