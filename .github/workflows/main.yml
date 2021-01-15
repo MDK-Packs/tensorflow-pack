@@ -39,7 +39,7 @@ jobs:
       - name: Build the docker image with CMSIS tools 
         run: |
            ls ${{ github.workspace }}
-           docker build --pull --rm -f ${{ github.workspace }}/tensorflow-build/cmsis_oss_docker/Dockerfile" -t cmsisossdocker:latest "."
+           docker build --pull --rm -f "${{ github.workspace }}/tensorflow-build/cmsis_oss_docker/Dockerfile" -t cmsisossdocker:latest "."
 
       - name: Create Container runtime from image
         run : docker run -i -v ${{ github.workspace }}:/workspace/host --name build_runtime  -d cmsisossdocker
