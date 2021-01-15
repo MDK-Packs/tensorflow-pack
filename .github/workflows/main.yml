@@ -35,7 +35,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Build the docker image with CMSIS tools 
         run: |
-           ls /github/workspace
+           ls ${{ github.workspace }}
            docker build --pull --rm -f /github/workspace/cmsis_oss_docker/Dockerfile" -t cmsisossdocker:latest "."
 
       - name: Create Container runtime from image
