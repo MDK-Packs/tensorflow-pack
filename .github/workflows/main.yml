@@ -26,20 +26,21 @@ jobs:
         uses: actions/checkout@v2
         with: 
           repository: MDK-Packs/tensorflow-pack
+          path: tensorflow-build
          
       - name: Checkout tensorflow
         uses: actions/checkout@v2
         with: 
           repository: tensorflow/tensorflow
+          path: tensorflow
 
       # Runs a single command using the runners shell
       - name: Build the docker image with CMSIS tools 
         run: |
-           ls ${{ github.workspace }}
-           docker build --pull --rm -f /github/workspace/cmsis_oss_docker/Dockerfile" -t cmsisossdocker:latest "."
+           docker build --pull --rm -f ${{ github.workspace }}/cmsis_oss_docker/Dockerfile" -t cmsisossdocker:latest "."
 
       - name: Create Container runtime from image
-        run : docker run -i -v /github/workspace:/workspace/host --name build_runtime  -d cmsisossdocker
+        run : docker run -i -v ${{ github.workspace }}:/workspace/host --name build_runtime  -d cmsisossdocker
            
       - name: Build PackChk
         run : |
