@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Dockerfile Build and Test
+name: Create Runtime environment and Build Pack
 
 # Controls when the action will run. 
 on:
@@ -36,8 +36,7 @@ jobs:
       - name: Build the docker image with CMSIS tools 
         run: |
            ls -la
-           cd tensorflow-pack/cmsis_oss_docker
-           docker build --pull --rm -f "Dockerfile" -t cmsisossdocker:latest "."
+           docker build --pull --rm -f /github/workspace/cmsis_oss_docker/Dockerfile" -t cmsisossdocker:latest "."
 
       - name: Create Container runtime from image
         run : docker run -i -v /github/workspace:/workspace/host --name build_runtime  -d cmsisossdocker
