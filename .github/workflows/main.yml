@@ -50,7 +50,7 @@ jobs:
       - name: Create Container runtime from image
         run : |
           docker run -i -v ${{ github.workspace }}:/workspace/host --name build_runtime  -d cmsisossdocker
-          docker exec build_runtime pip3 install six
+          docker exec build_runtime pip3 install six requests
         
            
       - name: Build Pack and run PackChk
