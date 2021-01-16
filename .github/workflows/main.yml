@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Dockerfile Build and Test
+name: Create Runtime environment and Build Pack
 
 # Controls when the action will run. 
 on:
@@ -22,27 +22,35 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+
+      # - name: Cache
+      #  uses: actions/cache@v2.1.3
+      #  with:
+      #    path: 
+  
       - name: Checkout tensorflow-build 
         uses: actions/checkout@v2
         with: 
           repository: MDK-Packs/tensorflow-pack
+          path: tensorflow-pack
          
       - name: Checkout tensorflow
         uses: actions/checkout@v2
         with: 
           repository: tensorflow/tensorflow
+          path: tensorflow
+          clean: false  
 
       # Runs a single command using the runners shell
       - name: Build the docker image with CMSIS tools 
         run: |
-           cd cmsis_oss_docker
+           cd ${{ github.workspace }}/tensorflow-pack/cmsis_oss_docker/
            docker build --pull --rm -f "Dockerfile" -t cmsisossdocker:latest "."
 
       - name: Create Container runtime from image
-        run : docker run -i -v /github/workspace:/workspace/host --name build_runtime  -d cmsisossdocker
+        run : docker run -i -v ${{ github.workspace }}:/workspace/host --name build_runtime  -d cmsisossdocker
            
       - name: Build PackChk
         run : |
-          docker exec testcontainer ls /workspace/host -la
-          docker exec testcontainer python3 /workspace/tensorflow-build/generate_cmsis_pack.py  --tensorflow_path=/workspace/tensorflow --input_template=/workspace/tensorflow-build/template/cmsis_pack.tpl
+          docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-build/generate_cmsis_pack.py  --tensorflow_path=/workspace/host/tensorflow/tensorflow --input_template=/workspace/host/tensorflow-pack/tensorflow-build/template/cmsis_pack.tpl
         
