@@ -48,9 +48,15 @@ jobs:
            docker build --pull --rm -f "Dockerfile" -t cmsisossdocker:latest "."
 
       - name: Create Container runtime from image
-        run : docker run -i -v ${{ github.workspace }}:/workspace/host --name build_runtime  -d cmsisossdocker
+        run : |
+          docker run -i -v ${{ github.workspace }}:/workspace/host --name build_runtime  -d cmsisossdocker
+          docker exec pip3 install six
+        
            
-      - name: Build PackChk
+      - name: Build Pack and run PackChk
         run : |
           docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-build/generate_cmsis_pack.py  --tensorflow_path=/workspace/host/tensorflow/tensorflow --input_template=/workspace/host/tensorflow-pack/tensorflow-build/template/cmsis_pack.tpl
+          
+      - name: Execute test suite
+        run: echo "Run tests on Cortex-M55 FVP"
         
