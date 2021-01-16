@@ -12,6 +12,7 @@ RUN apt-get update && \
       git \
       bzip2 \
       python3 \
+      python3-pip \
       curl \
       dos2unix \
       unzip \
