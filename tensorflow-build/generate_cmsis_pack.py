@@ -35,7 +35,7 @@ from os import listdir
 from os.path import isfile, join
 import fnmatch
 
-run_path = os.getcwd()
+run_path = os.path.dirname(__file__))
 tf_path = ""
 outpath = run_path + "/gen/"
 kernelpath = "" 
