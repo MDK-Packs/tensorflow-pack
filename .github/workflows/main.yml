@@ -63,6 +63,7 @@ jobs:
       
       - name: Upload Pack
         uses: actions/upload-artifact@v2
-        path: /workspace/gen/build/*.pack
+        with:
+          path: /workspace/gen/build/*.pack
         
         
