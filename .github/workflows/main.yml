@@ -64,6 +64,6 @@ jobs:
       - name: Upload Pack
         uses: actions/upload-artifact@v2
         with:
-          path: /workspace/host/tensorflow-pack/tensorflow-build/gen/build/*.pack
+          path: /workspace/gen/build/
         
         
