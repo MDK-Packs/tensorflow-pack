@@ -60,4 +60,9 @@ jobs:
       
       - name: Execute test suite
         run: echo "Run tests on Cortex-M55 FVP"
+      
+      - name: Upload Pack
+        uses: actions/upload-artifact@v2
+        path: /workspace/gen/build/*.pack
+        
         
