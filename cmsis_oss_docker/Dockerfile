@@ -23,20 +23,29 @@ RUN apt-get update && \
 RUN wget -qO- https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2 | tar -xj
 ENV PATH "/workspace/gcc-arm-none-eabi-10-2020-q4-major/bin:$PATH"
 
+# Download and install Arm Compiler 6    
+RUN wget -qO- https://developer.arm.com/-/media/Files/downloads/compiler/DS500-BN-00026-r5p0-17rel0.tgz | tar xvz -
+RUN ./install_x86_64.sh --i-agree-to-the-contained-eula --no-interactive -d /AC6/
+RUN rm ./install_x86_64.sh
+ENV PATH "/workspace/gcc-arm-none-eabi-10-2020-q4-major/bin:$PATH"
+
 # Download and install Corestone SSE-300 FVP MPS3
 RUN wget -qO- https://developer.arm.com/-/media/Arm%20Developer%20Community/Downloads/OSS/FVP/Corstone-300/FVP_Corstone_SSE-300_Ethos-U55_11.12_57.tgz | tar -xz
 RUN ./FVP_Corstone_SSE-300_Ethos-U55.sh --no-interactive --i-agree-to-the-contained-eula -d /workspace/FVP_Corstone_SSE-300_Ethos-U55 
+RUN rm ./FVP_Corstone_SSE-300_Ethos-U55.sh
 ENV PATH "/workspace/FVP_Corstone_SSE-300_Ethos-U55/models/Linux64_GCC-6.4:$PATH"
 
 # Download and install Corestone SSE-300 FVP MPS2
 RUN wget -qO- https://developer.arm.com/-/media/Arm%20Developer%20Community/Downloads/OSS/FVP/Corstone-300/FVP_Corstone_SSE-300_11.10_44.tgz| tar -xz
 RUN ./FVP_Corstone_SSE-300.sh --no-interactive --i-agree-to-the-contained-eula -d /workspace/FVP_Corstone_SSE-300
+RUN rm ./FVP_Corstone_SSE-300.sh
 ENV PATH "/workspace/FVP_Corstone_SSE-300/models/Linux64_GCC-6.4:$PATH"
 
 # Download and install cmsis-build
 RUN wget https://github.com/ARM-software/CMSIS_5/releases/download/5.7.0/cbuild_install.0.10.0.sh
 RUN chmod +x cbuild_install.0.10.0.sh
 RUN ./cbuild_install.0.10.0.sh -x ./cbuild
+RUN rm cbuild_install.0.10.0.sh
 RUN mv ./cbuild/bin/cbuildgen.lin ./cbuild/bin/cbuildgen
 RUN mv GCC.10.2.1.mak ./cbuild/etc/GCC.10.2.1.mak 
 ENV PATH "/workspace/cbuild/bin:$PATH"
@@ -54,3 +63,5 @@ ENV PATH "/workspace/bin:$PATH"
 
 # Install Packs: CMSIS, DFP for FVPs 
 RUN cp_install.sh packlist
+
+
