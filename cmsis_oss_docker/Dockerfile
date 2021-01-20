@@ -24,7 +24,7 @@ RUN wget -qO- https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4
 ENV PATH "/workspace/gcc-arm-none-eabi-10-2020-q4-major/bin:$PATH"
 
 # Download and install Arm Compiler 6    
-RUN wget -qO- https://developer.arm.com/-/media/Files/downloads/compiler/DS500-BN-00026-r5p0-17rel0.tgz | tar xvz -
+RUN wget -qO- https://developer.arm.com/-/media/Files/downloads/compiler/DS500-BN-00026-r5p0-17rel0.tgz | tar xv
 RUN ./install_x86_64.sh --i-agree-to-the-contained-eula --no-interactive -d /AC6/
 RUN rm ./install_x86_64.sh
 ENV PATH "/workspace/gcc-arm-none-eabi-10-2020-q4-major/bin:$PATH"
