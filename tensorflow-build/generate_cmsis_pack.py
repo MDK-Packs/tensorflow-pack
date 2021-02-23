@@ -150,6 +150,12 @@ def main(unparsed_args, flags):
   all_core_srcs_list = core_srcs_list + core_hdrs_list
   all_core_srcs_list.sort()
 
+  #get --srcs and --hdrs from arguments
+  util_srcs_list = load_list_from_file(flags.util_srcs)
+  #util_hdrs_list = load_list_from_file(flags.util_hdrs)
+  all_util_srcs_list = util_srcs_list #+ util_hdrs_list
+  all_util_srcs_list.sort()
+
   #get --srcs-cmsis_nn and --hdrs-cmsis_nn from arguments
   cmsis_nn_srcs_list = load_list_from_file(flags.srcs_cmsis_nn)
   cmsis_nn_hdrs_list = load_list_from_file(flags.hdrs_cmsis_nn)
@@ -169,6 +175,7 @@ def main(unparsed_args, flags):
   all_test_srcs_list.sort()
 
   replace_core_srcs = make_component_file_list(all_core_srcs_list)
+  replace_util_srcs = make_component_file_list(all_util_srcs_list)
   replace_test_srcs = make_component_file_list(all_test_srcs_list)
   replace_cmsis_srcs = make_component_file_list(all_cmsis_nn_srcs_list)
   replace_ethos_srcs = make_component_file_list(all_ethos_srcs_list)
@@ -188,9 +195,11 @@ def main(unparsed_args, flags):
   template_file_text = re.sub(r'%{KERNEL_FILES_REFERENCE}%', replace_core_srcs, six.ensure_str(template_file_text))
   template_file_text = re.sub(r'%{KERNEL_FILES_CMSIS}%', replace_cmsis_srcs, six.ensure_str(template_file_text))
   template_file_text = re.sub(r'%{KERNEL_FILES_ETHOS}%', replace_ethos_srcs, six.ensure_str(template_file_text))
+  template_file_text = re.sub(r'%{KERNEL_UTIL_FILES}%', replace_util_srcs, six.ensure_str(template_file_text))
   template_file_text = re.sub(r'%{TEST_FILES}%', replace_test_srcs, six.ensure_str(template_file_text))
   template_file_text = re.sub(r'%{RELEASE_VERSION}%', pack_version, template_file_text)
-  template_file_text = re.sub(r'%{RELEASE_DATE}%', tmpl_pdsc_date, template_file_text)                      
+  template_file_text = re.sub(r'%{RELEASE_DATE}%', tmpl_pdsc_date, template_file_text) 
+                     
 
   with open(pack_build + "/tensorflow.tensorflow-lite-micro.pdsc", 'w') as output_file:
     output_file.write(template_file_text)
@@ -227,6 +236,16 @@ def parse_args():
       type=str,
       default='./srcs.lst',
       help='Sources for cvariant Reference')
+  parser.add_argument(
+      '--util_hdrs',
+      type=str,
+      default='./util_hdrs.lst',
+      help='Headers for Kernel Utils')
+  parser.add_argument(
+      '--util_srcs',
+      type=str,
+      default='./util_srcs.lst',
+      help='Sources for Kernel Utils')      
   parser.add_argument(
       '--hdrs-cmsis-nn',
       type=str,
