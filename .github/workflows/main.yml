@@ -42,11 +42,15 @@ jobs:
           docker exec build_runtime pip3 install six requests
       
            
-      - name: Build Pack and run PackChk
+      - name: Build TensorFlow Pack and run PackChk
         run : |
           docker exec build_runtime /bin/bash /workspace/host/tensorflow-pack/tensorflow-build/prep.sh
           docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-build/generate_cmsis_pack.py  --tensorflow_path=/workspace/host/tensorflow --input_template=/workspace/host/tensorflow-pack/tensorflow-build/template/cmsis_pdsc.tpl  --srcs=/workspace/host/tensorflow-pack/tensorflow-build/srcs.lst --hdrs=/workspace/host/tensorflow-pack/tensorflow-build/hdrs.lst --hdrs-cmsis-nn=/workspace/host/tensorflow-pack/tensorflow-build/srcs.cmsis-nn.lst --srcs-cmsis-nn=/workspace/host/tensorflow-pack/tensorflow-build/hdrs.cmsis-nn.lst --hdrs-ethos=/workspace/host/tensorflow-pack/tensorflow-build/srcs.ethos.lst --srcs-ethos=/workspace/host/tensorflow-pack/tensorflow-build/hdrs.ethos.lst --testhdrs=/workspace/host/tensorflow-pack/tensorflow-build/srcs.test.lst --testsrcs=/workspace/host/tensorflow-pack/tensorflow-build/hdrs.test.lst --util_src=/workspace/host/tensorflow-pack/tensorflow-build/util_srcs.lst     
-        
+
+      - name: Build 3rd Party Packs and run PackChk
+        run : |
+        docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/3ython3 gen_pack.py --path=./flatbuffers --date_tag
+
       
       - name: Execute test suite
         run: echo "Run tests on Cortex-M55 FVP"
