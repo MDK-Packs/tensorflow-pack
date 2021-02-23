@@ -1,0 +1,14 @@
+name: ruy
+vendor: tensorflow
+version: 0.0.1
+
+pdsc: ./contributions/merge/tensorflow.ruy.pdsc
+add:  ./contributions/add
+build: build
+out: ./
+
+remote_source: #https://github.com/google/flatbuffers/archive/master.zip
+local_source: ../../../tensorflow/tensorflow/lite/micro/tools/make/downloads/ruy
+src_dest: ./src
+
+

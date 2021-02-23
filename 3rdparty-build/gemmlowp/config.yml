@@ -1,0 +1,14 @@
+name: gemmlowp
+vendor: tensorflow
+version: 0.0.1
+
+pdsc: ./contributions/merge/tensorflow.gemmlowp.pdsc
+add:  ./contributions/add
+build: build
+out: ./
+
+remote_source: #
+local_source: ../../../tensorflow/tensorflow/lite/micro/tools/make/downloads/gemmlowp
+src_dest: ./src
+
+

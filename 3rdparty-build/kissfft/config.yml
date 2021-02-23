@@ -1,0 +1,14 @@
+name: kissfft
+vendor: tensorflow
+version: 0.0.1
+
+pdsc: ./contributions/merge/tensorflow.kissfft.pdsc
+add:  ./contributions/add
+build: build
+out: ./
+
+remote_source: #https://github.com/google/flatbuffers/archive/master.zip
+local_source: ../../../tensorflow/tensorflow/lite/micro/tools/make/downloads/kissfft
+src_dest: ./src
+
+
