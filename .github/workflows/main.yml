@@ -52,13 +52,13 @@ jobs:
       - name: Build 3rd Party Packs and run PackChk
         run : |
           docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/flatbuffers --date_tag
-          mv ${{ github.workspace }}/tensorflow-pack/3rdparty-build/flatbuffers/build/*.pack ./out/
+          mv ${{ github.workspace }}/tensorflow-pack/3rdparty-build/flatbuffers/build/*.pack ${{ github.workspace }}/out/
           docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/ruy --date_tag
-          mv ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ruy/build/*.pack ./out/
+          mv ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ruy/build/*.pack ${{ github.workspace }}/out/
           docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/gemmlowp --date_tag
-          mv ${{ github.workspace }}/tensorflow-pack/3rdparty-build/gemmlowp/build/*.pack ./out/
+          mv ${{ github.workspace }}/tensorflow-pack/3rdparty-build/gemmlowp/build/*.pack ${{ github.workspace }}/out/
           docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/kissfft --date_tag
-          mv ${{ github.workspace }}/tensorflow-pack/3rdparty-build/kissfft/build/*.pack ./out/
+          mv ${{ github.workspace }}/tensorflow-pack/3rdparty-build/kissfft/build/*.pack ${{ github.workspace }}/out/
       
       - name: Execute test suite
         run: echo "Run tests on Cortex-M55 FVP"
