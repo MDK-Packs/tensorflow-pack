@@ -49,7 +49,10 @@ jobs:
 
       - name: Build 3rd Party Packs and run PackChk
         run : |
-          docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/3ython3 gen_pack.py --path=./flatbuffers --date_tag
+          docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/python3 gen_pack.py --path=./flatbuffers --date_tag
+          docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/python3 gen_pack.py --path=./ruy --date_tag
+          docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/python3 gen_pack.py --path=./gemmlowp --date_tag
+          docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/python3 gen_pack.py --path=./kissfft --date_tag
 
       
       - name: Execute test suite
