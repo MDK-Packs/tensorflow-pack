@@ -13,9 +13,11 @@ python3 genpack.py --path=<packpath> [--date_tag --version=1.2.3]
 
 ### Directory Structure of Pack Assets
 
-contributions/add/     | Files that are copied untouched to the pack
-contributions/merge/   | Template Files that are merged with variables before copied to pack (only pdsc supported now)
-config.yml             | The configuration
+| File/Folder   | Details  |
+| ------------- |:-------------:|
+| contributions/add/     | Files that are copied untouched to the pack |
+| contributions/merge/   | Template Files that are merged with variables before copied to pack (only pdsc supported now) |
+| config.yml             | The configuration |
 
 ### config.yml Example
 
