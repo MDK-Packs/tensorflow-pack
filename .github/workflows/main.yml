@@ -39,7 +39,7 @@ jobs:
       - name: Create Container runtime from DockerHub
         run : |
           docker run -i -v ${{ github.workspace }}:/workspace/host --mac-address="00:02:F7:FF:55:55" --name build_runtime -d armswdev/cmsis_tools_m55:latest 
-          docker exec build_runtime pip3 install six requests
+          docker exec build_runtime pip3 install six requests pyyaml
       
            
       - name: Build TensorFlow Pack and run PackChk
