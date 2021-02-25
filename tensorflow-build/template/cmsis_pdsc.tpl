@@ -5,7 +5,7 @@
   <name>tensorflow-lite-micro</name>
   <description>Deep learning framework for on-device inference.</description>
   <!-- web download link -->
-  <url>https://github.com/MDK-Packs/Pack/raw/master/TensorFlow/</url>
+  <url>https://github.com/MDK-Packs/Pack/raw/master/TensorFlow-Pack/</url>
   <license>LICENSE</license>
   <releases>
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
@@ -35,9 +35,10 @@
         <require Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils"/>
     </condition>
     <condition id="3rd Party">
-      <require Cclass="Data Processing" Cgroup="Math" Csub="Kissfft" version="1.4.5:1.4.5"/>
-      <require Cclass="Data Processing" Cgroup="Math" Csub="ruy"/>
-      <require Cclass="Data Processing" Cgroup="Math" Csub="gemmlowp fixed-point"/>
+      <require Cclass="Data Processing" Cgroup="Math" Csub="kissfft" Cvariant="tensorflow"/>
+      <require Cclass="Data Processing" Cgroup="Math" Csub="ruy" Cvariant="tensorflow"/>
+      <require Cclass="Data Processing" Cgroup="Math" Csub="gemmlowp fixed-point" Cvariant="tensorflow"/>
+      <require Cclass="Data Exchange" Cgroup="Serialization" Csub="flatbuffers" Cvariant="tensorflow"/>
     </condition>    
   </conditions>
 
@@ -91,7 +92,8 @@
     <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cversion="%{RELEASE_VERSION}%">
       <description>TensorFlow Lite Micro Library</description>
       <files>
-        <file category="sourceCpp" name="tensorflow/lite/kernels/kernel_util.cc"/>
+        <file category="sourceCpp" name="tensorflow/lite/kernels/kernel_util.cc"/> 
+        %{KERNEL_UTIL_FILES}%
       </files>
     </component>
     <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Testing" Cversion="%{RELEASE_VERSION}%">
