@@ -7,8 +7,8 @@
   <url>https://github.com/MDK-Packs/Pack/raw/master/flatbuffers/</url>
   <license>LICENSE.txt</license>
   <releases>
-    <release version="1.0.0" date="2020-08-24">
-      Initial release 
+    <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
+      ruy for TensorFlow %{RELEASE_VERSION}%
     </release>
   </releases>
   <taxonomy>
