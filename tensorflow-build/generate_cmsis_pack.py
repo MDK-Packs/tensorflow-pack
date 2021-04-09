@@ -101,6 +101,7 @@ def get_version ():
 
 def make_component_file_list (srcs_list):
   replace_srcs = ''
+  srcs_list = set(srcs_list)
   print (srcs_list)
   for src in srcs_list:
     if not src:

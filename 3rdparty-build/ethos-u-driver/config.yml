@@ -1,0 +1,14 @@
+name: ethos-u-core-driver
+vendor: Arm
+version: 0.0.1
+
+pdsc: ./contributions/merge/Arm.ethos-u-core-driver.pdsc
+add:  ./contributions/add
+build: build
+out: ./
+
+remote_source: #https://github.com/google/flatbuffers/archive/master.zip
+local_source: ../../../tensorflow/tensorflow/lite/micro/tools/make/downloads/ethos_u_core_driver/
+src_dest: ./ethos_u_core_driver
+
+

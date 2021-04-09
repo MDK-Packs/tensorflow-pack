@@ -23,6 +23,7 @@ limitations under the License.
 #include "tensorflow/lite/micro/micro_interpreter.h"
 #include "tensorflow/lite/micro/system_setup.h"
 #include "tensorflow/lite/schema/schema_generated.h"
+#include "tensorflow/lite/micro/cortex_m_generic/debug_log_callback.h"
 
 // Globals, used for compatibility with Arduino-style sketches.
 namespace {
@@ -35,7 +36,14 @@ int inference_count = 0;
 
 constexpr int kTensorArenaSize = 2000;
 uint8_t tensor_arena[kTensorArenaSize];
-}  // namespace
+}  
+
+//void debug_log_printf(const char* s)
+//{
+//  printf("Hallo");
+//  printf(s);
+//}
+
 
 // The name of this function is important for Arduino compatibility.
 void setup() {
@@ -47,6 +55,8 @@ void setup() {
   static tflite::MicroErrorReporter micro_error_reporter;
   error_reporter = &micro_error_reporter;
 
+	//RegisterDebugLogCallback(debug_log_printf);
+	
   // Map the model into a usable data structure. This doesn't involve any
   // copying or parsing, it's a very lightweight operation.
   model = tflite::GetModel(g_model);

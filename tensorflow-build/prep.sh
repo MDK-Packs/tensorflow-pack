@@ -1,11 +1,11 @@
 #!/bin/sh
 ref_src_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 microlite printvar-tagged-MICROLITE_CC_SRCS"
-ref_hdr_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 microlite printvar-tagged-MICROLITE_CC_HDRS"
+ref_hdr_make="printvar-tagged-MICROLITE_CC_HDRS"
 util_src_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 microlite printvar-tagged-MICROLITE_CC_BASE_SRCS"
 nn_src_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 microlite printvar-tagged-MICROLITE_CC_SRCS"
-nn_hdr_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 microlite printvar-tagged-MICROLITE_CC_HDRS"
-ethos_src_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 TARGET_ARCH=cortex-m55 OPTIMIZED_KERNEL_DIR=cmsis_nn CO_PROCESSOR=ethos_u microlite printvar-tagged-MICROLITE_CC_SRCS"
-ethos_hdr_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 TARGET_ARCH=cortex-m55 OPTIMIZED_KERNEL_DIR=cmsis_nn CO_PROCESSOR=ethos_u microlite printvar-tagged-MICROLITE_CC_HDRS"
+nn_hdr_make="-printvar-tagged-MICROLITE_CC_HDRS"
+ethos_src_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 TARGET_ARCH=cortex-m55 CO_PROCESSOR=ethos_u microlite printvar-tagged-MICROLITE_CC_SRCS"
+ethos_hdr_make="CO_PROCESSOR=ethos_u microlite printvar-tagged-MICROLITE_CC_HDRS"
 test_src_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 microlite printvar-tagged-MICROLITE_TEST_SRCS"
 test_hdr_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 microlite printvar-tagged-MICROLITE_TEST_HDRS"
 
