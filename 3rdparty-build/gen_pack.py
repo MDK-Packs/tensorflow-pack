@@ -56,9 +56,6 @@ def main(unparsed_args, flags):
   print(add_path)
 
   SOURCE_ADD = cfg["local_source"]
-  src_path = os.path.realpath(os.path.join(os.path.abspath(flags.path), SOURCE_ADD)) 
-  src_dest = os.path.realpath(os.path.join(pack_path, cfg["src_dest"]))
-  print(src_path)
 
   OUTPATH = cfg["out"]
   out_path = os.path.realpath(os.path.join(os.path.abspath(flags.path), OUTPATH))
@@ -86,6 +83,8 @@ def main(unparsed_args, flags):
   print(">>> Version: ", pack_version)  
 
   if cfg["local_source"] is not None:
+    src_path = os.path.realpath(os.path.join(os.path.abspath(flags.path), SOURCE_ADD)) 
+    src_dest = os.path.realpath(os.path.join(pack_path, cfg["src_dest"]))
     print (">>> Merging local source:")
     print (">>> ", src_path, "==>" ,src_dest)
     os.mkdir(src_dest)
