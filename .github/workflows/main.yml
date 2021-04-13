@@ -28,10 +28,10 @@ jobs:
           repository: MDK-Packs/tensorflow-pack
           path: tensorflow-pack
          
-      - name: Checkout tensorflow
+      - name: Checkout tflite-micro
         uses: actions/checkout@v2
         with: 
-          repository: tensorflow/tensorflow
+          repository: tensorflow/tflite-micro
           path: tensorflow
           clean: false  
 
