@@ -8,7 +8,7 @@
   <license>LICENSE.txt</license>
   <releases>
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
-      kissfft for TensorFlow %{RELEASE_VERSION}%
+      Ethos-U Core Driver %{RELEASE_VERSION}%
     </release>
   </releases>
   <components>

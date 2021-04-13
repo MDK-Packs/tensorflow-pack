@@ -61,7 +61,8 @@ jobs:
           # cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/kissfft/build/*.pack ${{ github.workspace }}/out/
           docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/ethos-u-driver --date_tag
           cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ethos-u-driver/build/*.pack ${{ github.workspace }}/out/
-
+          docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/tflite-er-profiler --date_tag
+          cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/tflite-er-profiler/build/*.pack ${{ github.workspace }}/out/
 
       - name: Execute test suite
         run: echo "Run tests on Cortex-M55 FVP"

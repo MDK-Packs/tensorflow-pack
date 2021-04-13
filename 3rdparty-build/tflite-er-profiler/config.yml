@@ -1,0 +1,14 @@
+name: tflite-er-profiler
+vendor: Arm
+version: 0.0.1
+
+pdsc: ./contributions/merge/Arm.tflite-er-profiler.pdsc
+add:  ./contributions/add
+build: build
+out: ./
+
+remote_source: #https://github.com/google/flatbuffers/archive/master.zip
+local_source: #../../../tensorflow/tensorflow/lite/micro/tools/make/downloads/ethos_u_core_driver/
+src_dest: #./ethos_u_core_driver
+
+
