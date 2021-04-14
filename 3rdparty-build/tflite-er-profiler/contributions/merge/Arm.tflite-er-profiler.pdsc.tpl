@@ -12,7 +12,7 @@
     </release>
   </releases>
   <components>
-    <component Cclass="Machine Learning" Cgroup="Tensorflow" Csub="Profiler" Cvariant="Event Recorder" Cversion="1.0.0">
+    <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Profiler" Cvariant="Event Recorder" Cversion="1.0.0">
       <description>Event Recorder MicroProfiler</description>
       <RTE_Components_h>
         <!-- the following content goes into file 'RTE_Components.h' -->
