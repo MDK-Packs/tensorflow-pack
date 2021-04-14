@@ -12,6 +12,9 @@ test_hdr_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 microlite prin
 
 cd /workspace/host/tensorflow
 
+#Force download of all necessary 3rd Party dependencies
+make -f tensorflow/lite/micro/tools/make/Makefile micro_speech_bin
+
 make -f tensorflow/lite/micro/tools/make/Makefile -f /workspace/host/tensorflow-pack/tensorflow-build/make/print.mak $ref_src_make > /workspace/host/tensorflow-pack/tensorflow-build/srcs.lst
 make -f tensorflow/lite/micro/tools/make/Makefile -f /workspace/host/tensorflow-pack/tensorflow-build/make/print.mak $ref_hdr_make > /workspace/host/tensorflow-pack/tensorflow-build/hdrs.lst
 make -f tensorflow/lite/micro/tools/make/Makefile -f /workspace/host/tensorflow-pack/tensorflow-build/make/print.mak $util_src_make > /workspace/host/tensorflow-pack/tensorflow-build/util_srcs.lst
@@ -21,5 +24,4 @@ make -f tensorflow/lite/micro/tools/make/Makefile -f /workspace/host/tensorflow-
 make -f tensorflow/lite/micro/tools/make/Makefile -f /workspace/host/tensorflow-pack/tensorflow-build/make/print.mak $ethos_hdr_make > /workspace/host/tensorflow-pack/tensorflow-build/hdrs.ethos.lst
 make -f tensorflow/lite/micro/tools/make/Makefile -f /workspace/host/tensorflow-pack/tensorflow-build/make/print.mak $test_src_make > /workspace/host/tensorflow-pack/tensorflow-build/srcs.test.lst
 make -f tensorflow/lite/micro/tools/make/Makefile -f /workspace/host/tensorflow-pack/tensorflow-build/make/print.mak $test_hdr_make > /workspace/host/tensorflow-pack/tensorflow-build/hdrs.test.lst
-
 
