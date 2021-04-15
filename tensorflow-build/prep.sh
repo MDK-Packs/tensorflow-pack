@@ -11,6 +11,7 @@ test_hdr_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 microlite prin
 
 
 cd /workspace/host/tensorflow
+tensorflow/lite/micro/tools/make/download_and_extract.sh "http://mirror.tensorflow.org/github.com/mborgerding/kissfft/archive/v130.zip" "438ba1fef5783cc5f5f201395cc477ca" tensorflow/lite/micro/tools/make/downloads/kissfft patch_kissfft
 
 make -f tensorflow/lite/micro/tools/make/Makefile -f /workspace/host/tensorflow-pack/tensorflow-build/make/print.mak $ref_src_make > /workspace/host/tensorflow-pack/tensorflow-build/srcs.lst
 make -f tensorflow/lite/micro/tools/make/Makefile -f /workspace/host/tensorflow-pack/tensorflow-build/make/print.mak $ref_hdr_make > /workspace/host/tensorflow-pack/tensorflow-build/hdrs.lst
