@@ -13,7 +13,7 @@ Requirements:
 
 Pull the docker image from Dockerhub and instance a container on your machine. Make sure the -v parameter points to your local project folder 
 ```
-docker run -i -v ~\projects\tensorflow-pack\Examples:/workspace/host --name tflm-container -d armswdev/cmsis_tools_m55:latest
+docker run -i -v ~\projects\tensorflow-pack\Examples\microspeech_test:/workspace/host --name tflm-container -d armswdev/cmsis_tools_m55:latest
 ```
 
 Install the tensorflow pack:
