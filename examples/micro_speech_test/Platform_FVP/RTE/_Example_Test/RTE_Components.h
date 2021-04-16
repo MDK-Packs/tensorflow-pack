@@ -14,8 +14,12 @@
 /*
  * Define the Device Header File: 
  */
-#define CMSIS_device_header "platform_description.h"
+#define CMSIS_device_header "SSE300MPS3.h"
 
+/* ARM::CMSIS Driver:USART:1.0.0 */
+#define RTE_Drivers_USART
+/* Arm::Machine Learning:NPU Support:Ethos-U Driver:U55:1.0.5 */
+#define RTE_DataExchange_Math_kissfft     /* kissfft */
 /* Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.2.0 */
 #define RTE_Compiler_IO_STDOUT          /* Compiler I/O: STDOUT */
           #define RTE_Compiler_IO_STDOUT_User     /* Compiler I/O: STDOUT User */
@@ -27,9 +31,9 @@
 #define RTE_DataExchange_Math_kissfft     /* kissfft */
 /* tensorflow::Data Processing:Math:ruy:tensorflow:1.12.0 */
 #define RTE_DataProcessing_Math_ruy     /* ruy */
-/* tensorflow::Machine Learning:TensorFlow:Kernel:CMSIS-NN:0.1.20210225 */
+/* tensorflow::Machine Learning:TensorFlow:Kernel:CMSIS-NN:0.1.20210416 */
 #define RTE_ML_TF_LITE     /* TF */
-/* tensorflow::Machine Learning:TensorFlow:Testing:0.1.20210225 */
+/* tensorflow::Machine Learning:TensorFlow:Testing:0.1.20210416 */
 #define RTE_ML_TF_LITE     /* TF */
 
 

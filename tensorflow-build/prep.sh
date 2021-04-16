@@ -22,5 +22,3 @@ make -f tensorflow/lite/micro/tools/make/Makefile -f /workspace/host/tensorflow-
 make -f tensorflow/lite/micro/tools/make/Makefile -f /workspace/host/tensorflow-pack/tensorflow-build/make/print.mak $ethos_hdr_make > /workspace/host/tensorflow-pack/tensorflow-build/hdrs.ethos.lst
 make -f tensorflow/lite/micro/tools/make/Makefile -f /workspace/host/tensorflow-pack/tensorflow-build/make/print.mak $test_src_make > /workspace/host/tensorflow-pack/tensorflow-build/srcs.test.lst
 make -f tensorflow/lite/micro/tools/make/Makefile -f /workspace/host/tensorflow-pack/tensorflow-build/make/print.mak $test_hdr_make > /workspace/host/tensorflow-pack/tensorflow-build/hdrs.test.lst
-
-

@@ -1,0 +1,8 @@
+
+*.mather01
+*.o
+*.d
+*.map
+*.lst
+*.lnp
+*.dep

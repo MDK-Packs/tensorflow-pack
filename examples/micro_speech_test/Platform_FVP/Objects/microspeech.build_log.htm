@@ -1,0 +1,507 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.34.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Matthias Hertel Arm Flex license: MDK Professional 5.34 (Flex) (mdk_pro) Borrow: 30 Apr 2021
+ 
+Tool Versions:
+Toolchain:       MDK Professional 5.34 (Flex)  Version: 5.34.0.0
+Toolchain Path:  C:\Keil\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         
+Dialog DLL:      
+Target DLL:      UL2V8M.DLL V1.6.10.0
+Dialog DLL:      TCM.DLL V1.48.0.0
+ 
+<h2>Project:</h2>
+C:\Projects\mdk-packs\tensorflow-pack\examples\micro_speech_test\Platform_FVP\microspeech.uvprojx
+Project File Date:  04/16/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil\ARM\ARMCLANG\Bin'
+Build target 'Example Test'
+Note: source file 'C:\Users\mather01\AppData\Local\Arm\Packs\tensorflow\tensorflow-lite-micro\0.1.20210416\tensorflow\lite\micro\debug_log.cc' - object file renamed from '.\Objects\debug_log.o' to '.\Objects\debug_log_1.o'.
+Note: source file 'C:\Users\mather01\AppData\Local\Arm\Packs\tensorflow\tensorflow-lite-micro\0.1.20210416\tensorflow\lite\micro\kernels\kernel_util.cc' - object file renamed from '.\Objects\kernel_util.o' to '.\Objects\kernel_util_1.o'.
+compiling serial.c...
+compiling filterbank.c...
+compiling frontend_util.c...
+compiling log_lut.c...
+compiling filterbank_util.c...
+compiling frontend.c...
+compiling fft.cc...
+compiling fft_util.cc...
+compiling log_scale.c...
+compiling pcan_gain_control.c...
+compiling log_scale_util.c...
+compiling noise_reduction_util.c...
+compiling noise_reduction.c...
+compiling pcan_gain_control_util.c...
+compiling window.c...
+compiling window_util.c...
+compiling micro_model_settings.cc...
+compiling no_micro_features_data.cc...
+compiling yes_micro_features_data.cc...
+compiling model.cc...
+compiling audio_provider.cc...
+compiling micro_features_generator.cc...
+compiling command_responder.cc...
+compiling feature_provider.cc...
+compiling recognize_commands.cc...
+compiling Driver_FVP_SSE300_MPC.c...
+compiling Driver_SPI.c...
+compiling retarget_io.c...
+compiling Driver_USART.c...
+compiling kiss_fftr.c...
+compiling Driver_SSE300_PPC.c...
+compiling device_definition.c...
+compiling kiss_fft.c...
+compiling system_SSE300MPS3.c...
+compiling common.c...
+compiling ethosu_device.c...
+compiling ethosu_driver.c...
+compiling startup_fvp_sse300_mps3.c...
+compiling ethosu_pmu.c...
+compiling error_reporter.cc...
+compiling debug_log.cc...
+compiling tensor_utils.cc...
+compiling quantization_util.cc...
+../micro_speech/src/micro_speech_test.cc(30): warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+                printf(s);
+                       ^
+../micro_speech/src/micro_speech_test.cc(30): note: treat the string as an argument to avoid this
+                printf(s);
+                       ^
+                       "%s", 
+1 warning generated.
+compiling micro_speech_test.cc...
+compiling debug_log.cc...
+compiling kernel_util.cc...
+compiling activations.cc...
+compiling op_resolver.cc...
+compiling arg_min_max.cc...
+compiling add_n.cc...
+compiling all_ops_resolver.cc...
+compiling batch_to_space_nd.cc...
+compiling cast.cc...
+compiling ceil.cc...
+compiling flatbuffer_conversions.cc...
+compiling concatenation.cc...
+compiling cumsum.cc...
+compiling conv_common.cc...
+compiling conv.cc...
+compiling add.cc...
+compiling comparisons.cc...
+compiling circular_buffer.cc...
+compiling depthwise_conv.cc...
+compiling depthwise_conv_common.cc...
+compiling dequantize.cc...
+compiling expand_dims.cc...
+compiling exp.cc...
+compiling elementwise.cc...
+compiling fill.cc...
+compiling elu.cc...
+compiling floor.cc...
+compiling floor_div.cc...
+compiling kernel_runner.cc...
+compiling fully_connected_common.cc...
+compiling floor_mod.cc...
+compiling fully_connected.cc...
+compiling hard_swish.cc...
+compiling kernel_util.cc...
+compiling detection_postprocess.cc...
+compiling l2_pool_2d.cc...
+compiling leaky_relu.cc...
+compiling logical.cc...
+compiling l2norm.cc...
+compiling logistic.cc...
+compiling log_softmax.cc...
+compiling maximum_minimum.cc...
+compiling neg.cc...
+compiling pack.cc...
+compiling quantize.cc...
+compiling prelu.cc...
+compiling quantize_common.cc...
+compiling pad.cc...
+compiling pooling.cc...
+compiling reduce.cc...
+compiling resize_nearest_neighbor.cc...
+compiling mul.cc...
+compiling round.cc...
+compiling softmax_common.cc...
+compiling softmax.cc...
+compiling split_v.cc...
+compiling split.cc...
+compiling space_to_batch_nd.cc...
+compiling shape.cc...
+compiling reshape.cc...
+compiling strided_slice.cc...
+compiling sub.cc...
+compiling svdf.cc...
+compiling svdf_common.cc...
+compiling greedy_memory_planner.cc...
+compiling unpack.cc...
+compiling zeros_like.cc...
+compiling transpose_conv.cc...
+compiling squeeze.cc...
+compiling linear_memory_planner.cc...
+compiling tanh.cc...
+compiling micro_error_reporter.cc...
+compiling micro_profiler.cc...
+compiling micro_time.cc...
+compiling micro_string.cc...
+compiling micro_utils.cc...
+compiling system_setup.cc...
+compiling recording_simple_memory_allocator.cc...
+compiling memory_helpers.cc...
+compiling ethosu.cc...
+compiling arm_mps3_io_drv.c...
+compiling gpio_cmsdk_drv.c...
+compiling ppc_sse300_drv.c...
+compiling mpc_sie_drv.c...
+compiling micro_allocator.cc...
+compiling recording_micro_allocator.cc...
+compiling micro_interpreter.cc...
+compiling syscounter_armv8-m_read_drv.c...
+compiling simple_memory_allocator.cc...
+compiling spi_pl022_drv.c...
+compiling syscounter_armv8-m_cntrl_drv.c...
+compiling systimer_armv8-m_drv.c...
+compiling syswdog_armv8-m_drv.c...
+compiling schema_utils.cc...
+compiling uart_cmsdk_drv.c...
+compiling test_helpers.cc...
+linking...
+.\Objects\microspeech.axf: Error: L6200E: Symbol DebugLog multiply defined (by debug_log_1.o and debug_log.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 1 error messages.
+".\Objects\microspeech.axf" - 1 Error(s), 1 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.1-dev0.pack
+                ARM.CMSIS.5.7.1-dev0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: SPI Version: 2.3.0
+   * Component: USART Version: 2.4.0
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.V2M_MPS3_SSE_300_BSP.1.1.0.pack
+                ARM.V2M_MPS3_SSE_300_BSP.1.1.0
+                ARM V2M-MPS3 Board Support PACK for CoreLink SSE-300 - TrustZone enabled subsystem for embedded.
+   * Component: MPC Version: 1.0.0
+   * Component: PPC Version: 1.0.0
+   * Component: SPI Version: 1.0.0
+   * Component: USART Version: 1.0.0
+   * Component: Definition Version: 1.1.0
+   * Component: Startup Variant: Baremetal Version: 1.1.0
+   * Component: GPIO Version: 1.0.0
+   * Component: IO Version: 1.0.0
+   * Component: MPC Version: 1.0.0
+   * Component: PPC Version: 1.0.0
+   * Component: SPI Version: 1.0.0
+   * Component: SysCounter Version: 1.0.0
+   * Component: SysTimer Version: 1.0.0
+   * Component: UART Version: 1.0.0
+   * Component: Watch Dog Version: 1.0.0
+
+Package Vendor: Arm
+                https://review.mlplatform.org/plugins/gitiles/ml/ethos-u/ethos-u-core-driver/Arm.ethos-u-core-driver.0.0.1.20210413.pack
+                Arm.ethos-u-core-driver.0.0.1.20210413
+                Device Driver for the Arm(R) Ethos(TM)-U NPU.
+   * Component: Ethos-U Driver Variant: U55 Version: 1.0.5
+
+Package Vendor: tensorflow
+                https://github.com/MDK-Packs/Pack/raw/master/flatbuffers/tensorflow.flatbuffers.0.0.1.20210416.pack
+                tensorflow.flatbuffers.0.0.1.20210416
+                FlatBuffers: Memory Efficient Serialization Library
+   * Component: flatbuffers Variant: tensorflow Version: 1.12.0
+
+Package Vendor: tensorflow
+                https://github.com/MDK-Packs/Pack/raw/master/gemmlowp/tensorflow.gemmlowp.0.0.1.20210416.pack
+                tensorflow.gemmlowp.0.0.1.20210416
+                a small self-contained low-precision GEMM library
+   * Component: gemmlowp fixed-point Variant: tensorflow Version: 1.0.0
+
+Package Vendor: tensorflow
+                https://github.com/MDK-Packs/Pack/raw/master/kissfft/tensorflow.kissfft.0.0.1.20210416.pack
+                tensorflow.kissfft.0.0.1.20210416
+                Fast Fourier Transform (FFT) library that tries to Keep it Simple, Stupid
+   * Component: kissfft Variant: tensorflow Version: 1.4.5
+
+Package Vendor: tensorflow
+                https://github.com/MDK-Packs/Pack/raw/master/flatbuffers/tensorflow.ruy.0.0.1.20210416.pack
+                tensorflow.ruy.0.0.1.20210416
+                The ruy matrix multiplication library
+   * Component: ruy Variant: tensorflow Version: 1.12.0
+
+Package Vendor: tensorflow
+                https://github.com/MDK-Packs/Pack/raw/master/TensorFlow-Pack/tensorflow.tensorflow-lite-micro.0.1.20210416.pack
+                tensorflow.tensorflow-lite-micro.0.1.20210416
+                Deep learning framework for on-device inference.
+   * Component: Kernel Utils Version: 0.1.20210416
+   * Component: Kernel Variant: CMSIS-NN Version: 0.1.20210416
+   * Component: Testing Version: 0.1.20210416
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.ARM_Compiler.1.6.3.pack
+                Keil.ARM_Compiler.1.6.3
+                Keil ARM Compiler extensions for ARM Compiler 5 and ARM Compiler 6
+   * Component: STDOUT Variant: User Version: 1.2.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\SSE-300-MPS3
+  .\RTE\_Example_Test
+  C:\Users\mather01\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.1-dev0\CMSIS\Core\Include
+  C:\Users\mather01\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.1-dev0\CMSIS\Driver\Include
+  C:\Users\mather01\AppData\Local\Arm\Packs\ARM\V2M_MPS3_SSE_300_BSP\1.1.0\Board\Device_Definition
+  C:\Users\mather01\AppData\Local\Arm\Packs\ARM\V2M_MPS3_SSE_300_BSP\1.1.0\Board\Platform
+  C:\Users\mather01\AppData\Local\Arm\Packs\ARM\V2M_MPS3_SSE_300_BSP\1.1.0\CMSIS_Driver
+  C:\Users\mather01\AppData\Local\Arm\Packs\ARM\V2M_MPS3_SSE_300_BSP\1.1.0\CMSIS_Driver\Config
+  C:\Users\mather01\AppData\Local\Arm\Packs\ARM\V2M_MPS3_SSE_300_BSP\1.1.0\CMSIS_Driver\Include
+  C:\Users\mather01\AppData\Local\Arm\Packs\ARM\V2M_MPS3_SSE_300_BSP\1.1.0\Device\Include
+  C:\Users\mather01\AppData\Local\Arm\Packs\ARM\V2M_MPS3_SSE_300_BSP\1.1.0\Native_Driver
+  C:\Users\mather01\AppData\Local\Arm\Packs\ARM\ethos-u-core-driver\0.0.1.20210413\ethos_u_core_driver\include
+  C:\Users\mather01\AppData\Local\Arm\Packs\ARM\ethos-u-core-driver\0.0.1.20210413\ethos_u_core_driver\src
+  C:\Users\mather01\AppData\Local\Arm\Packs\tensorflow\flatbuffers\0.0.1.20210416\src\include
+  C:\Users\mather01\AppData\Local\Arm\Packs\tensorflow\gemmlowp\0.0.1.20210416\src
+  C:\Users\mather01\AppData\Local\Arm\Packs\tensorflow\kissfft\0.0.1.20210416\src
+  C:\Users\mather01\AppData\Local\Arm\Packs\tensorflow\ruy\0.0.1.20210416\src
+  C:\Users\mather01\AppData\Local\Arm\Packs\tensorflow\tensorflow-lite-micro\0.1.20210416
+  C:\Users\mather01\AppData\Local\Arm\Packs\tensorflow\tensorflow-lite-micro\0.1.20210416\tensorflow\lite\micro\cortex_m_generic
+  C:\Users\mather01\AppData\Local\Arm\Packs\tensorflow\tensorflow-lite-micro\0.1.20210416\tensorflow\lite\micro\testing
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ::CMSIS Driver:SPI:2.3.0 (API)
+      Include file:  CMSIS\Driver\Include\Driver_SPI.h
+
+   * Component: ::CMSIS Driver:USART:2.4.0 (API)
+      Include file:  CMSIS\Driver\Include\Driver_USART.h
+
+   * Component: ARM::CMSIS Driver:MPC:1.0.0
+      Source file:   CMSIS_Driver\Driver_FVP_SSE300_MPC.c
+      Include file:  CMSIS_Driver\Driver_MPC.h
+
+   * Component: ARM::CMSIS Driver:PPC:1.0.0
+      Source file:   CMSIS_Driver\Driver_SSE300_PPC.c
+      Include file:  CMSIS_Driver\Driver_SSE300_PPC.h
+
+   * Component: ARM::CMSIS Driver:SPI:1.0.0
+      Source file:   CMSIS_Driver\Driver_SPI.c
+
+   * Component: ARM::CMSIS Driver:USART:1.0.0
+      Source file:   CMSIS_Driver\Driver_USART.c
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+      Include file:  CMSIS\Core\Include\tz_context.h
+
+   * Component: ARM::Device:Definition:1.1.0
+      Include file:  Board\Platform\platform_base_address.h
+      Include file:  Board\Device_Definition\device_definition.h
+      Source file:   Board\Device_Definition\device_definition.c
+      Source file:   Device\Source\system_SSE300MPS3.c
+
+   * Component: ARM::Device:Startup:Baremetal:1.1.0
+      Source file:   Device\Source\startup_fvp_sse300_mps3.c
+      Include file:  Device\Include\region_defs.h
+      Include file:  CMSIS_Driver\Config\Baremetal\cmsis_driver_config.h
+      Include file:  Device\Include\region_limits.h
+      Include file:  Device\Config\Baremetal\device_cfg.h
+      Include file:  CMSIS_Driver\Config\RTE_Device.h
+
+   * Component: ARM::Native Driver:GPIO:1.0.0
+      Source file:   Native_Driver\gpio_cmsdk_drv.c
+      Include file:  Native_Driver\gpio_cmsdk_drv.h
+
+   * Component: ARM::Native Driver:IO:1.0.0
+      Source file:   Native_Driver\arm_mps3_io_drv.c
+      Include file:  Native_Driver\arm_mps3_io_drv.h
+
+   * Component: ARM::Native Driver:MPC:1.0.0
+      Source file:   Native_Driver\mpc_sie_drv.c
+      Include file:  Native_Driver\mpc_sie_drv.h
+
+   * Component: ARM::Native Driver:PPC:1.0.0
+      Source file:   Native_Driver\ppc_sse300_drv.c
+      Include file:  Native_Driver\ppc_sse300_drv.h
+
+   * Component: ARM::Native Driver:SPI:1.0.0
+      Source file:   Native_Driver\spi_pl022_drv.c
+      Include file:  Native_Driver\spi_pl022_drv.h
+
+   * Component: ARM::Native Driver:SysCounter:1.0.0
+      Include file:  Native_Driver\syscounter_armv8-m_cntrl_drv.h
+      Source file:   Native_Driver\syscounter_armv8-m_read_drv.c
+      Source file:   Native_Driver\syscounter_armv8-m_cntrl_drv.c
+      Include file:  Native_Driver\syscounter_armv8-m_read_drv.h
+
+   * Component: ARM::Native Driver:SysTimer:1.0.0
+      Include file:  Native_Driver\systimer_armv8-m_drv.h
+      Source file:   Native_Driver\systimer_armv8-m_drv.c
+
+   * Component: ARM::Native Driver:UART:1.0.0
+      Include file:  Native_Driver\uart_cmsdk_drv.h
+      Source file:   Native_Driver\uart_cmsdk_drv.c
+
+   * Component: ARM::Native Driver:Watch Dog:1.0.0
+      Source file:   Native_Driver\syswdog_armv8-m_drv.c
+      Include file:  Native_Driver\syswdog_armv8-m_drv.h
+
+   * Component: Arm::Machine Learning:NPU Support:Ethos-U Driver:U55:1.0.5
+      Source file:   ethos_u_core_driver\src\ethosu_pmu.c
+      Source file:   ethos_u_core_driver\src\ethosu_driver.c
+      Source file:   ethos_u_core_driver\src\ethosu_device.c
+
+   * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.2.0
+      Source file:   Template\stdout_display.c
+      Source file:   Template\stdout_user.c
+      Source file:   Template\stdout_USART.c
+      Source file:   Source\retarget_io.c
+
+   * Component: tensorflow::Data Exchange:Serialization:flatbuffers:tensorflow:1.12.0
+
+   * Component: tensorflow::Data Processing:Math:gemmlowp fixed-point:tensorflow:1.0.0
+
+   * Component: tensorflow::Data Processing:Math:kissfft:tensorflow:1.4.5
+      Source file:   src\tools\kiss_fftr.c
+      Source file:   src\kiss_fft.c
+
+   * Component: tensorflow::Data Processing:Math:ruy:tensorflow:1.12.0
+
+   * Component: tensorflow::Machine Learning:TensorFlow:Kernel Utils:0.1.20210416
+      Source file:   tensorflow\lite\micro\micro_string.cc
+      Source file:   tensorflow\lite\core\api\error_reporter.cc
+      Source file:   tensorflow\lite\micro\test_helpers.cc
+      Source file:   tensorflow\lite\micro\debug_log.cc
+      Source file:   tensorflow\lite\core\api\tensor_utils.cc
+      Source file:   tensorflow\lite\micro\memory_helpers.cc
+      Source file:   tensorflow\lite\micro\system_setup.cc
+      Source file:   tensorflow\lite\micro\micro_utils.cc
+      Source file:   tensorflow\lite\micro\memory_planner\greedy_memory_planner.cc
+      Source file:   tensorflow\lite\core\api\op_resolver.cc
+      Source file:   tensorflow\lite\micro\micro_interpreter.cc
+      Source file:   tensorflow\lite\micro\memory_planner\linear_memory_planner.cc
+      Source file:   tensorflow\lite\micro\micro_time.cc
+      Source file:   tensorflow\lite\schema\schema_utils.cc
+      Source file:   tensorflow\lite\core\api\flatbuffer_conversions.cc
+      Source file:   tensorflow\lite\micro\micro_profiler.cc
+      Source file:   tensorflow\lite\kernels\internal\quantization_util.cc
+      Source file:   tensorflow\lite\micro\all_ops_resolver.cc
+      Source file:   tensorflow\lite\kernels\kernel_util.cc
+      Source file:   tensorflow\lite\micro\micro_error_reporter.cc
+      Source file:   tensorflow\lite\micro\micro_allocator.cc
+      Source file:   tensorflow\lite\c\common.c
+      Source file:   tensorflow\lite\micro\simple_memory_allocator.cc
+      Source file:   tensorflow\lite\micro\recording_micro_allocator.cc
+      Source file:   tensorflow\lite\micro\recording_simple_memory_allocator.cc
+
+   * Component: tensorflow::Machine Learning:TensorFlow:Kernel:CMSIS-NN:0.1.20210416
+      Source file:   tensorflow\lite\micro\kernels\mul.cc
+      Source file:   tensorflow\lite\micro\cortex_m_generic\debug_log.cc
+      Source file:   tensorflow\lite\micro\kernels\logical.cc
+      Source file:   tensorflow\lite\micro\kernels\activations.cc
+      Source file:   tensorflow\lite\micro\kernels\log_softmax.cc
+      Source file:   tensorflow\lite\micro\kernels\kernel_util.cc
+      Source file:   tensorflow\lite\micro\kernels\floor.cc
+      Source file:   tensorflow\lite\micro\kernels\cast.cc
+      Source file:   tensorflow\lite\micro\kernels\fully_connected.cc
+      Source file:   tensorflow\lite\micro\test_helpers.cc
+      Source file:   tensorflow\lite\micro\kernels\ceil.cc
+      Source file:   tensorflow\lite\micro\kernels\arg_min_max.cc
+      Source file:   tensorflow\lite\micro\kernels\batch_to_space_nd.cc
+      Source file:   tensorflow\lite\micro\micro_profiler.cc
+      Source file:   tensorflow\lite\micro\kernels\reduce.cc
+      Source file:   tensorflow\lite\micro\simple_memory_allocator.cc
+      Source file:   tensorflow\lite\micro\kernels\ethosu.cc
+      Source file:   tensorflow\lite\micro\kernels\add_n.cc
+      Source file:   tensorflow\lite\micro\kernels\conv.cc
+      Source file:   tensorflow\lite\micro\micro_allocator.cc
+      Source file:   tensorflow\lite\micro\kernels\add.cc
+      Source file:   tensorflow\lite\micro\kernels\conv_common.cc
+      Source file:   tensorflow\lite\micro\kernels\squeeze.cc
+      Source file:   tensorflow\lite\micro\recording_simple_memory_allocator.cc
+      Source file:   tensorflow\lite\micro\kernels\sub.cc
+      Source file:   tensorflow\lite\micro\micro_error_reporter.cc
+      Source file:   tensorflow\lite\micro\kernels\depthwise_conv_common.cc
+      Source file:   tensorflow\lite\micro\kernels\leaky_relu.cc
+      Source file:   tensorflow\lite\micro\kernels\unpack.cc
+      Source file:   tensorflow\lite\micro\kernels\kernel_runner.cc
+      Source file:   tensorflow\lite\micro\kernels\logistic.cc
+      Source file:   tensorflow\lite\micro\kernels\exp.cc
+      Source file:   tensorflow\lite\schema\schema_utils.cc
+      Source file:   tensorflow\lite\micro\kernels\elementwise.cc
+      Source file:   tensorflow\lite\micro\kernels\pack.cc
+      Source file:   tensorflow\lite\micro\kernels\fill.cc
+      Source file:   tensorflow\lite\micro\kernels\space_to_batch_nd.cc
+      Source file:   tensorflow\lite\micro\kernels\l2_pool_2d.cc
+      Source file:   tensorflow\lite\micro\kernels\l2norm.cc
+      Source file:   tensorflow\lite\micro\recording_micro_allocator.cc
+      Source file:   tensorflow\lite\micro\kernels\circular_buffer.cc
+      Source file:   tensorflow\lite\micro\kernels\svdf_common.cc
+      Source file:   tensorflow\lite\core\api\flatbuffer_conversions.cc
+      Source file:   tensorflow\lite\core\api\op_resolver.cc
+      Source file:   tensorflow\lite\micro\kernels\pooling.cc
+      Source file:   tensorflow\lite\micro\system_setup.cc
+      Source file:   tensorflow\lite\micro\kernels\strided_slice.cc
+      Source file:   tensorflow\lite\micro\kernels\quantize_common.cc
+      Source file:   tensorflow\lite\micro\kernels\reshape.cc
+      Source file:   tensorflow\lite\core\api\error_reporter.cc
+      Source file:   tensorflow\lite\micro\micro_utils.cc
+      Include file:  tensorflow\lite\micro\cortex_m_generic\debug_log_callback.h
+      Source file:   tensorflow\lite\micro\kernels\dequantize.cc
+      Source file:   tensorflow\lite\micro\kernels\softmax.cc
+      Source file:   tensorflow\lite\micro\kernels\prelu.cc
+      Source file:   tensorflow\lite\micro\kernels\svdf.cc
+      Source file:   tensorflow\lite\micro\micro_interpreter.cc
+      Source file:   tensorflow\lite\micro\kernels\comparisons.cc
+      Source file:   tensorflow\lite\micro\kernels\expand_dims.cc
+      Source file:   tensorflow\lite\micro\kernels\maximum_minimum.cc
+      Source file:   tensorflow\lite\micro\kernels\floor_mod.cc
+      Source file:   tensorflow\lite\micro\kernels\transpose_conv.cc
+      Source file:   tensorflow\lite\micro\memory_planner\greedy_memory_planner.cc
+      Source file:   tensorflow\lite\micro\kernels\detection_postprocess.cc
+      Source file:   tensorflow\lite\micro\kernels\tanh.cc
+      Source file:   tensorflow\lite\kernels\internal\quantization_util.cc
+      Source file:   tensorflow\lite\micro\micro_string.cc
+      Source file:   tensorflow\lite\micro\kernels\split.cc
+      Source file:   tensorflow\lite\micro\kernels\neg.cc
+      Source file:   tensorflow\lite\micro\kernels\fully_connected_common.cc
+      Source file:   tensorflow\lite\micro\kernels\quantize.cc
+      Source file:   tensorflow\lite\micro\kernels\resize_nearest_neighbor.cc
+      Source file:   tensorflow\lite\micro\kernels\split_v.cc
+      Source file:   tensorflow\lite\micro\all_ops_resolver.cc
+      Source file:   tensorflow\lite\micro\kernels\hard_swish.cc
+      Source file:   tensorflow\lite\micro\memory_planner\linear_memory_planner.cc
+      Source file:   tensorflow\lite\micro\kernels\shape.cc
+      Source file:   tensorflow\lite\micro\kernels\softmax_common.cc
+      Source file:   tensorflow\lite\micro\kernels\elu.cc
+      Source file:   tensorflow\lite\micro\kernels\cumsum.cc
+      Source file:   tensorflow\lite\micro\kernels\zeros_like.cc
+      Source file:   tensorflow\lite\core\api\tensor_utils.cc
+      Source file:   tensorflow\lite\micro\micro_time.cc
+      Source file:   tensorflow\lite\micro\kernels\floor_div.cc
+      Source file:   tensorflow\lite\micro\kernels\round.cc
+      Source file:   tensorflow\lite\micro\memory_helpers.cc
+      Source file:   tensorflow\lite\micro\kernels\depthwise_conv.cc
+      Source file:   tensorflow\lite\micro\kernels\pad.cc
+      Source file:   tensorflow\lite\c\common.c
+      Source file:   tensorflow\lite\micro\kernels\concatenation.cc
+
+   * Component: tensorflow::Machine Learning:TensorFlow:Testing:0.1.20210416
+      Include file:  tensorflow\lite\micro\testing\micro_test.h
+      Include file:  tensorflow\lite\micro\testing\test_conv_model.h
+Target not created.
+Build Time Elapsed:  00:00:52
+</pre>
+</body>
+</html>
