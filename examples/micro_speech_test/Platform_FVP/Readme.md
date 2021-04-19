@@ -32,9 +32,10 @@ Run the executable on the Fixed Virtual Platform:
  docker exec tflm-container FVP_Corstone_SSE-300_Ethos-U55 -q --cyclelimit 100000000 -f /workspace/host/Platform_FVP/ARMCM55_config.txt /workspace/host/Platform_FVP/Objects/microspeech.axf
 ```
 
-
-
-
+Note, that you need to install xterm using the following command into your container once:
+```
+docker exec tflm-container apt install xterm -y
+```
 # ... in Keil MDK (Windows)
 
 Requirements:
