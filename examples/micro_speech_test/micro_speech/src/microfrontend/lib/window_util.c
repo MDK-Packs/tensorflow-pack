@@ -12,7 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include "/microfrontend/lib/window_util.h"
+#include "microfrontend/lib/window_util.h"
 
 #include <math.h>
 #include <stdio.h>

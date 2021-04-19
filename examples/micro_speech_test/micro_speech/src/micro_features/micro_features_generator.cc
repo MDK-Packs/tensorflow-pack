@@ -18,8 +18,8 @@ limitations under the License.
 #include <cmath>
 #include <cstring>
 
-#include "/microfrontend/lib/frontend.h"
-#include "/microfrontend/lib/frontend_util.h"
+#include "microfrontend/lib/frontend.h"
+#include "microfrontend/lib/frontend_util.h"
 #include "micro_features/micro_model_settings.h"
 
 // Configure FFT to output 16 bit fixed point.

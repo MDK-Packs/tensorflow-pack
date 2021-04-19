@@ -12,10 +12,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include "/microfrontend/lib/log_scale.h"
+#include "microfrontend/lib/log_scale.h"
 
-#include "/microfrontend/lib/bits.h"
-#include "/microfrontend/lib/log_lut.h"
+#include "microfrontend/lib/bits.h"
+#include "microfrontend/lib/log_lut.h"
 
 #define kuint16max 0x0000FFFF
 

@@ -17,7 +17,7 @@ limitations under the License.
 #include <stdio.h>
 #include <string.h>
 
-#include "/microfrontend/lib/bits.h"
+#include "microfrontend/lib/bits.h"
 
 void FrontendFillConfigWithDefaults(struct FrontendConfig* config) {
   WindowFillConfigWithDefaults(&config->window);
