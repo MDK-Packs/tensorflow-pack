@@ -1,4 +1,4 @@
-#! armclang --target=arm-arm-none-eabi -march=armv8.1-m.main -E -xc
+#! armclang --target=arm-arm-none-eabi -mcpu=cortex-m55+nomve+nofp -E -xc
 
 ;/*
 ; * Copyright (c) 2018-2021 Arm Limited. All rights reserved.
