@@ -6,3 +6,6 @@
 *.lst
 *.lnp
 *.dep
+*._cc
+*._cxx
+*.map
