@@ -71,6 +71,7 @@
       <files>
         %{KERNEL_FILES_CMSIS}%
         <file category="include" name="./"/>
+        <file category="sourceCpp" attr="config" name="tensorflow/lite/micro/system_setup.cc"/>
       </files>
     </component>
     <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel" Cvariant="Ethos-U" Cversion="%{RELEASE_VERSION}%" condition="Ethos-U">
