@@ -17,3 +17,4 @@ sed -i 's/tensorflow\/lite\/micro\/kernels\/conv_test_common.cc / /' /workspace/
 sed -i 's/tensorflow\/lite\/micro\/system_setup.cc / /' /workspace/host/tensorflow-pack/tensorflow-build/hdrs.cmsis-nn.lst
 sed -i 's/tensorflow\/lite\/micro\/system_setup.cc / /' /workspace/host/tensorflow-pack/tensorflow-build/srcs.cmsis-nn.lst
 sed -i 's/tensorflow\/lite\/micro\/system_setup.cc / /' /workspace/host/tensorflow-pack/tensorflow-build/srcs.lst
+sed -i 's/tensorflow\/lite\/micro\/system_setup.cc / /' /workspace/host/tensorflow-pack/tensorflow-build/util_srcs.lst
