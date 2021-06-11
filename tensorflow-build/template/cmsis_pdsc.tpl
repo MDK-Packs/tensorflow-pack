@@ -94,8 +94,8 @@
       <files>
         <file category="sourceCpp" name="tensorflow/lite/kernels/kernel_util.cc"/> 
         <file category="sourceCpp" name="tensorflow/lite/micro/system_setup.cc" attr="config"/>
-        <file category="sourceCpp" name="tensorflow/lite/micro/cortex_m_generic/system_setup.cc" attr="config"/>
-        <file category="sourceCpp" name="tensorflow/lite/micro/cortex_m_generic/system_setup.cc" attr="config"/>
+        <file category="sourceCpp" name="tensorflow/lite/micro/cortex_m_generic/micro_time.cc" attr="config"/>
+        <file category="sourceCpp" name="tensorflow/lite/micro/cortex_m_generic/debug_log.cc" attr="config"/>
         %{KERNEL_UTIL_FILES}%
       </files>
     </component>
