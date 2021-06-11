@@ -6,7 +6,7 @@ sed -i 's/<LIST>/<LIST>tensorflow\/lite\/micro\/cortex_m_generic\/debug_log_call
 sed -i 's/<LIST>/<LIST>tensorflow\/lite\/micro\/cortex_m_generic\/debug_log_callback.h /' /workspace/host/tensorflow-pack/tensorflow-build/hdrs.lst
 
 # Remove Generic Debug_log.cc from Kernel Utils
-sed -i 's/tensorflow\/lite\/micro\/debug_log.cc/ /' util_srcs.lst
+sed -i 's/tensorflow\/lite\/micro\/debug_log.cc/ /' /workspace/host/tensorflow-pack/tensorflow-build/util_srcs.lst
 
 # Remove conv_test_common.cc from all lists
 sed -i 's/tensorflow\/lite\/micro\/kernels\/conv_test_common.cc / /' /workspace/host/tensorflow-pack/tensorflow-build/hdrs.cmsis-nn.lst
