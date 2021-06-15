@@ -63,12 +63,12 @@ jobs:
           cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ethos-u-driver/build/*.pack ${{ github.workspace }}/out/
 
 
+  
       - name: Execute test suite
         run: echo "Run tests on Cortex-M55 FVP"
-           docker exec build_runtime cp_install.sh /workspace/host/tensorflow-pack/examples/hello_world/Platform_FVP/packlist
-           docker exec build_runtime cbuild.sh /workspace/host/tensorflow-pack/examples/hello_world/Platform_FVP/hello_world.Example_Test.cprj
-           docker exec build_runtime FVP_Corstone_SSE-300_Ethos-U55 -q --cyclelimit 100000000  -f /armtools/FVP_Corstone300_MPS3.config /workspace/host/tensorflow-pack/examples/hello_world/Platform_FVP/hello_world.axf
-      
+           docker exec build_runtime /workspace/host/tensorflow-pack/packinstall.sh
+           docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --tflm_path=/workspace/host/tensorflow/tensorflow/lite/micro/kernels
+    
       - name: Upload Pack
         uses: actions/upload-artifact@v2
         with:
