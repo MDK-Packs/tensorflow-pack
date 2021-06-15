@@ -67,9 +67,7 @@ jobs:
       - name: Execute test suite
         run: | 
            echo "Run tests on Cortex-M55 FVP"
-           find $(pwd) -type f -name "*.pack" > packlist
-           sed -i '1s/^/file:\/\//' packlist
-           docker exec build_runtime cp_install.sh /workspace/host/packlist
+           docker exec -w /workspace/host/tensorflow-pack build_runtime /workspace/host/tensorflow-pack/packinstall.sh
            docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --tflm_path=/workspace/host/tensorflow/tensorflow/lite/micro/kernels
     
       - name: Upload Pack
