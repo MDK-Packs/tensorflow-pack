@@ -14,25 +14,12 @@ limitations under the License.
 ==============================================================================*/
 
 #include "main_functions.h"
-#include "stdio.h"
-#include "tensorflow/lite/micro/cortex_m_generic/debug_log_callback.h"
-
-
-extern "C" void serial_init (void);
-
-void debug_log_printf(const char* s)
-{
-		printf(s);
-}
-
 
 // This is the default main used on systems that have the standard C entry
 // point. Other devices (for example FreeRTOS or ESP32) that have different
 // requirements for entry code (like an app_main function) should specialize
 // this main.cc file in a target-specific subfolder.
 int main(int argc, char* argv[]) {
-	serial_init();
-	RegisterDebugLogCallback(debug_log_printf);
   setup();
   while (true) {
     loop();

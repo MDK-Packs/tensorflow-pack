@@ -132,13 +132,13 @@
             <UseTargetDll>1</UseTargetDll>
             <UseExternalTool>0</UseExternalTool>
             <RunIndependent>0</RunIndependent>
-            <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
-            <Capability>0</Capability>
-            <DriverSelection>-1</DriverSelection>
+            <UpdateFlashBeforeDebugging>0</UpdateFlashBeforeDebugging>
+            <Capability>1</Capability>
+            <DriverSelection>4102</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2V8M.DLL</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -337,7 +337,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define></Define>
+              <Define>FLATBUFFERS_PREFER_PRINTF</Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
             </VariousControls>
@@ -453,11 +453,6 @@
               <FileName>main.cc</FileName>
               <FileType>8</FileType>
               <FilePath>..\hello_world\src\main.cc</FilePath>
-            </File>
-            <File>
-              <FileName>main_functions.cc</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\hello_world\src\main_functions.cc</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -509,6 +504,11 @@
                   </Cads>
                 </FileArmAds>
               </FileOption>
+            </File>
+            <File>
+              <FileName>main_functions.cc</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\hello_world\src\main_functions.cc</FilePath>
             </File>
             <File>
               <FileName>model.cc</FileName>
@@ -598,11 +598,6 @@
               <FileName>hello_world_test.cc</FileName>
               <FileType>8</FileType>
               <FilePath>..\hello_world\src\hello_world_test.cc</FilePath>
-            </File>
-            <File>
-              <FileName>testing_helpers_test.cc</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\..\..\..\tensorflow\tensorflow\lite\micro\testing_helpers_test.cc</FilePath>
             </File>
           </Files>
         </Group>
@@ -1023,7 +1018,7 @@
             <uC99>0</uC99>
             <uGnu>0</uGnu>
             <useXO>0</useXO>
-            <v6Lang>5</v6Lang>
+            <v6Lang>1</v6Lang>
             <v6LangP>6</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
@@ -1034,7 +1029,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>../../../../templates/CMSIS-NN/ARMCLANG/SSE-300-MPS3/API/Source</IncludePath>
+              <IncludePath></IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1138,75 +1133,6 @@
         </Group>
         <Group>
           <GroupName>TF_main</GroupName>
-          <GroupOption>
-            <CommonProperty>
-              <UseCPPCompiler>0</UseCPPCompiler>
-              <RVCTCodeConst>0</RVCTCodeConst>
-              <RVCTZI>0</RVCTZI>
-              <RVCTOtherData>0</RVCTOtherData>
-              <ModuleSelection>0</ModuleSelection>
-              <IncludeInBuild>0</IncludeInBuild>
-              <AlwaysBuild>2</AlwaysBuild>
-              <GenerateAssemblyFile>2</GenerateAssemblyFile>
-              <AssembleAssemblyFile>2</AssembleAssemblyFile>
-              <PublicsOnly>2</PublicsOnly>
-              <StopOnExitCode>11</StopOnExitCode>
-              <CustomArgument></CustomArgument>
-              <IncludeLibraryModules></IncludeLibraryModules>
-              <ComprImg>1</ComprImg>
-            </CommonProperty>
-            <GroupArmAds>
-              <Cads>
-                <interw>2</interw>
-                <Optim>0</Optim>
-                <oTime>2</oTime>
-                <SplitLS>2</SplitLS>
-                <OneElfS>2</OneElfS>
-                <Strict>2</Strict>
-                <EnumInt>2</EnumInt>
-                <PlainCh>2</PlainCh>
-                <Ropi>2</Ropi>
-                <Rwpi>2</Rwpi>
-                <wLevel>0</wLevel>
-                <uThumb>2</uThumb>
-                <uSurpInc>2</uSurpInc>
-                <uC99>2</uC99>
-                <uGnu>2</uGnu>
-                <useXO>2</useXO>
-                <v6Lang>0</v6Lang>
-                <v6LangP>0</v6LangP>
-                <vShortEn>2</vShortEn>
-                <vShortWch>2</vShortWch>
-                <v6Lto>2</v6Lto>
-                <v6WtE>2</v6WtE>
-                <v6Rtti>2</v6Rtti>
-                <VariousControls>
-                  <MiscControls></MiscControls>
-                  <Define></Define>
-                  <Undefine></Undefine>
-                  <IncludePath></IncludePath>
-                </VariousControls>
-              </Cads>
-              <Aads>
-                <interw>2</interw>
-                <Ropi>2</Ropi>
-                <Rwpi>2</Rwpi>
-                <thumb>2</thumb>
-                <SplitLS>2</SplitLS>
-                <SwStkChk>2</SwStkChk>
-                <NoWarn>2</NoWarn>
-                <uSurpInc>2</uSurpInc>
-                <useXO>2</useXO>
-                <ClangAsOpt>0</ClangAsOpt>
-                <VariousControls>
-                  <MiscControls></MiscControls>
-                  <Define></Define>
-                  <Undefine></Undefine>
-                  <IncludePath></IncludePath>
-                </VariousControls>
-              </Aads>
-            </GroupArmAds>
-          </GroupOption>
           <Files>
             <File>
               <FileName>constants.cc</FileName>
@@ -1344,62 +1270,6 @@
               <FileName>hello_world_test.cc</FileName>
               <FileType>8</FileType>
               <FilePath>..\hello_world\src\hello_world_test.cc</FilePath>
-              <FileOption>
-                <CommonProperty>
-                  <UseCPPCompiler>2</UseCPPCompiler>
-                  <RVCTCodeConst>0</RVCTCodeConst>
-                  <RVCTZI>0</RVCTZI>
-                  <RVCTOtherData>0</RVCTOtherData>
-                  <ModuleSelection>0</ModuleSelection>
-                  <IncludeInBuild>0</IncludeInBuild>
-                  <AlwaysBuild>2</AlwaysBuild>
-                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
-                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
-                  <PublicsOnly>2</PublicsOnly>
-                  <StopOnExitCode>11</StopOnExitCode>
-                  <CustomArgument></CustomArgument>
-                  <IncludeLibraryModules></IncludeLibraryModules>
-                  <ComprImg>1</ComprImg>
-                </CommonProperty>
-                <FileArmAds>
-                  <Cads>
-                    <interw>2</interw>
-                    <Optim>0</Optim>
-                    <oTime>2</oTime>
-                    <SplitLS>2</SplitLS>
-                    <OneElfS>2</OneElfS>
-                    <Strict>2</Strict>
-                    <EnumInt>2</EnumInt>
-                    <PlainCh>2</PlainCh>
-                    <Ropi>2</Ropi>
-                    <Rwpi>2</Rwpi>
-                    <wLevel>0</wLevel>
-                    <uThumb>2</uThumb>
-                    <uSurpInc>2</uSurpInc>
-                    <uC99>2</uC99>
-                    <uGnu>2</uGnu>
-                    <useXO>2</useXO>
-                    <v6Lang>0</v6Lang>
-                    <v6LangP>0</v6LangP>
-                    <vShortEn>2</vShortEn>
-                    <vShortWch>2</vShortWch>
-                    <v6Lto>2</v6Lto>
-                    <v6WtE>2</v6WtE>
-                    <v6Rtti>2</v6Rtti>
-                    <VariousControls>
-                      <MiscControls></MiscControls>
-                      <Define></Define>
-                      <Undefine></Undefine>
-                      <IncludePath></IncludePath>
-                    </VariousControls>
-                  </Cads>
-                </FileArmAds>
-              </FileOption>
-            </File>
-            <File>
-              <FileName>testing_helpers_test.cc</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\..\..\..\tensorflow\tensorflow\lite\micro\testing_helpers_test.cc</FilePath>
             </File>
           </Files>
         </Group>
@@ -1532,8 +1402,8 @@
           <targetInfo name="Example Test"/>
         </targetInfos>
       </component>
-      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.5.0" condition="ARMv6_7_8-M Device">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.8.0-dev505+g909a563b3"/>
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.4.0" condition="ARMv6_7_8-M Device">
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.7.1-dev0"/>
         <targetInfos>
           <targetInfo name="Example"/>
           <targetInfo name="Example Test"/>
@@ -1623,22 +1493,22 @@
           <targetInfo name="Example Test"/>
         </targetInfos>
       </component>
-      <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="0.1.20210614">
-        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/Pack/raw/master/TensorFlow-Pack/" vendor="tensorflow" version="0.1.20210614"/>
+      <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="0.1.20210416">
+        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/Pack/raw/master/TensorFlow-Pack/" vendor="tensorflow" version="0.1.20210416"/>
         <targetInfos>
           <targetInfo name="Example"/>
           <targetInfo name="Example Test"/>
         </targetInfos>
       </component>
-      <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel" Cvariant="CMSIS-NN" Cvendor="tensorflow" Cversion="0.1.20210614" condition="CMSIS-NN">
-        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/Pack/raw/master/TensorFlow-Pack/" vendor="tensorflow" version="0.1.20210614"/>
+      <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel" Cvariant="CMSIS-NN" Cvendor="tensorflow" Cversion="0.1.20210416" condition="CMSIS-NN">
+        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/Pack/raw/master/TensorFlow-Pack/" vendor="tensorflow" version="0.1.20210416"/>
         <targetInfos>
           <targetInfo name="Example"/>
           <targetInfo name="Example Test"/>
         </targetInfos>
       </component>
-      <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Testing" Cvendor="tensorflow" Cversion="0.1.20210614">
-        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/Pack/raw/master/TensorFlow-Pack/" vendor="tensorflow" version="0.1.20210614"/>
+      <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Testing" Cvendor="tensorflow" Cversion="0.1.20210416">
+        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/Pack/raw/master/TensorFlow-Pack/" vendor="tensorflow" version="0.1.20210416"/>
         <targetInfos>
           <targetInfo name="Example"/>
           <targetInfo name="Example Test"/>
@@ -1732,33 +1602,6 @@
         <component Cclass="Device" Cgroup="Startup" Cvendor="ARM" Cversion="1.0.0" condition="SSE-300-MPS3 Device"/>
         <package name="V2M_MPS3_SSE_300_BSP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="ARM" version="1.0.0"/>
         <targetInfos/>
-      </file>
-      <file attr="config" category="sourceCpp" name="tensorflow\lite\micro\cortex_m_generic\debug_log.cc" version="0.1.20210611">
-        <instance index="0">RTE\Machine_Learning\debug_log.cc</instance>
-        <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="0.1.20210614"/>
-        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/Pack/raw/master/TensorFlow-Pack/" vendor="tensorflow" version="0.1.20210614"/>
-        <targetInfos>
-          <targetInfo name="Example"/>
-          <targetInfo name="Example Test"/>
-        </targetInfos>
-      </file>
-      <file attr="config" category="sourceCpp" name="tensorflow\lite\micro\cortex_m_generic\micro_time.cc" version="0.1.20210611">
-        <instance index="0">RTE\Machine_Learning\micro_time.cc</instance>
-        <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="0.1.20210614"/>
-        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/Pack/raw/master/TensorFlow-Pack/" vendor="tensorflow" version="0.1.20210614"/>
-        <targetInfos>
-          <targetInfo name="Example"/>
-          <targetInfo name="Example Test"/>
-        </targetInfos>
-      </file>
-      <file attr="config" category="sourceCpp" name="tensorflow\lite\micro\system_setup.cc" version="0.1.20210611">
-        <instance index="0">RTE\Machine_Learning\system_setup.cc</instance>
-        <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow" Cversion="0.1.20210614"/>
-        <package name="tensorflow-lite-micro" schemaVersion="1.6" url="https://github.com/MDK-Packs/Pack/raw/master/TensorFlow-Pack/" vendor="tensorflow" version="0.1.20210614"/>
-        <targetInfos>
-          <targetInfo name="Example"/>
-          <targetInfo name="Example Test"/>
-        </targetInfos>
       </file>
     </files>
   </RTE>

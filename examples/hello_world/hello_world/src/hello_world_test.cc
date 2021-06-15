@@ -20,20 +20,9 @@ limitations under the License.
 #include "tensorflow/lite/micro/micro_error_reporter.h"
 #include "tensorflow/lite/micro/micro_interpreter.h"
 #include "tensorflow/lite/micro/testing/micro_test.h"
-#include "tensorflow/lite/micro/cortex_m_generic/debug_log_callback.h"
-
-extern "C" void serial_init (void);
-
-void debug_log_printf(const char* s)
-{
-		printf(s);
-}
-
+#include "tensorflow/lite/schema/schema_generated.h"
 
 TF_LITE_MICRO_TESTS_BEGIN
-
-  serial_init();
-	RegisterDebugLogCallback(debug_log_printf);
 
 TF_LITE_MICRO_TEST(LoadModelAndPerformInference) {
   // Define the input and the expected output
