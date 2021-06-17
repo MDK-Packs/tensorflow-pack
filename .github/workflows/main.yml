@@ -31,8 +31,7 @@ jobs:
       - name: Checkout tensorflow
         uses: actions/checkout@v2
         with: 
-          repository: tensorflow/tflite-micro
-          path: tensorflow
+          repository: tensorflow/tensorflow
           clean: false  
 
       - name: Create Container runtime from DockerHub
