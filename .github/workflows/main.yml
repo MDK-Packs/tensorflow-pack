@@ -31,7 +31,7 @@ jobs:
       - name: Checkout tensorflow
         uses: actions/checkout@v2
         with: 
-          repository: tensorflow/tensorflow
+          repository: tensorflow/tflite-micro
           path: tensorflow
           clean: false  
 
