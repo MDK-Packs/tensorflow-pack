@@ -13,15 +13,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "main_functions.h"
+// See the header for documentation on the meaning of this data.
 
-// This is the default main used on systems that have the standard C entry
-// point. Other devices (for example FreeRTOS or ESP32) that have different
-// requirements for entry code (like an app_main function) should specialize
-// this main.cc file in a target-specific subfolder.
-int main(int argc, char* argv[]) {
-  setup();
-  while (true) {
-    loop();
-  }
-}
+#include "micro_features/yes_feature_data_slice.h"
+
+const int8_t g_yes_feature_data_slice[g_yes_feature_data_slice_size] = {
+    86,  88,   108, 75, 108, 76,   98,  64,  75,  61, 71,  66, 85,  -1,
+    -77, -128, 46,  61, 92,  69,   100, 93,  113, 80, 108, 93, 113, 91,
+    110, 80,   85,  15, -33, -128, 12,  -50, 34,  50, 70,  55,
+};

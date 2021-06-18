@@ -13,15 +13,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "main_functions.h"
+// See the header for documentation on the meaning of this data.
 
-// This is the default main used on systems that have the standard C entry
-// point. Other devices (for example FreeRTOS or ESP32) that have different
-// requirements for entry code (like an app_main function) should specialize
-// this main.cc file in a target-specific subfolder.
-int main(int argc, char* argv[]) {
-  setup();
-  while (true) {
-    loop();
-  }
-}
+#include "micro_features/no_feature_data_slice.h"
+
+const int8_t g_no_feature_data_slice[g_no_feature_data_slice_size] = {
+    89,  68, 96,  83, 111, 96, 115, 87, 99,  76, 105, 84, 105, 86,
+    113, 91, 108, 87, 110, 78, 80,  46, 22,  74, 88,  72, 103, 86,
+    80,  68, 48,  24, 68,  48, 55,  36, 108, 90, 90,  63,
+};

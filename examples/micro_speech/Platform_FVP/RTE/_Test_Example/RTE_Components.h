@@ -4,7 +4,7 @@
  *      *** Do not modify ! ***
  *
  * Project: 'microspeech' 
- * Target:  'Example Test' 
+ * Target:  'Test Example' 
  */
 
 #ifndef RTE_COMPONENTS_H
@@ -18,10 +18,9 @@
 
 /* ARM::CMSIS Driver:USART:1.0.0 */
 #define RTE_Drivers_USART
-/* ARM::CMSIS:RTOS2:Keil RTX5:Source:5.5.3 */
+/* ARM::CMSIS:RTOS2:Keil RTX5:Library:5.5.3 */
 #define RTE_CMSIS_RTOS2                 /* CMSIS-RTOS2 */
         #define RTE_CMSIS_RTOS2_RTX5            /* CMSIS-RTOS2 Keil RTX5 */
-        #define RTE_CMSIS_RTOS2_RTX5_SOURCE     /* CMSIS-RTOS2 Keil RTX5 Source */
 /* Arm::Machine Learning:NPU Support:Ethos-U Driver:U55:1.0.5 */
 #define RTE_DataExchange_Math_kissfft     /* kissfft */
 /* Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.2.0 */

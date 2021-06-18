@@ -23,7 +23,7 @@
 #include "main.h"
 #include "stdio.h"
 
-#include "tensorflow/lite/micro/examples/micro_speech/main_functions.h"
+#include "main_functions.h"
 
 #include "cmsis_os2.h"
 

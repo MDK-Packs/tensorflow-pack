@@ -26,7 +26,6 @@ limitations under the License.
 #include "tensorflow/lite/micro/micro_mutable_op_resolver.h"
 #include "tensorflow/lite/micro/system_setup.h"
 #include "tensorflow/lite/schema/schema_generated.h"
-#include "tensorflow/lite/micro/cortex_m_generic/debug_log_callback.h"
 
 // Globals, used for compatibility with Arduino-style sketches.
 namespace {
@@ -46,23 +45,14 @@ uint8_t tensor_arena[kTensorArenaSize];
 int8_t feature_buffer[kFeatureElementCount];
 int8_t* model_input_buffer = nullptr;
 }  // namespace
-extern "C" void serial_init (void);
-
-void debug_log_printf(const char* s)
-{
-		printf(s);
-}
 
 // The name of this function is important for Arduino compatibility.
 void setup() {
   tflite::InitializeTarget();
-	
+
   // Set up logging. Google style is to avoid globals or statics because of
   // lifetime uncertainty, but since this has a trivial destructor it's okay.
   // NOLINTNEXTLINE(runtime-global-variables)
-	
-  serial_init();
-	RegisterDebugLogCallback(debug_log_printf);
   static tflite::MicroErrorReporter micro_error_reporter;
   error_reporter = &micro_error_reporter;
 

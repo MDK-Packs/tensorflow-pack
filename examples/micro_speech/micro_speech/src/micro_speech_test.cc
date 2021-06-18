@@ -21,20 +21,8 @@ limitations under the License.
 #include "tensorflow/lite/micro/micro_mutable_op_resolver.h"
 #include "tensorflow/lite/micro/testing/micro_test.h"
 #include "tensorflow/lite/schema/schema_generated.h"
-#include "tensorflow/lite/micro/cortex_m_generic/debug_log_callback.h"
-
-extern "C" void serial_init (void);
-
-void debug_log_printf(const char* s)
-{
-		printf(s);
-}
-
 
 TF_LITE_MICRO_TESTS_BEGIN
-
-  serial_init();
-	RegisterDebugLogCallback(debug_log_printf);
 
 TF_LITE_MICRO_TEST(TestInvoke) {
   // Set up logging.
@@ -64,8 +52,12 @@ TF_LITE_MICRO_TEST(TestInvoke) {
   micro_op_resolver.AddSoftmax();
 
   // Create an area of memory to use for input, output, and intermediate arrays.
-  const int tensor_arena_size = 10 * 1024;
-  static uint8_t tensor_arena[tensor_arena_size];
+#if defined(XTENSA)
+  constexpr int tensor_arena_size = 15 * 1024;
+#else
+  constexpr int tensor_arena_size = 10 * 1024;
+#endif
+  uint8_t tensor_arena[tensor_arena_size];
 
   // Build an interpreter to run the model with.
   tflite::MicroInterpreter interpreter(model, micro_op_resolver, tensor_arena,
@@ -112,8 +104,8 @@ TF_LITE_MICRO_TEST(TestInvoke) {
   const int kNoIndex = 3;
 
   // Make sure that the expected "Yes" score is higher than the other classes.
-  uint8_t silence_score = output->data.uint8[kSilenceIndex] + 128;
-  uint8_t unknown_score = output->data.uint8[kUnknownIndex] + 128;
+  uint8_t silence_score = output->data.int8[kSilenceIndex] + 128;
+  uint8_t unknown_score = output->data.int8[kUnknownIndex] + 128;
   uint8_t yes_score = output->data.int8[kYesIndex] + 128;
   uint8_t no_score = output->data.int8[kNoIndex] + 128;
   TF_LITE_MICRO_EXPECT_GT(yes_score, silence_score);

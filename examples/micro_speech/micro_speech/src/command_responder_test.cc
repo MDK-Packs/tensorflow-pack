@@ -13,15 +13,19 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-#include "main_functions.h"
+#include "command_responder.h"
 
-// This is the default main used on systems that have the standard C entry
-// point. Other devices (for example FreeRTOS or ESP32) that have different
-// requirements for entry code (like an app_main function) should specialize
-// this main.cc file in a target-specific subfolder.
-int main(int argc, char* argv[]) {
-  setup();
-  while (true) {
-    loop();
-  }
+#include "tensorflow/lite/micro/testing/micro_test.h"
+
+TF_LITE_MICRO_TESTS_BEGIN
+
+TF_LITE_MICRO_TEST(TestCallability) {
+  tflite::MicroErrorReporter micro_error_reporter;
+
+  // This will have external side-effects (like printing to the debug console
+  // or lighting an LED) that are hard to observe, so the most we can do is
+  // make sure the call doesn't crash.
+  RespondToCommand(&micro_error_reporter, 0, "foo", 0, true);
 }
+
+TF_LITE_MICRO_TESTS_END

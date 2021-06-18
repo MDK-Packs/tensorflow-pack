@@ -4,7 +4,7 @@
  *      *** Do not modify ! ***
  *
  * Project: 'microspeech' 
- * Target:  'Example Test' 
+ * Target:  'Test Audio Provider' 
  */
 
 #ifndef PRE_INCLUDE_GLOBAL_H

@@ -18,6 +18,10 @@
 
 /* ARM::CMSIS Driver:USART:1.0.0 */
 #define RTE_Drivers_USART
+/* ARM::CMSIS:RTOS2:Keil RTX5:Source:5.5.3 */
+#define RTE_CMSIS_RTOS2                 /* CMSIS-RTOS2 */
+        #define RTE_CMSIS_RTOS2_RTX5            /* CMSIS-RTOS2 Keil RTX5 */
+        #define RTE_CMSIS_RTOS2_RTX5_SOURCE     /* CMSIS-RTOS2 Keil RTX5 Source */
 /* Arm::Machine Learning:NPU Support:Ethos-U Driver:U55:1.0.5 */
 #define RTE_DataExchange_Math_kissfft     /* kissfft */
 /* Keil.ARM Compiler::Compiler:I/O:STDOUT:User:1.2.0 */
@@ -31,9 +35,9 @@
 #define RTE_DataExchange_Math_kissfft     /* kissfft */
 /* tensorflow::Data Processing:Math:ruy:tensorflow:1.12.0 */
 #define RTE_DataProcessing_Math_ruy     /* ruy */
-/* tensorflow::Machine Learning:TensorFlow:Kernel:CMSIS-NN:0.1.20210416 */
+/* tensorflow::Machine Learning:TensorFlow:Kernel:CMSIS-NN:0.1.20210614 */
 #define RTE_ML_TF_LITE     /* TF */
-/* tensorflow::Machine Learning:TensorFlow:Testing:0.1.20210416 */
+/* tensorflow::Machine Learning:TensorFlow:Testing:0.1.20210614 */
 #define RTE_ML_TF_LITE     /* TF */
 
 

@@ -14,7 +14,6 @@ limitations under the License.
 ==============================================================================*/
 
 #include <limits>
-#include <stdio.h>
 
 #include "tensorflow/lite/c/common.h"
 #include "audio_provider.h"
@@ -23,20 +22,8 @@ limitations under the License.
 #include "yes_1000ms_sample_data.h"
 #include "tensorflow/lite/micro/micro_error_reporter.h"
 #include "tensorflow/lite/micro/testing/micro_test.h"
-#include "tensorflow/lite/micro/cortex_m_generic/debug_log_callback.h"
-
-extern "C" void serial_init (void);
-
-void debug_log_printf(const char* s)
-{
-		printf(s);
-}
-
 
 TF_LITE_MICRO_TESTS_BEGIN
-
-  serial_init();
-	RegisterDebugLogCallback(debug_log_printf);
 
 TF_LITE_MICRO_TEST(TestAudioProviderMock) {
   tflite::MicroErrorReporter micro_error_reporter;

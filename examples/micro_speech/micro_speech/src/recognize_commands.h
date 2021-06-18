@@ -132,7 +132,7 @@ class RecognizeCommands {
   // help reduce spurious recognitions.
   explicit RecognizeCommands(tflite::ErrorReporter* error_reporter,
                              int32_t average_window_duration_ms = 1000,
-                             uint8_t detection_threshold = 200,
+                             uint8_t detection_threshold = 140,
                              int32_t suppression_ms = 1500,
                              int32_t minimum_count = 3);
 

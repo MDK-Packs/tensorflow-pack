@@ -4,7 +4,7 @@
  *      *** Do not modify ! ***
  *
  * Project: 'microspeech' 
- * Target:  'Example Test' 
+ * Target:  'Example Audio Provider Mock' 
  */
 
 #ifndef RTE_COMPONENTS_H
