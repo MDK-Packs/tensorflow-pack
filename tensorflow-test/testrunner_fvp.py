@@ -212,6 +212,7 @@ def main( ):
   test_folder = os.path.basename(os.path.normpath(tflm_path))
   test_report_fn = test_folder + ".junit"
   junit_file = open( os.path.join(test_on_arm_base, test_report_fn), "w")
+  print("Writing report to ", junit_file)
   junit_cases = []
 
   if result[ 0 ]:
