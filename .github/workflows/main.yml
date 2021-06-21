@@ -72,6 +72,12 @@ jobs:
            docker exec build_runtime /bin/bash cp_install.sh /workspace/host/tensorflow-pack/tensorflow-test/templates/CMSIS-NN/ARMCLANG/SSE-300-MPS3/packlist
            docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --tflm_path=/workspace/host/tensorflow/tensorflow/lite/micro/kernels
     
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: always()
+        with:
+        files: ${{ github.workspace }}/tensorflow-pack/**/*.junit
+    
       - name: Upload Pack
         uses: actions/upload-artifact@v2
         with:
