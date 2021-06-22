@@ -187,7 +187,7 @@ def main(unparsed_args, flags):
   now = datetime.datetime.now()
   calversion = datetime.datetime.today().strftime('%Y%m%d')
   tmpl_pdsc_date = now.strftime('%Y-%m-%d')
-  pack_version = "0.2." + calversion + "-preview"  #get_version()
+  pack_version = "0.2." + calversion  #get_version()
 
   #load pdsc template from ../templates
   with open(flags.input_template, 'r') as input_template_file:

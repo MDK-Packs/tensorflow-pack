@@ -9,3 +9,5 @@
 *._cc
 *._cxx
 *.map
+*.junit
+tensorflow-build/gen/
