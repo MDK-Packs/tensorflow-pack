@@ -42,11 +42,20 @@ jobs:
           mkdir ${{ github.workspace }}/out/
       
            
-      - name: Build TensorFlow Pack and run PackChk
-        run : |
+      - name: Prepare list of sources for tensorflow library
+        run : 
           docker exec build_runtime /bin/bash /workspace/host/tensorflow-pack/tensorflow-build/prep.sh
+
+      - name: Fix various issues in list of modules
+        run : 
           docker exec build_runtime /bin/bash /workspace/host/tensorflow-pack/tensorflow-build/hotfix.sh
+      
+      - name: Build TensorFlow Pack and run PackChk
+        run : 
           docker exec build_runtime /bin/bash /workspace/host/tensorflow-pack/tensorflow-build/build.sh
+          
+      - name: Copy tensorflow-pack to out path
+        run : 
           cp ${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/*.pack ${{ github.workspace }}/out/
 
       - name: Build 3rd Party Packs and run PackChk
