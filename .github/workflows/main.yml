@@ -58,16 +58,13 @@ jobs:
         run : 
           cp ${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/*.pack ${{ github.workspace }}/out/
 
-      - name: Build 3rd Party Packs and run PackChk
+      - name: Build 3rd Party Pack Flatbuffers 
         run : |
           docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/flatbuffers --date_tag
           cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/flatbuffers/build/*.pack ${{ github.workspace }}/out/
-          # docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/ruy --date_tag
-          # cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ruy/build/*.pack ${{ github.workspace }}/out/
-          # docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/gemmlowp --date_tag
-          # cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/gemmlowp/build/*.pack ${{ github.workspace }}/out/
-          # docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/kissfft --date_tag
-          # cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/kissfft/build/*.pack ${{ github.workspace }}/out/
+  
+      - name: Build 3rd Party Pack Ethos-U Driver 
+        run : |
           docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/ethos-u-driver --date_tag
           cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ethos-u-driver/build/*.pack ${{ github.workspace }}/out/
   
