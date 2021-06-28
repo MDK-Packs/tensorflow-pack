@@ -19,7 +19,7 @@
         #define RTE_ETHOS_U_CORE_DRIVER
       </RTE_Components_h>
       <files>     
-        <file category="sourceC" name="ethos_u_core_driver/src/ethosu_device.c"/>
+        <file category="sourceC" name="ethos_u_core_driver/src/ethosu_device_u55.c"/>
         <file category="sourceC" name="ethos_u_core_driver/src/ethosu_driver.c"/>
         <file category="sourceC" name="ethos_u_core_driver/src/ethosu_pmu.c"/>
         <file category="include" name="ethos_u_core_driver/src/"/>
