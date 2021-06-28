@@ -10,7 +10,6 @@
     <package name="CMSIS" vendor="ARM"/>
     <package name="V2M_MPS3_SSE_300_BSP" vendor="ARM"/>
     <package name="flatbuffers" vendor="tensorflow"/>
-    <package name="gemmlowp" vendor="tensorflow"/>
     <package name="tensorflow-lite-micro" vendor="tensorflow"/>
     <package name="ARM_Compiler" vendor="Keil"/>
   </packages>
@@ -35,7 +34,6 @@
     <component Cclass="CMSIS Driver" Cgroup="PPC" Cvendor="ARM"/>
     <component Cclass="CMSIS Driver" Cgroup="USART" Cvendor="ARM"/>
     <component Cclass="Data Exchange" Cgroup="Serialization" Csub="flatbuffers" Cvariant="tensorflow" Cvendor="tensorflow"/>
-    <component Cclass="Data Processing" Cgroup="Math" Csub="gemmlowp fixed-point" Cvariant="tensorflow" Cvendor="tensorflow"/>
     <component Cclass="Device" Cgroup="Definition" Cvendor="ARM">
       <file attr="config" category="header" name="Board/Platform/platform_base_address.h" version="1.1.2"/>
       <file attr="config" category="source" name="Device/Source/system_SSE300MPS3.c" version="1.0.0"/>
