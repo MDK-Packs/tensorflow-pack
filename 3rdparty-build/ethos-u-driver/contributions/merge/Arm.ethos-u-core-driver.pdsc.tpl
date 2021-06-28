@@ -8,7 +8,7 @@
   <license>LICENSE.txt</license>
   <releases>
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
-      kissfft for TensorFlow %{RELEASE_VERSION}%
+      Ethos-U Core Driver %{RELEASE_VERSION}%
     </release>
   </releases>
   <components>
@@ -16,7 +16,7 @@
       <description>Driver for Ethos-U55</description>
       <RTE_Components_h>
         <!-- the following content goes into file 'RTE_Components.h' -->
-        #define RTE_DataExchange_Math_kissfft     /* kissfft */
+        #define RTE_ETHOS_U_CORE_DRIVER
       </RTE_Components_h>
       <files>     
         <file category="sourceC" name="ethos_u_core_driver/src/ethosu_device.c"/>
