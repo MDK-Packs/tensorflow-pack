@@ -346,7 +346,8 @@ def main():
 
     # Open the junit format test report file
     test_folder = os.path.basename(os.path.normpath(tflm_path))
-    test_report_fn = test_folder + ".junit"
+    test_fn_name = os.path.basename(inventory_file)
+    test_report_fn = test_fn_name + ".junit"
     junit_file = open(os.path.join(test_on_arm_base, test_report_fn), "w")
     print(">>>TEST Writing report to ", junit_file)
     junit_cases = []

@@ -11,7 +11,6 @@
     <package name="V2M_MPS3_SSE_300_BSP" vendor="ARM"/>
     <package name="flatbuffers" vendor="tensorflow"/>
     <package name="gemmlowp" vendor="tensorflow"/>
-    <package name="kissfft" vendor="tensorflow"/>
     <package name="ruy" vendor="tensorflow"/>
     <package name="tensorflow-lite-micro" vendor="tensorflow"/>
     <package name="ARM_Compiler" vendor="Keil"/>
@@ -38,7 +37,6 @@
     <component Cclass="CMSIS Driver" Cgroup="USART" Cvendor="ARM"/>
     <component Cclass="Data Exchange" Cgroup="Serialization" Csub="flatbuffers" Cvariant="tensorflow" Cvendor="tensorflow"/>
     <component Cclass="Data Processing" Cgroup="Math" Csub="gemmlowp fixed-point" Cvariant="tensorflow" Cvendor="tensorflow"/>
-    <component Cclass="Data Processing" Cgroup="Math" Csub="kissfft" Cvariant="tensorflow" Cvendor="tensorflow"/>
     <component Cclass="Data Processing" Cgroup="Math" Csub="ruy" Cvariant="tensorflow" Cvendor="tensorflow"/>
     <component Cclass="Device" Cgroup="Definition" Cvendor="ARM">
       <file attr="config" category="header" name="Board/Platform/platform_base_address.h" version="1.1.2"/>
@@ -75,7 +73,7 @@
        </file>
     </group>
     <group name="TF_test">
-       <file category="sourceCpp" name="_file_to_test"/>
+       _file_block_xml_
     </group>
   </files>
 
