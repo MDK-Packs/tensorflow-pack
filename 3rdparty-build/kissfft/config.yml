@@ -1,6 +1,6 @@
 name: kissfft
 vendor: tensorflow
-version: 0.0.1
+version: "0.1"
 
 pdsc: ./contributions/merge/tensorflow.kissfft.pdsc
 add:  ./contributions/add
