@@ -12,7 +12,7 @@ test_hdr_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 build printvar
 
 cd /workspace/host/tensorflow
 #Download additional software
-make -f tensorflow/lite/micro/tools/make/Makefile OPTIMIZED_KERNEL_DIR=cmsis_nn TARGET=cortex_m_corstone_300 TARGET_ARCH=cortex-m55 third_party_downloads
+make -f tensorflow/lite/micro/tools/make/Makefile third_party_downloads 
 
 make -n -f tensorflow/lite/micro/tools/make/Makefile -f /workspace/host/tensorflow-pack/tensorflow-build/make/print.mak $ref_src_make > /workspace/host/tensorflow-pack/tensorflow-build/srcs.lst
 make -n -f tensorflow/lite/micro/tools/make/Makefile -f /workspace/host/tensorflow-pack/tensorflow-build/make/print.mak $ref_hdr_make > /workspace/host/tensorflow-pack/tensorflow-build/hdrs.lst
