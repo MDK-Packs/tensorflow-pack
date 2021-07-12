@@ -78,7 +78,6 @@ def main(unparsed_args, flags):
   print (cfg["version"])
   if flags.version is not None:
     pack_version = flags.version
-  pack_version = str(flags.version)
   now = datetime.datetime.now()
   calversion = datetime.datetime.today().strftime('%Y%m%d')
   tmpl_pdsc_date = now.strftime('%Y-%m-%d')
