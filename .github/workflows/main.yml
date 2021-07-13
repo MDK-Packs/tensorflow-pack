@@ -102,4 +102,8 @@ jobs:
         with:
           path: ${{ github.workspace }}/out
         
+      - name: Upload Test Reports
+        uses: actions/upload-artifact@v2
+        with:
+          path: ${{ github.workspace }}/tensorflow-pack/**/*.junit
         
