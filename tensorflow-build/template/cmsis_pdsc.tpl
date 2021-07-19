@@ -21,6 +21,7 @@
     <condition id="CMSIS-NN">
         <require condition="Kernel Utils"/>
         <require condition="3rd Party"/>
+        <require Cclass="CMSIS" Cgroup="NN Lib"/>
     </condition>
     <condition id="Reference">
         <require condition="Kernel Utils"/>
@@ -67,6 +68,7 @@
       <Pre_Include_Global_h>
         // enabling global pre includes 
         #define TF_LITE_STATIC_MEMORY 1
+        #define CMSIS_NN
       </Pre_Include_Global_h>
       <files>
         %{KERNEL_FILES_CMSIS}%
@@ -82,6 +84,7 @@
       <Pre_Include_Global_h>
         // enabling global pre includes 
         #define TF_LITE_STATIC_MEMORY 1
+        #define CMSIS_NN
       </Pre_Include_Global_h>
       <files>
          %{KERNEL_FILES_ETHOS}%
@@ -93,9 +96,9 @@
       <description>TensorFlow Lite Micro Library</description>
       <files>
         <file category="sourceCpp" name="tensorflow/lite/kernels/kernel_util.cc"/> 
-        <file category="sourceCpp" name="tensorflow/lite/micro/system_setup.cc" attr="config"/>
-        <file category="sourceCpp" name="tensorflow/lite/micro/cortex_m_generic/micro_time.cc" attr="config"/>
-        <file category="sourceCpp" name="tensorflow/lite/micro/cortex_m_generic/debug_log.cc" attr="config"/>
+        <file category="sourceCpp" name="tensorflow/lite/micro/system_setup.cc" version="1.0" attr="config"/>
+        <file category="sourceCpp" name="tensorflow/lite/micro/cortex_m_generic/micro_time.cc" version="1.0" attr="config"/>
+        <file category="sourceCpp" name="tensorflow/lite/micro/cortex_m_generic/debug_log.cc" version="1.0" attr="config"/>
         %{KERNEL_UTIL_FILES}%
       </files>
     </component>

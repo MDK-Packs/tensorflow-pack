@@ -36,6 +36,7 @@ from os import listdir
 from os.path import isfile, join
 import fnmatch
 
+
 run_path = os.path.dirname(__file__)
 tf_path = ""
 outpath = run_path + "/gen/"
@@ -58,7 +59,6 @@ def findReplace(directory, find, replace, filePattern):
 def sanitize_xml(unsanitized):
     """Uses a whitelist to avoid generating bad XML."""
     return re.sub(r'[^a-zA-Z0-9+_\-/\\.]', '', six.ensure_str(unsanitized))
-
 
 def prepare_environment():
     global packcheck_name
@@ -111,6 +111,8 @@ def make_component_file_list(srcs_list):
     srcs_list = set(srcs_list)
     print(srcs_list)
     for src in srcs_list:
+        src = src.split("\\n")[0]
+        print(src)
         if not src:
             continue
         ext = os.path.splitext(src)[1]
@@ -193,7 +195,7 @@ def main(unparsed_args, flags):
     replace_ethos_srcs = make_component_file_list(all_ethos_srcs_list)
 
     # fix includes for CMSIS-NN, as we use the pack instead
-    findReplace(outpath, "cmsis/CMSIS/NN/Include/", "", "*.cc")
+    findReplace(outpath, "CMSIS/NN/Include/", "", "*.cc")
 
     now = datetime.datetime.now()
     calversion = datetime.datetime.today().strftime('%Y%m%d')
