@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2020 Arm Limited
+ * Copyright (c) 2016-2020 Arm Limited
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
-#ifndef __REGION_LIMITS_H__
-#define __REGION_LIMITS_H__
+#ifndef __REGION_DEFS_H__
+#define __REGION_DEFS_H__
+
+#include "region_limits.h"
 
 /* **************************************************************
  * WARNING: this file is parsed both by the C/C++ compiler
@@ -26,26 +28,22 @@
  *   - UL postfix for macros is not suported by the linker script
  ****************************************************************/
 
-/* Secure Code */
-#define S_ROM_ALIAS               (0x10000000) /* ITCM_BASE_S */
-#define TOTAL_S_ROM_SIZE          (0x00080000) /* 256 kB */
+/* Secure regions */
+#define S_CODE_START     ( S_ROM_ALIAS )
+#define S_CODE_SIZE      ( TOTAL_S_ROM_SIZE )
+#define S_CODE_LIMIT     ( S_CODE_START + S_CODE_SIZE )
 
-/* Secure Data */
-#define S_RAM_ALIAS               (0x30000000) /* DTCM_BASE_S */
-#define TOTAL_S_RAM_SIZE          (0x00040000) /* 256 kB */
+#define S_DATA_START     ( S_RAM_ALIAS )
+#define S_DATA_SIZE      ( TOTAL_S_RAM_SIZE )
+#define S_DATA_LIMIT     ( S_DATA_START + S_DATA_SIZE )
 
+/* Non-Secure regions */
+#define NS_CODE_START    ( NS_ROM_ALIAS )
+#define NS_CODE_SIZE     ( TOTAL_NS_ROM_SIZE )
+#define NS_CODE_LIMIT    ( NS_CODE_START + NS_CODE_SIZE )
 
-/* Non-Secure Code */
-#define NS_ROM_ALIAS              (0x01000000) /* SRAM_BASE_NS */
-#define TOTAL_NS_ROM_SIZE         (0x00080000) /* 256 kB */
+#define NS_DATA_START    ( NS_RAM_ALIAS )
+#define NS_DATA_SIZE     ( TOTAL_NS_RAM_SIZE )
+#define NS_DATA_LIMIT    ( NS_DATA_START + NS_DATA_SIZE )
 
-/* Non-Secure Data */
-#define NS_RAM_ALIAS              (0x21000000) /* ISRAM0_BASE_NS */
-#define TOTAL_NS_RAM_SIZE         (0x00040000) /* 256 kB */
-
-
-/* Heap and Stack sizes for secure and nonsecure applications */
-#define HEAP_SIZE                 (0x0000C000) /* 1 KiB */
-#define STACK_SIZE                (0x00008000) /* 1 KiB */
-
-#endif /* __REGION_LIMITS_H__ */
+#endif /* __REGION_DEFS_H__ */

@@ -33,8 +33,6 @@
 
    <components>
     <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM"/>
-    <component Cclass="CMSIS" Cgroup="DSP" Cvariant="Source" Cvendor="ARM"/>
-    <component Cclass="CMSIS" Cgroup="NN Lib" Cvendor="ARM"/>
     <component Cclass="CMSIS Driver" Cgroup="MPC" Cvendor="ARM"/>
     <component Cclass="CMSIS Driver" Cgroup="PPC" Cvendor="ARM"/>
     <component Cclass="CMSIS Driver" Cgroup="USART" Cvendor="ARM"/>
@@ -55,7 +53,7 @@
       <file attr="config" category="linkerScript" name="Device/Source/armclang/fvp_sse300_mps3_s.sct" version="1.1.0"/>
       <file attr="config" category="source" name="Device/Source/startup_fvp_sse300_mps3.c" version="1.1.1"/>
     </component>
-    <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel" Cvariant="CMSIS-NN" Cvendor="tensorflow"/>
+    <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel" Cvariant="Reference" Cvendor="tensorflow"/>
     <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cvendor="tensorflow">
       <file attr="config" category="sourceCpp" name="tensorflow/lite/micro/cortex_m_generic/debug_log.cc" version="0.1.20210611"/>
       <file attr="config" category="sourceCpp" name="tensorflow/lite/micro/cortex_m_generic/micro_time.cc" version="0.1.20210611"/>
