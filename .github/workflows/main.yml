@@ -84,13 +84,21 @@ jobs:
           docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/ethos-u-driver --date_tag
           cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ethos-u-driver/build/*.pack ${{ github.workspace }}/out/
   
-      - name: Execute test suite
+      - name: Prepare and test test suite
         run: | 
            echo "Run tests on Cortex-M55 FVP"
            docker exec -w /workspace/host/tensorflow-pack/tensorflow-build build_runtime /bin/bash /workspace/host/tensorflow-pack/packinstall.sh
            docker exec -w /workspace/host/tensorflow-pack/3rdparty-build build_runtime /bin/bash /workspace/host/tensorflow-pack/packinstall.sh
-           docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Reference --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/all_tests.yml
-    
+           docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Reference --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/test_tests.yml
+
+    - name: Execute test suite
+        run: | 
+           echo "Run tests on Cortex-M55 FVP"
+           docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Reference --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/generic_tests.yml
+           docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Reference --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_reference.yml
+           docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=cmsis-nn --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_cmsis.yml
+           docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=ethos-u --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_ethos.yml
+
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
