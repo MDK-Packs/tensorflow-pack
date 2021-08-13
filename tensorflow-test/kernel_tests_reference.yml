@@ -1,5 +1,5 @@
 kernel_unit_tests:
-  readable: "Kernel Unit Tests - Reference"
+  readable: "Kernel Unit Tests Reference"
   report: kernel.reference.junit
   tests:
     - activations_test:
