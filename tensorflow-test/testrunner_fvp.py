@@ -193,14 +193,14 @@ def run_test_on_arm_yml(cvariant, toolchain, device_name, tflm_path, test_list, 
                       perf_counter() - startTime))
                   if 0 == Error:
                       tc = TestCase(classname=testname, name=tcname, elapsed_sec=(
-                          perf_counter() - startTime), stderr=last_stderr, stdout=last_stdout)
+                          perf_counter() - startTime), stderr=last_stderr[:250], stdout=last_stdout[:250])
                       print(">>>TEST All Tests passed: " + testname)
                       log_file.write(", %s" % "success")
                       success_counter = success_counter + 1
                       junit_report.append(tc)
                   else:
                       tc = TestCase(classname=testname, name=tcname, elapsed_sec=(
-                          perf_counter() - startTime), stderr=last_stderr, stdout=last_stdout)
+                          perf_counter() - startTime), stderr=last_stderr[:250], stdout=last_stdout[:250])
                       print(">>!TEST failure: tests failed " +
                             testname)
                       log_file.write(", %s" % "failure: debug result")
@@ -210,7 +210,7 @@ def run_test_on_arm_yml(cvariant, toolchain, device_name, tflm_path, test_list, 
                       junit_report.append(tc)
               else:
                   tc = TestCase(classname=testname, name=tcname, elapsed_sec=(
-                      perf_counter() - startTime), stderr=last_stderr, stdout=last_stdout)
+                      perf_counter() - startTime), stderr=last_stderr[:250], stdout=last_stdout[:250])
                   print(">>!TEST failure: build failed: " + testname)
                   log_file.write(", %s" % "failure: debug file")
                   tc.add_failure_info("CMSIS Build reports failure")
@@ -218,7 +218,7 @@ def run_test_on_arm_yml(cvariant, toolchain, device_name, tflm_path, test_list, 
                   junit_report.append(tc)
           else:
               tc = TestCase(classname=testname, name=tcname, elapsed_sec=(
-                  perf_counter() - startTime), stderr=last_stderr, stdout=last_stdout)
+                  perf_counter() - startTime), stderr=last_stderr[:250], stdout=last_stdout[:250])
               print(">>!TEST failure: project generation failed" +
                     testname)
               log_file.write(", %s" % "failure: cprj file")
