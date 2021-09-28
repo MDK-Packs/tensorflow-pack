@@ -83,6 +83,8 @@ def main(unparsed_args, flags):
   tmpl_pdsc_date = now.strftime('%Y-%m-%d')
   if flags.date_tag:
     pack_version = pack_version + "." + calversion 
+  else:
+    pack_version = pack_version + ".0"
   print(">>> Version: ", pack_version)  
 
   if cfg["local_source"] is not None:
