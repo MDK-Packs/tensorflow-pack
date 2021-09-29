@@ -1,6 +1,6 @@
 name: gemmlowp
 vendor: tensorflow
-version: "0.1"
+version: "0.4"
 
 pdsc: ./contributions/merge/tensorflow.gemmlowp.pdsc
 add:  ./contributions/add
