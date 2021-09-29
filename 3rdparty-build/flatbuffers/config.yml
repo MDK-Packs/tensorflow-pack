@@ -1,6 +1,6 @@
 name: flatbuffers
 vendor: tensorflow
-version: "0.1"
+version: "0.5"
 
 pdsc: ./contributions/merge/tensorflow.flatbuffers.pdsc
 add:  ./contributions/add
