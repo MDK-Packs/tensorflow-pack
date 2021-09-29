@@ -48,7 +48,7 @@ jobs:
       
       - name: Build TensorFlow Pack and run PackChk
         run : 
-          docker exec build_runtime /bin/bash /workspace/host/tensorflow-pack/tensorflow-build/build.sh
+          docker exec build_runtime /bin/bash /workspace/host/tensorflow-pack/tensorflow-build/build_r.sh
           
       - name: Copy tensorflow-pack to out path
         run : 
