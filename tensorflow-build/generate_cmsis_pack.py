@@ -200,7 +200,7 @@ def main(unparsed_args, flags):
     now = datetime.datetime.now()
     calversion = datetime.datetime.today().strftime('%Y%m%d')
     tmpl_pdsc_date = now.strftime('%Y-%m-%d')
-    if args.release:
+    if flags.release:
       pack_version = "0.4." + calversion  # get_version()  
     else:    
       pack_version = "0.4.0"
