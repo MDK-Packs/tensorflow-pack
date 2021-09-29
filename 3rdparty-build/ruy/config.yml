@@ -1,6 +1,6 @@
 name: ruy
 vendor: tensorflow
-version: "0.1"
+version: "0.4"
 
 pdsc: ./contributions/merge/tensorflow.ruy.pdsc
 add:  ./contributions/add
