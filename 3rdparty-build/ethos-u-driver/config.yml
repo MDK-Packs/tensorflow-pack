@@ -1,6 +1,6 @@
 name: ethos-u-core-driver
 vendor: Arm
-version: "0.1"
+version: "0.5"
 
 pdsc: ./contributions/merge/Arm.ethos-u-core-driver.pdsc
 add:  ./contributions/add
