@@ -4,7 +4,7 @@
   <name>ethos-u-core-driver</name>
   <description>Device Driver for the Arm(R) Ethos(TM)-U NPU.</description>
   <!-- web download link -->
-  <url>https://review.mlplatform.org/plugins/gitiles/ml/ethos-u/ethos-u-core-driver/</url>
+  <url>https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/</url>
   <license>LICENSE.txt</license>
   <releases>
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
