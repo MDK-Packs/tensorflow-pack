@@ -4,7 +4,7 @@
   <name>kissfft</name>
   <description>Fast Fourier Transform (FFT) library that tries to Keep it Simple, Stupid</description>
   <!-- web download link -->
-  <url>https://github.com/MDK-Packs/Pack/raw/master/kissfft/</url>
+  <url>https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/</url>
   <license>LICENSE.txt</license>
   <releases>
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
