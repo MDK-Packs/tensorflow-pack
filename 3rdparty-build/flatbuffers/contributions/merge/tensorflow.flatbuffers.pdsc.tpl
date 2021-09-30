@@ -4,7 +4,7 @@
   <name>flatbuffers</name>
   <description>FlatBuffers: Memory Efficient Serialization Library</description>
   <!-- web download link -->
-  <url>https://github.com/MDK-Packs/Pack/raw/master/flatbuffers/</url>
+  <url>https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/</url>
   <license>LICENSE.txt</license>
   <releases>
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
