@@ -2,9 +2,12 @@
 <index schemaVersion="1.0.0" xs:noNamespaceSchemaLocation="PackIndex.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
   <vendor>MDK-Packs</vendor>
   <url>https://github.com/MDK-Packs/Pack/raw/master/</url>
-  <timestamp>2021-09-29T12:00:00</timestamp>
+  <timestamp>2021-09-30T12:00:00</timestamp>
   <pindex>
-    <pdsc url=""    vendor="tensorflow"      name=""    version="0.4.0"/>
-
+    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/tensorflow.ethos-u-core-driver.pdsc" vendor="tensorflow" name="ethos-u-core-driver" version="0.4.0"/>
+    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/tensorflow.gemmlowp.pdsc" vendor="tensorflow" name="gemmlowp" version="0.4.0"/>
+    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/tensorflow.kissfft.pdsc" vendor="tensorflow" name="kissfft" version="0.4.0"/>
+    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/tensorflow.ruy.pdsc" vendor="tensorflow" name="ruy" version="0.4.0"/>
+    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/tensorflow.tensorflow-lite-micro.pdsc" vendor="tensorflow" name="tensorflow-lite-micro" version="0.4.0"/>
   </pindex>
 </index>
