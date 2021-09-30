@@ -58,22 +58,27 @@ jobs:
         run : |
           docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/flatbuffers 
           cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/flatbuffers/build/*.pack ${{ github.workspace }}/out/
+          cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/flatbuffers/build/*.pdsc ${{ github.workspace }}/out/
       - name: Build 3rd Party Pack KissFFT
         run : |
           docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/kissfft 
           cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/kissfft/build/*.pack ${{ github.workspace }}/out/
+          cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/kissfft/build/*.pdsc ${{ github.workspace }}/out/
       - name: Build 3rd Party Pack gemmlowp
         run : |
           docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/gemmlowp 
           cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/gemmlowp/build/*.pack ${{ github.workspace }}/out/
+          cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/gemmlowp/build/*.pdsc ${{ github.workspace }}/out/
       - name: Build 3rd Party Pack ruy
         run : |
           docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/ruy 
           cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ruy/build/*.pack ${{ github.workspace }}/out/
+          cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ruy/build/*.pdsc ${{ github.workspace }}/out/
       - name: Build 3rd Party Pack Ethos-U Driver 
         run : |
           docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/ethos-u-driver
           cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ethos-u-driver/build/*.pack ${{ github.workspace }}/out/
+          cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ethos-u-driver/build/*.pdsc ${{ github.workspace }}/out/
   
       - name: Prepare and test test suite
         run: | 
@@ -102,4 +107,4 @@ jobs:
       - name: Upload Test Reports
         uses: actions/upload-artifact@v2
         with:
-          path: ${{ github.workspace }}/tensorflow-pack/**/*.juni
+          path: ${{ github.workspace }}/tensorflow-pack/**/*.junit
