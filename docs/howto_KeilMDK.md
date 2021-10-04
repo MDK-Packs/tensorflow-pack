@@ -1,4 +1,4 @@
-# Create a tensorflow lite micro project in Keil MDK
+# Create a Tensorflow Lite Micro project in Keil MDK
 
 To create a project in MDK Version 5, you must install the Device Family pack for the MCU you plan to use. 
 While doing this, you will also install the tensorflow-lite-micro pack, that contains the latest tensorflow lite micro library.
