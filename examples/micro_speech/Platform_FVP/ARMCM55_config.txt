@@ -1,6 +1,0 @@
-# Parameters:
-# instance.parameter=value       #(type, mode) default = 'def value' : description : [min..max]
-#------------------------------------------------------------------------------
-mps3_board.visualisation.disable-visualisation=1   # (bool  , init-time) default = '0'      : Enable/disable visualisation
-
-#------------------------------------------------------------------------------
