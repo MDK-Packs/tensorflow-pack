@@ -29,7 +29,7 @@ Once you selected the device the Runtime Environment Manager will be displayed. 
 
 4. Expand the Board support folder and select the board you will be using. Then:
 5. Expand and select the components (File System, Graphics, Network, USB, etc.) you will be using in your application.
-6. Make sure you select Machine Learning::Tensorflow::Kernel* .
+6. Make sure you select the Machine Learning::Tensorflow::Kernel* components.
 7. Click the Resolve button to let µVision resolve as many required components based on your choices.
 
 In Validation Output, double-click any missing components to display them, then select them for your application, until all missing components have been resolved.
