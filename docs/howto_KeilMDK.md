@@ -14,6 +14,8 @@ filter the view on the right-hand side for the available packs.
 3. Click the Install Action button to the right of the DFP to install them.
 4. Browse the "generic" list of packs on the Packs tab to find the tensorflow related packs. You should install the latest versions of all tensorflow::* packs.
 
+![Pack Installer](https://github.com/MDK-Packs/tensorflow-pack/raw/main/docs/howto_KeilMDK_1.png)
+
 ## Creating a New Project
 Follow the steps below to create a new MDK project using the Keil Run-Time Environment (RTE) and to specify and organize your source (and debug) files that are a part of this project.
 
