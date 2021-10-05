@@ -21,7 +21,7 @@ Follow the steps below to create a new MDK project using the Keil Run-Time Envir
 
 1. Create a New Project File with the µVision menu command Project — New — µVision Project.
 2. Select a microcontroller from the Device Database®. 
-3. If you do not yet have made a choice, you can select the SSE-300-MPS3 device by Arm. 
+3. If you do don´t know which device to use yet, you can select the SSE-300-MPS3 device by Arm. 
 
 SSE-300 is a reference SoC design by Arm based on the Cortex-M55 core. 
 MDK can simulate this platform and no hardware will be required.
