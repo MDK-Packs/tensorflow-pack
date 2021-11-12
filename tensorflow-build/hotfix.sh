@@ -51,6 +51,9 @@ sed -i 's/tensorflow\/lite\/micro\/cortex_m_generic\/debug_log.cc / /' /workspac
 sed -i 's/tensorflow\/lite\/micro\/cortex_m_generic\/debug_log.cc / /' /workspace/host/tensorflow-pack/tensorflow-build/srcs.lst
 sed -i 's/tensorflow\/lite\/micro\/cortex_m_generic\/debug_log.cc / /' /workspace/host/tensorflow-pack/tensorflow-build/util_srcs.lst
 
+# Remove default ethosu.cc from ethosu cvariant
+sed -i 's/tensorflow\/lite\/micro\/kernels\/ethosu.cc /tensorflow\/lite\/micro\/kernels\/ethos_u\/ethosu.cc  /' /workspace/host/tensorflow-pack/tensorflow-build/srcs.ethos.lst
+
 # Copy sources that are statically declared in pdsc
 mkdir -p /workspace/host/tensorflow-pack/tensorflow-build/gen/build/tensorflow/lite/micro/
 mkdir -p /workspace/host/tensorflow-pack/tensorflow-build/gen/build/tensorflow/lite/micro/cortex_m_generic

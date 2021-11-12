@@ -3,7 +3,8 @@ ref_src_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 list_library_so
 ref_hdr_make="list_library_headers"
 nn_src_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 OPTIMIZED_KERNEL_DIR=cmsis_nn list_library_sources"
 nn_hdr_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 OPTIMIZED_KERNEL_DIR=cmsis_nn list_library_headers"
-ethos_src_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 TARGET_ARCH=cortex-m55 CO_PROCESSOR=ethos_u list_library_sources"
+#ethos_src_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 OPTIMIZED_KERNEL_DIR=cmsis_nn TARGET_ARCH=cortex-m55 CO_PROCESSOR=ethos_u list_library_sources"
+ethos_src_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 OPTIMIZED_KERNEL_DIR=cmsis_nn list_library_sources"
 ethos_hdr_make="list_library_headers"
 
 util_src_make="-j8 TARGET=cortex_m_generic TARGET_ARCH=cortex-m55 build printvar-tagged-MICROLITE_CC_BASE_SRCS"

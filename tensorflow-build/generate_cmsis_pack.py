@@ -109,6 +109,8 @@ def get_version():
 def make_component_file_list(srcs_list):
     replace_srcs = ''
     srcs_list = set(srcs_list)
+    #create a new list for include pathes
+    include_list = []
     print(srcs_list)
     for src in srcs_list:
         src = src.split("\\n")[0]
@@ -117,7 +119,8 @@ def make_component_file_list(srcs_list):
             continue
         ext = os.path.splitext(src)[1]
         if ext == '.h':
-            category = "header"
+            incdir = os.path.dirname (src)
+            include_list.append(incdir)
         elif ext == '.c':
             category = "sourceC"
         elif ext == '.cc' or ext == '.cpp':
@@ -126,12 +129,26 @@ def make_component_file_list(srcs_list):
             continue
         basename = sanitize_xml(os.path.basename(src))
         clean_src = sanitize_xml(src)
-        if src != "tensorflow/lite/kernels/kernel_util.cc" and src.endswith("_test.cc") == False:
+        if ext != ".h" and src != "tensorflow/lite/kernels/kernel_util.cc" and src.endswith("_test.cc") == False:
             replace_srcs += '        <file category=\"' + \
                 category + '\" name=\"' + src + '\"/> \n'
         dest_fpath = pack_build+'/'+src
         os.makedirs(os.path.dirname(dest_fpath), exist_ok=True)
         copyfile(tf_path+'/'+src, dest_fpath)
+        print ("Copied " + src + " to " + dest_fpath)
+    include_list = set(include_list)
+    print ("Extracted include directories ", include_list)
+    for src in include_list:
+        src = src.split("\\n")[0]
+        print(src)
+        if not src:
+            continue
+        ext = os.path.splitext(src)[1]
+        basename = sanitize_xml(os.path.basename(src))
+        clean_src = sanitize_xml(src)
+        replace_srcs += '        <file category=\"include\" name=\"' + src + '\"/> \n'
+    
+
     return replace_srcs
 
 
