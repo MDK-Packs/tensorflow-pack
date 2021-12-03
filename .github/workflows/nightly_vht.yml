@@ -88,7 +88,7 @@ jobs:
         uses: Arm-Software/VHT-AMI@master
         with:
           vht_in: ${{ github.workspace }}/tensorflow-test/vht/packs/
-          instance_id: ${{ env.AWS_INSTANCE_ID }}
+          instance_id: ${{ secrets.AWS_INSTANCE_ID }}
           aws_region: ${{ secrets.AWS_DEFAULT_REGION }}
           access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           secret_access_key: ${{ secrets.AWS_SECRET_KEY }}
