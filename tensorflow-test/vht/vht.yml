@@ -1,0 +1,88 @@
+suite:
+  name: "tensorflow-kernel-tests-reference"
+  model: "VHT-Corstone-300"
+  configuration: ""
+  working_dir: "/home/ubuntu/vhtwork"
+  pre: ""
+  post: ""
+
+  builds:
+   - "activations_test:
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/activations_test.cprj"
+      pre: ""
+      post: "" 
+ 
+  tests:
+   - "dummy_test":
+      executable: ""
+      arguments: ""
+      pre: ""
+      post: ""
+      timeout: ""
+
+
+
+#./Reference/ARMCLANG/SSE-300-MPS3/add_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/add_n_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/arg_min_max_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/batch_to_space_nd_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/cast_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/ceil_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/circular_buffer_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/comparisons_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/concatenation_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/conv_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/cumsum_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/depth_to_space_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/depthwise_conv_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/dequantize_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/detection_postprocess_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/elementwise_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/elu_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/exp_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/expand_dims_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/fill_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/floor_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/floor_div_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/floor_mod_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/fully_connected_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/gather_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/gather_nd_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/hard_swish_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/l2norm_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/l2_pool_2d_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/leaky_relu_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/logical_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/logistic_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/log_softmax_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/maximum_minimum_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/mul_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/neg_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/pack_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/pad_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/pooling_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/prelu_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/quantization_util_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/quantize_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/reduce_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/reshape_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/resize_bilinear_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/resize_nearest_neighbor_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/round_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/shape_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/softmax_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/space_to_batch_nd_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/space_to_depth_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/split_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/split_v_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/squeeze_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/strided_slice_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/sub_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/svdf_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/tanh_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/transpose_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/transpose_conv_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/unpack_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/zeros_like_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/greedy_memory_planner_test.cprj
+#./Reference/ARMCLANG/SSE-300-MPS3/linear_memory_planner_te.cprj
