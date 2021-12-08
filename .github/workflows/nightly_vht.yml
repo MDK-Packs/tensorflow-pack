@@ -92,6 +92,7 @@ jobs:
         #   docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Reference --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_reference.yml
         #   docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=CMSIS-NN --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_cmsis.yml
         #   docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Ethos-U --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_ethos.yml
+           mv -R /workspace/host/tensorflow-pack/tensorflow-test/vht/ ./vht
 
 
 
@@ -101,7 +102,7 @@ jobs:
       - name: Prepare and test test suite
         uses: Arm-Software/VHT-AMI@master
         with:
-          vht_in: ./tensorflow-pack/tensorflow-test/vht/
+          vht_in: ./vht/
           instance_id: ${{ secrets.AWS_INSTANCE_ID }}
           aws_region: ${{ secrets.AWS_DEFAULT_REGION }}
           access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
