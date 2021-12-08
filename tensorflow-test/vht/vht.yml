@@ -2,18 +2,18 @@ suite:
   name: "tensorflow-kernel-tests-reference"
   model: "VHT-Corstone-300"
   configuration: ""
-  working_dir: "/home/ubuntu/vhtwork/"
+  working_dir: "/home/ubuntu/vhtwork"
   pre: ""
   post: ""
 
   builds:
-   - "activations_test:
+   - "activations_test":
       shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/activations_test.cprj"
       pre: ""
       post: "" 
  
   tests:
-   - "dummy_test":
+  - "dummy_test":
       executable: ""
       arguments: ""
       pre: ""
