@@ -13,7 +13,7 @@ suite:
       post: "" 
  
   tests:
-  - "dummy_test":
+   - "dummy_test":
       executable: ""
       arguments: ""
       pre: ""
