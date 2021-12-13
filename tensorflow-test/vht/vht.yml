@@ -15,7 +15,7 @@ suite:
   tests:
    - "dummy_test":
       executable: ""
-      arguments: ""
+      arguments: "--cyclelimit 1"
       pre: ""
       post: ""
       timeout: ""
