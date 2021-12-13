@@ -136,6 +136,6 @@ jobs:
       - name: Upload Test Reports
         uses: actions/upload-artifact@v2
         with:
-          path: ${{ github.workspace }}/tensorflow-pack/**/*.junit
+          path: ${{ github.workspace }}/out.tar
         
         
