@@ -70,8 +70,8 @@
 
   <files>
     <group name="BSP">
-       <file category="sourceC" name="../../../../templates/CMSIS-NN/ARMCLANG/SSE-300-MPS3/API/Source/serial.c">
-          <cflags add="-I ../../../../templates/CMSIS-NN/ARMCLANG/SSE-300-MPS3/API/Include" compiler="AC6"/>
+       <file category="sourceC" name="../../../templates/CMSIS-NN/ARMCLANG/SSE-300-MPS3/API/Source/serial.c">
+          <cflags add="-I ../../../templates/CMSIS-NN/ARMCLANG/SSE-300-MPS3/API/Include" compiler="AC6"/>
        </file>
     </group>
     <group name="TF_test">
