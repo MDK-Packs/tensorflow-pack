@@ -120,6 +120,10 @@ jobs:
         #   docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=CMSIS-NN --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_cmsis.yml
         #   docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Ethos-U --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_ethos.yml
 
+      - name: Fetch results from VHT
+        run: |
+          tar xvzf out.tar
+          cat ./home/ubuntu/vhtwork/out/activation_test.cprj.stdio
 
 
       - name: Publish Unit Test Results
