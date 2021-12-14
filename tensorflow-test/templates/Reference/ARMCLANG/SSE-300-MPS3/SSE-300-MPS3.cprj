@@ -41,7 +41,7 @@
     <component Cclass="Data Processing" Cgroup="Math" Csub="ruy" Cvariant="tensorflow" Cvendor="tensorflow"/>
     <component Cclass="Device" Cgroup="Definition" Cvendor="ARM">
       <file attr="config" category="header" name="Board/Platform/platform_base_address.h" version="1.1.2"/>
-      <file attr="config" category="source" name="Device/Source/system_SSE300MPS3.c" version="1.0.0"/>
+      <file attr="config" category="source" name="Device/Source/system_SSE300MPS3.c" version="1.1.1"/>
     </component>
     <component Cclass="Device" Cgroup="Startup" Cvariant="Baremetal" Cvendor="ARM">
       <file attr="config" category="header" name="CMSIS_Driver/Config/Baremetal/cmsis_driver_config.h" version="1.1.1"/>
@@ -69,7 +69,7 @@
 
   <files>
     <group name="Platform">
-      <file category="sourceC" name="./retarget_stdio.c"/>
+      <file category="sourceC" name="./RTE/retarget_stdio.c"/>
       <file category="linkerScript" name="./RTE/Device/SSE-300-MPS3/fvp_sse300_mps3_s.sct"/>
     </group>
     <group name="TF_test">
