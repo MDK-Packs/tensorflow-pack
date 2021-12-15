@@ -124,7 +124,7 @@ jobs:
       - name: Fetch results from VHT
         run: |
           tar xvzf out.tar
-          cat ./home/ubuntu/vhtwork/out/activation_test.cprj.stdio
+          cat ./home/ubuntu/vhtwork/out/testing_helpers_test.axf.stdio
 
 
       - name: Publish Unit Test Results
