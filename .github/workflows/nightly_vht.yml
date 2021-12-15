@@ -88,7 +88,7 @@ jobs:
       - name: Create test projects
         run: | 
            echo "Run tests on Cortex-M55 FVP"
-           docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_vht.py --cvariant=Reference --tflm_path=/home/ubuntu/vhtwork/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/generic_tests.yml
+           docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_vht.py --cvariant=Reference --tflm_path=/home/ubuntu/vhtwork/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/test_tests.yml
            mkdir ./vht
            mkdir ./vht/templates
            cp -R ${{ github.workspace }}/tensorflow-pack/tensorflow-test/vht/* ./vht
