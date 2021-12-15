@@ -10,7 +10,264 @@ suite:
    - "testing_helpers_test":
       shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/testing_helpers_test.cprj"
       pre: ""
-      post: "" 
+      post: ""
+   - "add_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/add_test.cprj"
+      pre: ""
+      post: ""
+   - "add_n_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/add_n_test.cprj"
+      pre: ""
+      post: ""
+   - "arg_min_max_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/arg_min_max_test.cprj"
+      pre: ""
+      post: ""
+   - "batch_to_space_nd_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/batch_to_space_nd_test.cprj"
+      pre: ""
+      post: ""
+   - "cast_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/cast_test.cprj"
+      pre: ""
+      post: ""
+   - "ceil_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/ceil_test.cprj"
+      pre: ""
+      post: ""
+   - "circular_buffer_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/circular_buffer_test.cprj"
+      pre: ""
+      post: ""
+   - "comparisons_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/comparisons_test.cprj"
+      pre: ""
+      post: ""
+   - "concatenation_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/concatenation_test.cprj"
+      pre: ""
+      post: ""
+   - "conv_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/conv_test.cprj"
+      pre: ""
+      post: ""
+   - "cumsum_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/cumsum_test.cprj"
+      pre: ""
+      post: ""
+   - "depth_to_space_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/depth_to_space_test.cprj"
+      pre: ""
+      post: ""
+   - "depthwise_conv_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/depthwise_conv_test.cprj"
+      pre: ""
+      post: ""
+   - "dequantize_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/dequantize_test.cprj"
+      pre: ""
+      post: ""
+   - "detection_postprocess_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/detection_postprocess_test.cprj"
+      pre: ""
+      post: ""
+   - "elementwise_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/elementwise_test.cprj"
+      pre: ""
+      post: ""
+   - "elu_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/elu_test.cprj"
+      pre: ""
+      post: ""
+   - "exp_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/exp_test.cprj"
+      pre: ""
+      post: ""
+   - "expand_dims_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/expand_dims_test.cprj"
+      pre: ""
+      post: ""
+   - "fill_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/fill_test.cprj"
+      pre: ""
+      post: ""
+   - "floor_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/floor_test.cprj"
+      pre: ""
+      post: ""
+   - "floor_div_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/floor_div_test.cprj"
+      pre: ""
+      post: ""
+   - "floor_mod_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/floor_mod_test.cprj"
+      pre: ""
+      post: ""
+   - "fully_connected_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/fully_connected_test.cprj"
+      pre: ""
+      post: ""
+   - "gather_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/gather_test.cprj"
+      pre: ""
+      post: ""
+   - "gather_nd_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/gather_nd_test.cprj"
+      pre: ""
+      post: ""
+   - "hard_swish_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/hard_swish_test.cprj"
+      pre: ""
+      post: ""
+   - "l2norm_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/l2norm_test.cprj"
+      pre: ""
+      post: ""
+   - "l2_pool_2d_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/l2_pool_2d_test.cprj"
+      pre: ""
+      post: ""
+   - "leaky_relu_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/leaky_relu_test.cprj"
+      pre: ""
+      post: ""
+   - "logical_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/logical_test.cprj"
+      pre: ""
+      post: ""
+   - "logistic_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/logistic_test.cprj"
+      pre: ""
+      post: ""
+   - "log_softmax_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/log_softmax_test.cprj"
+      pre: ""
+      post: ""
+   - "maximum_minimum_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/maximum_minimum_test.cprj"
+      pre: ""
+      post: ""
+   - "mul_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/mul_test.cprj"
+      pre: ""
+      post: ""
+   - "neg_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/neg_test.cprj"
+      pre: ""
+      post: ""
+   - "pack_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/pack_test.cprj"
+      pre: ""
+      post: ""
+   - "pad_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/pad_test.cprj"
+      pre: ""
+      post: ""
+   - "pooling_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/pooling_test.cprj"
+      pre: ""
+      post: ""
+   - "prelu_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/prelu_test.cprj"
+      pre: ""
+      post: ""
+   - "quantization_util_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/quantization_util_test.cprj"
+      pre: ""
+      post: ""
+   - "quantize_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/quantize_test.cprj"
+      pre: ""
+      post: ""
+   - "reduce_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/reduce_test.cprj"
+      pre: ""
+      post: ""
+   - "reshape_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/reshape_test.cprj"
+      pre: ""
+      post: ""
+   - "resize_bilinear_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/resize_bilinear_test.cprj"
+      pre: ""
+      post: ""
+   - "resize_nearest_neighbor_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/resize_nearest_neighbor_test.cprj"
+      pre: ""
+      post: ""
+   - "round_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/round_test.cprj"
+      pre: ""
+      post: ""
+   - "shape_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/shape_test.cprj"
+      pre: ""
+      post: ""
+   - "softmax_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/softmax_test.cprj"
+      pre: ""
+      post: ""
+   - "space_to_batch_nd_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/space_to_batch_nd_test.cprj"
+      pre: ""
+      post: ""
+   - "space_to_depth_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/space_to_depth_test.cprj"
+      pre: ""
+      post: ""
+   - "split_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/split_test.cprj"
+      pre: ""
+      post: ""
+   - "split_v_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/split_v_test.cprj"
+      pre: ""
+      post: ""
+   - "squeeze_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/squeeze_test.cprj"
+      pre: ""
+      post: ""
+   - "strided_slice_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/strided_slice_test.cprj"
+      pre: ""
+      post: ""
+   - "sub_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/sub_test.cprj"
+      pre: ""
+      post: ""
+   - "svdf_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/svdf_test.cprj"
+      pre: ""
+      post: ""
+   - "tanh_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/tanh_test.cprj"
+      pre: ""
+      post: ""
+   - "transpose_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/transpose_test.cprj"
+      pre: ""
+      post: ""
+   - "transpose_conv_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/transpose_conv_test.cprj"
+      pre: ""
+      post: ""
+   - "unpack_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/unpack_test.cprj"
+      pre: ""
+      post: ""
+   - "zeros_like_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/zeros_like_test.cprj"
+      pre: ""
+      post: ""
+   - "greedy_memory_planner_test":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/greedy_memory_planner_test.cprj"
+      pre: ""
+      post: ""
+   - "linear_memory_planner_te":
+      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/linear_memory_planner_te.cprj"
+      pre: ""
+      post: ""
+
  
   tests:
    - "testing_helpers_test":
@@ -19,70 +276,387 @@ suite:
       pre: ""
       post: ""
       timeout: ""
-
-
-
-#./Reference/ARMCLANG/SSE-300-MPS3/add_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/add_n_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/arg_min_max_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/batch_to_space_nd_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/cast_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/ceil_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/circular_buffer_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/comparisons_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/concatenation_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/conv_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/cumsum_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/depth_to_space_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/depthwise_conv_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/dequantize_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/detection_postprocess_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/elementwise_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/elu_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/exp_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/expand_dims_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/fill_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/floor_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/floor_div_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/floor_mod_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/fully_connected_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/gather_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/gather_nd_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/hard_swish_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/l2norm_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/l2_pool_2d_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/leaky_relu_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/logical_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/logistic_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/log_softmax_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/maximum_minimum_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/mul_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/neg_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/pack_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/pad_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/pooling_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/prelu_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/quantization_util_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/quantize_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/reduce_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/reshape_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/resize_bilinear_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/resize_nearest_neighbor_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/round_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/shape_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/softmax_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/space_to_batch_nd_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/space_to_depth_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/split_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/split_v_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/squeeze_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/strided_slice_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/sub_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/svdf_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/tanh_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/transpose_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/transpose_conv_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/unpack_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/zeros_like_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/greedy_memory_planner_test.cprj
-#./Reference/ARMCLANG/SSE-300-MPS3/linear_memory_planner_te.cprj
+   - "add_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/add_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "add_n_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/add_n_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "arg_min_max_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/arg_min_max_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "batch_to_space_nd_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/batch_to_space_nd_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "cast_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/cast_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "ceil_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/ceil_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "circular_buffer_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/circular_buffer_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "comparisons_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/comparisons_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "concatenation_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/concatenation_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "conv_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/conv_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "cumsum_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/cumsum_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "depth_to_space_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/depth_to_space_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "depthwise_conv_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/depthwise_conv_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "dequantize_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/dequantize_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "detection_postprocess_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/detection_postprocess_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "elementwise_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/elementwise_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "elu_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/elu_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "exp_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/exp_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "expand_dims_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/expand_dims_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "fill_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/fill_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "floor_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/floor_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "floor_div_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/floor_div_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "floor_mod_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/floor_mod_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "fully_connected_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/fully_connected_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "gather_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/gather_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "gather_nd_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/gather_nd_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "hard_swish_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/hard_swish_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "l2norm_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/l2norm_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "l2_pool_2d_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/l2_pool_2d_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "leaky_relu_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/leaky_relu_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "logical_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/logical_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "logistic_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/logistic_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "log_softmax_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/log_softmax_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "maximum_minimum_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/maximum_minimum_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "mul_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/mul_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "neg_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/neg_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "pack_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/pack_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "pad_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/pad_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "pooling_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/pooling_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "prelu_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/prelu_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "quantization_util_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/quantization_util_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "quantize_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/quantize_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "reduce_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/reduce_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "reshape_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/reshape_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "resize_bilinear_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/resize_bilinear_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "resize_nearest_neighbor_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/resize_nearest_neighbor_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "round_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/round_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "shape_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/shape_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "softmax_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/softmax_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "space_to_batch_nd_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/space_to_batch_nd_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "space_to_depth_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/space_to_depth_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "split_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/split_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "split_v_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/split_v_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "squeeze_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/squeeze_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "strided_slice_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/strided_slice_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "sub_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/sub_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "svdf_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/svdf_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "tanh_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/tanh_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "transpose_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/transpose_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "transpose_conv_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/transpose_conv_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "unpack_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/unpack_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "zeros_like_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/zeros_like_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "greedy_memory_planner_test":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/greedy_memory_planner_test.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timeout: ""
+   - "linear_memory_planner_te":
+     executable: "./Reference/ARMCLANG/SSE-300-MPS3/linear_memory_planner_te.axf"
+     arguments: "-f ./vht_config.txt --stat --cyclelimit 768000000"
+     pre: ""
+     post: ""
+     timout: ""e
