@@ -91,8 +91,12 @@ jobs:
            docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_vht.py --cvariant=Reference --tflm_path=/home/ubuntu/vhtwork/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/generic_tests.yml
            mkdir ./vht
            mkdir ./vht/templates
+           mkdir ./vht/packs
            cp -R ${{ github.workspace }}/tensorflow-pack/tensorflow-test/vht/* ./vht
            cp -R ${{ github.workspace }}/tensorflow-pack/tensorflow-test/templates/* ./vht/templates
+           cp -R ${{ github.workspace }}/out/*.pack ./vht/packs
+           find ./vht/packs -type f -name "*.pack" > ./vht/packs/packlist           
+           sed -i 's/^/file:\/\//' ./vht/packs/packlist
         #  docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Reference --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_reference.yml
         #  docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=CMSIS-NN --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_cmsis.yml
         #  docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Ethos-U --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_ethos.yml
