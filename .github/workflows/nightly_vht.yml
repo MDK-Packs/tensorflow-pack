@@ -88,7 +88,7 @@ jobs:
       - name: Create test projects
         run: | 
            echo "Run tests on Cortex-M55 FVP"
-           docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_vht.py --cvariant=Reference --tflm_path=/home/ubuntu/vhtwork/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/test_tests.yml
+           docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_vht.py --cvariant=Reference --tflm_path=/home/ubuntu/vhtwork/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/all_tests_reference.yml
            mkdir ./vht
            mkdir ./vht/templates
            cp -R ${{ github.workspace }}/tensorflow-pack/tensorflow-test/vht/* ./vht
@@ -103,7 +103,7 @@ jobs:
       #- name: Setup tmate session
       #  uses: mxschmitt/action-tmate@v3
       
-      - name: Prepare and test test suite
+      - name: Execute test suite on Virtual Hardware at AWS
         uses: Arm-Software/VHT-AMI@master
         with:
           vht_in: ./vht/
@@ -112,15 +112,8 @@ jobs:
           access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           secret_access_key: ${{ secrets.AWS_SECRET_KEY }}
           s3_bucket_name: ${{ secrets.AWS_S3_BUCKET }}
-
-      - name: Execute test suite
-        run: | 
-           echo "Run tests on Cortex-M55 FVP"
-        #   docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Reference --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/generic_tests.yml
-        #   docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Reference --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_reference.yml
-        #   docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=CMSIS-NN --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_cmsis.yml
-        #   docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Ethos-U --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_ethos.yml
-
+ 
+  
       - name: Fetch results from VHT
         run: |
           tar xvzf out.tar
