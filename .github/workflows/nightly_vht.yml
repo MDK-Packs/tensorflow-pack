@@ -98,8 +98,6 @@ jobs:
         #  docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=CMSIS-NN --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_cmsis.yml
         #  docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Ethos-U --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_ethos.yml
 
-
-
       #- name: Setup tmate session
       #  uses: mxschmitt/action-tmate@v3
       
@@ -119,6 +117,10 @@ jobs:
           tar xvzf out.tar
           cat ./home/ubuntu/vhtwork/out/testing_helpers_test.axf.stdio
 
+      - name: Create junit Test Reports
+        run: |
+          python3 testlog_parser.py ./home/ubuntu/vhtwork/out/
+          mv ./home/ubuntu/vhtwork/out/*.junit ${{ github.workspace }}/tensorflow-pack/
 
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
