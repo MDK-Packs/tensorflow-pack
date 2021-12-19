@@ -120,7 +120,7 @@ jobs:
       - name: Create junit Test Reports
         run: |
           docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testlog_parser.py /workspace/host/home/ubuntu/vhtwork/out/
-          mv ./home/ubuntu/vhtwork/out/*.junit ${{ github.workspace }}/tensorflow-pack/
+          # mv ./home/ubuntu/vhtwork/out/*.junit ${{ github.workspace }}/tensorflow-pack/
   
 
       - name: Publish Unit Test Results
