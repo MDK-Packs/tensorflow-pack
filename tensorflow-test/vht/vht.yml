@@ -251,14 +251,14 @@ suite:
       shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/transpose_conv_test.cprj"
       pre: ""
       post: ""
-   - "unpack_test":
-      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/unpack_test.cprj"
-      pre: ""
-      post: ""
-   - "zeros_like_test":
-      shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/zeros_like_test.cprj"
-      pre: ""
-      post: ""
+   #- "unpack_test":
+   #   shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/unpack_test.cprj"
+   #   pre: ""
+   #   post: ""
+   #- "zeros_like_test":
+   #   shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/zeros_like_test.cprj"
+   #   pre: ""
+   #   post: ""
    #- "greedy_memory_planner_test":
    #   shell: "cbuild.sh ./Reference/ARMCLANG/SSE-300-MPS3/greedy_memory_planner_test.cprj"
    #   pre: ""
