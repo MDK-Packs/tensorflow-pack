@@ -18,7 +18,7 @@ Some files are statically declared in the pack description. They need to be copi
 Call the generate_cmsis_pack.py and pass all generated lists of sources.
 
 ## generate_cmsis_pack.py 
-'''
+```
 Parameters are:
   --input_template        Path to template file pdsc.
   --hdrs                  Headers for cvariant Reference
@@ -33,4 +33,4 @@ Parameters are:
   --testsrcs              Sources for component "Testing"
   --release               Release version
   --tensorflow_path       Path to root of tensorflow git
-'''
+```
