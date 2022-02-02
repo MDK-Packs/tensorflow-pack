@@ -112,7 +112,7 @@ jobs:
           s3_bucket_name: 	gh-mdkpacks-tensorflow-1
           ssh_key_name: common
           subnet_id: ${{ secrets.AWS_SUBNET_ID }}
-          terminate_ec2_instance: 'true'
+          terminate_ec2_instance: 'false'
           vht_ami_version: '1.0.0'
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
