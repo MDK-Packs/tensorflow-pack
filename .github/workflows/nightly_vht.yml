@@ -102,14 +102,18 @@ jobs:
       #  uses: mxschmitt/action-tmate@v3
       
       - name: Execute test suite on Virtual Hardware at AWS
-        uses: Arm-Software/VHT-AMI@master
+        uses: Arm-Software/VHT-AMI@v2
         with:
           vht_in: ./vht/
-          instance_id: ${{ secrets.AWS_INSTANCE_ID }}
-          aws_region: ${{ secrets.AWS_DEFAULT_REGION }}
-          access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          secret_access_key: ${{ secrets.AWS_SECRET_KEY }}
-          s3_bucket_name: ${{ secrets.AWS_S3_BUCKET }}
+          ec2_instance_id: ${{ secrets.AWS_INSTANCE_ID }}
+          ec2_instance_type: t2.xlarge
+          ec2_security_group_id: ${{ secrets.AWS_EC2_SECURITY_GROUP_ID }}
+          iam_profile: ${{ secrets.AWS_IAM_PROFILE }}
+          s3_bucket_name: ${{ secrets.AWS_S3_BUCKET_NAME }}
+          ssh_key_name: common
+          subnet_id: ${{ secrets.AWS_SUBNET_ID }}
+          terminate_ec2_instance: 'true'
+          vht_ami_version: '1.0.0'
  
   
       - name: Fetch results from VHT
