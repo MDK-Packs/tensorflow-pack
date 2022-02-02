@@ -114,8 +114,11 @@ jobs:
           subnet_id: ${{ secrets.AWS_SUBNET_ID }}
           terminate_ec2_instance: 'true'
           vht_ami_version: '1.0.0'
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}          
  
-  
       - name: Fetch results from VHT
         run: |
           tar xvzf out.tar
