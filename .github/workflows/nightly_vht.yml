@@ -110,7 +110,7 @@ jobs:
           ec2_security_group_id: ${{ secrets.AWS_EC2_SECURITY_GROUP_ID }}
           iam_profile: ${{ secrets.AWS_IAM_PROFILE }}
           s3_bucket_name: 	gh-mdkpacks-tensorflow-1
-          ssh_key_name: common
+          ssh_key_name: tensorflow-pack
           subnet_id: ${{ secrets.AWS_SUBNET_ID }}
           terminate_ec2_instance: 'false'
           vht_ami_version: '1.0.0'
