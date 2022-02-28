@@ -97,6 +97,13 @@ jobs:
       #- name: Setup tmate session
       #  uses: mxschmitt/action-tmate@v3
       
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+         path: ${{ github.workspace }}/tensorflow-pack
+         retention-days: 1
+          
+      
       - name: Execute test suite on Virtual Hardware at AWS
         uses: Arm-Software/VHT-AMI@v2
         with:
@@ -131,11 +138,6 @@ jobs:
         with:
           files: ${{ github.workspace }}/home/ubuntu/vhtwork/out/**/*.junit
     
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          path: ${{ github.workspace }}/tensorflow-pack
-          
       - name: Upload Pack
         uses: actions/upload-artifact@v2
         with:
