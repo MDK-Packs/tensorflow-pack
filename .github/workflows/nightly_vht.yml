@@ -42,7 +42,6 @@ jobs:
           rm cmsis-toolbox_0.9.1.sh
 
 
-
       - name: Install dependencies
         run : |
           pip3 install six requests pyyaml junit_xml pillow
