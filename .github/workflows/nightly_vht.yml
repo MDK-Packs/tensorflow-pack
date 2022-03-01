@@ -47,8 +47,8 @@ jobs:
           # ./tensorflow-pack/tensorflow-build/.wgetrc /root/.wgetrc 
           mkdir ${{ github.workspace }}/out/
 
-      #- name: Setup tmate session
-      #  uses: mxschmitt/action-tmate@v3
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
       
       - name: Prepare list of sources for tensorflow library
         run : 
