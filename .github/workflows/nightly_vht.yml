@@ -35,14 +35,23 @@ jobs:
           path: tensorflow
           clean: false  
 
-      - name: Create Container runtime from DockerHub
+      - name: Install CMSIS tools
+        run:
+          wget https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools/toolbox/0.9.1/cmsis-toolbox_0.9.1.sh
+          bash cmsis-toolbox_0.9.1.sh < tensorflow-pack/tensorflow-test/cmsis-toolbox.options
+          rm cmsis-toolbox_0.9.1.sh
+
+
+
+      - name: Install dependencies
         run : |
-          docker run -i -v ${{ github.workspace }}:/workspace/host --mac-address="00:02:F7:FF:55:55" --name build_runtime -d armswdev/cmsis_tools_m55:latest 
-          docker exec build_runtime pip3 install six requests pyyaml junit_xml pillow
-          docker exec build_runtime cp /workspace/host/tensorflow-pack/tensorflow-build/.wgetrc /root/.wgetrc 
+          pip3 install six requests pyyaml junit_xml pillow
+          # /workspace/host/tensorflow-pack/tensorflow-build/.wgetrc /root/.wgetrc 
           mkdir ${{ github.workspace }}/out/
+
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
       
-           
       - name: Prepare list of sources for tensorflow library
         run : 
           docker exec build_runtime /bin/bash /workspace/host/tensorflow-pack/tensorflow-build/prep.sh
@@ -98,8 +107,7 @@ jobs:
         #  docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=CMSIS-NN --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_cmsis.yml
         #  docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Ethos-U --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_ethos.yml
 
-      #- name: Setup tmate session
-      #  uses: mxschmitt/action-tmate@v3
+
       
       - name: Execute test suite on Virtual Hardware at AWS
         uses: Arm-Software/VHT-AMI@v2
