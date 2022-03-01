@@ -17,14 +17,14 @@ cd ./tensorflow
 #Download additional software
 make -f tensorflow/lite/micro/tools/make/Makefile third_party_downloads 
 
-make -n -f tensorflow/lite/micro/tools/make/Makefile $ref_src_make  > ./tensorflow-pack/tensorflow-build/srcs.lst
-make -n -f tensorflow/lite/micro/tools/make/Makefile $ref_hdr_make > ./tensorflow-pack/tensorflow-build/hdrs.lst
-make -n -f tensorflow/lite/micro/tools/make/Makefile $nn_src_make > ./tensorflow-pack/tensorflow-build/srcs.cmsis-nn.lst
-make -n -f tensorflow/lite/micro/tools/make/Makefile $nn_hdr_make > ./tensorflow-pack/tensorflow-build/hdrs.cmsis-nn.lst
-make -n -f tensorflow/lite/micro/tools/make/Makefile $ethos_src_make > ./tensorflow-pack/tensorflow-build/srcs.ethos.lst
-make -n -f tensorflow/lite/micro/tools/make/Makefile $ethos_hdr_make > ./tensorflow-pack/tensorflow-build/hdrs.ethos.lst
+make -n -f tensorflow/lite/micro/tools/make/Makefile $ref_src_make  > ../tensorflow-pack/tensorflow-build/srcs.lst
+make -n -f tensorflow/lite/micro/tools/make/Makefile $ref_hdr_make > ../tensorflow-pack/tensorflow-build/hdrs.lst
+make -n -f tensorflow/lite/micro/tools/make/Makefile $nn_src_make > ../tensorflow-pack/tensorflow-build/srcs.cmsis-nn.lst
+make -n -f tensorflow/lite/micro/tools/make/Makefile $nn_hdr_make > ../tensorflow-pack/tensorflow-build/hdrs.cmsis-nn.lst
+make -n -f tensorflow/lite/micro/tools/make/Makefile $ethos_src_make > ../tensorflow-pack/tensorflow-build/srcs.ethos.lst
+make -n -f tensorflow/lite/micro/tools/make/Makefile $ethos_hdr_make > ../tensorflow-pack/tensorflow-build/hdrs.ethos.lst
 
-make -n -f tensorflow/lite/micro/tools/make/Makefile -f ./tensorflow-pack/tensorflow-build/make/print.mak $util_src_make > ./tensorflow-pack/tensorflow-build/util_srcs.lst
+make -n -f tensorflow/lite/micro/tools/make/Makefile -f ../tensorflow-pack/tensorflow-build/make/print.mak $util_src_make > ../tensorflow-pack/tensorflow-build/util_srcs.lst
 
-make -n -f tensorflow/lite/micro/tools/make/Makefile -f ./tensorflow-pack/tensorflow-build/make/print.mak $test_src_make > ./tensorflow-pack/tensorflow-build/srcs.test.lst
-make -n -f tensorflow/lite/micro/tools/make/Makefile -f ./tensorflow-pack/tensorflow-build/make/print.mak $test_hdr_make > ./tensorflow-pack/tensorflow-build/hdrs.test.lst
+make -n -f tensorflow/lite/micro/tools/make/Makefile -f ../tensorflow-pack/tensorflow-build/make/print.mak $test_src_make > ../tensorflow-pack/tensorflow-build/srcs.test.lst
+make -n -f tensorflow/lite/micro/tools/make/Makefile -f ../tensorflow-pack/tensorflow-build/make/print.mak $test_hdr_make > ../tensorflow-pack/tensorflow-build/hdrs.test.lst
