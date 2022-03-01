@@ -51,8 +51,8 @@ jobs:
         run : 
           ./tensorflow-pack/tensorflow-build/prep.sh
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+     # - name: Setup tmate session
+     #   uses: mxschmitt/action-tmate@v3
 
       - name: Fix various issues in list of modules
         run : 
