@@ -1,0 +1,5 @@
+./cmsis-toolbox
+./packs
+
+
+tensorflow/lite/micro/tools/make/downloads/gcc_embedded
