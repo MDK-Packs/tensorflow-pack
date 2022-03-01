@@ -38,14 +38,13 @@ jobs:
       - name: Install CMSIS tools
         run:
           wget https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools/toolbox/0.9.1/cmsis-toolbox_0.9.1.sh
-          && chmod +x ./cmsis-toolbox_0.9.1.sh && ./cmsis-toolbox_0.9.1.sh < tensorflow-pack/tensorflow-test/cmsis-toolbox.options
-          && rm cmsis-toolbox_0.9.1.sh
-
+          bash cmsis-toolbox_0.9.1.sh < tensorflow-pack/tensorflow-test/cmsis-toolbox.options
+          rm cmsis-toolbox_0.9.1.sh
 
       - name: Install dependencies
         run : |
           pip3 install six requests pyyaml junit_xml pillow
-          # /workspace/host/tensorflow-pack/tensorflow-build/.wgetrc /root/.wgetrc 
+          # ./tensorflow-pack/tensorflow-build/.wgetrc /root/.wgetrc 
           mkdir ${{ github.workspace }}/out/
 
       - name: Setup tmate session
@@ -53,15 +52,15 @@ jobs:
       
       - name: Prepare list of sources for tensorflow library
         run : 
-          docker exec build_runtime /bin/bash /workspace/host/tensorflow-pack/tensorflow-build/prep.sh
+          ./tensorflow-pack/tensorflow-build/prep.sh
 
       - name: Fix various issues in list of modules
         run : 
-          docker exec build_runtime /bin/bash /workspace/host/tensorflow-pack/tensorflow-build/hotfix.sh
+          ./tensorflow-pack/tensorflow-build/hotfix.sh
       
       - name: Build TensorFlow Pack and run PackChk
         run : 
-          docker exec build_runtime /bin/bash /workspace/host/tensorflow-pack/tensorflow-build/build.sh
+          ./tensorflow-pack/tensorflow-build/build.sh
           
       - name: Copy tensorflow-pack to out path
         run : 
@@ -69,45 +68,43 @@ jobs:
 
       - name: Build 3rd Party Pack Flatbuffers 
         run : |
-          docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/flatbuffers --date_tag
+          python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/flatbuffers --date_tag
           cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/flatbuffers/build/*.pack ${{ github.workspace }}/out/
 
       - name: Build 3rd Party Pack KissFFT
         run : |
-          docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/kissfft --date_tag
+          python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/kissfft --date_tag
           cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/kissfft/build/*.pack ${{ github.workspace }}/out/
 
       - name: Build 3rd Party Pack gemmlowp
         run : |
-          docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/gemmlowp --date_tag
+          python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/gemmlowp --date_tag
           cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/gemmlowp/build/*.pack ${{ github.workspace }}/out/
 
       - name: Build 3rd Party Pack ruy
         run : |
-          docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/ruy --date_tag
+          python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/ruy --date_tag
           cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ruy/build/*.pack ${{ github.workspace }}/out/
 
       #- name: Build 3rd Party Pack Ethos-U Driver 
       #  run : |
-      #    docker exec build_runtime python3 /workspace/host/tensorflow-pack/3rdparty-build/gen_pack.py --path=/workspace/host/tensorflow-pack/3rdparty-build/ethos-u-driver --date_tag
+      #    docker exec build_runtime python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/ethos-u-driver --date_tag
       #    cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ethos-u-driver/build/*.pack ${{ github.workspace }}/out/
       
       
       - name: Create test projects
         run: | 
            echo "Run tests on Cortex-M55 FVP"
-           docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_vht.py --cvariant=Reference --tflm_path=/home/ubuntu/vhtwork/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/all_tests_reference.yml
+           python3 ./tensorflow-pack/tensorflow-test/testrunner_vht.py --cvariant=Reference --tflm_path=/home/ubuntu/vhtwork/ --inventory=./tensorflow-pack/tensorflow-test/all_tests_reference.yml
            mkdir ./vht
            mkdir ./vht/templates
            cp -R ${{ github.workspace }}/tensorflow-pack/tensorflow-test/vht/* ./vht
            cp -R ${{ github.workspace }}/tensorflow-pack/tensorflow-test/templates/* ./vht/templates
            cp -R ${{ github.workspace }}/out/*.pack ./vht/packs
-        #  docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Reference --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_reference.yml
-        #  docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=CMSIS-NN --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_cmsis.yml
-        #  docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Ethos-U --tflm_path=/workspace/host/tensorflow/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/kernel_tests_ethos.yml
+        #  docker exec build_runtime python3 ./tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Reference --tflm_path=./tensorflow/ --inventory=./tensorflow-pack/tensorflow-test/kernel_tests_reference.yml
+        #  docker exec build_runtime python3 ./tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=CMSIS-NN --tflm_path=./tensorflow/ --inventory=./tensorflow-pack/tensorflow-test/kernel_tests_cmsis.yml
+        #  docker exec build_runtime python3 ./tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Ethos-U --tflm_path=./tensorflow/ --inventory=./tensorflow-pack/tensorflow-test/kernel_tests_ethos.yml
 
-
-      
       - name: Execute test suite on Virtual Hardware at AWS
         uses: Arm-Software/VHT-AMI@v2
         with:
@@ -133,7 +130,7 @@ jobs:
 
       - name: Create junit Test Reports
         run: |
-          docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testlog_parser.py /workspace/host/home/ubuntu/vhtwork/out/
+          docker exec build_runtime python3 ./tensorflow-pack/tensorflow-test/testlog_parser.py ./home/ubuntu/vhtwork/out/
           # mv ./home/ubuntu/vhtwork/out/*.junit ${{ github.workspace }}/tensorflow-pack/
   
 
