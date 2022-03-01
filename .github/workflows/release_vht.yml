@@ -81,7 +81,7 @@ jobs:
       #    cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ethos-u-driver/build/*.pack ${{ github.workspace }}/out/
       #    cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ethos-u-driver/build/*.pdsc ${{ github.workspace }}/out/
   
-         - name: Create test projects
+      - name: Create test projects
         run: | 
            echo "Run tests on Cortex-M55 FVP (Corstone-300)"
            docker exec build_runtime python3 /workspace/host/tensorflow-pack/tensorflow-test/testrunner_vht.py --cvariant=Reference --tflm_path=/home/ubuntu/vhtwork/ --inventory=/workspace/host/tensorflow-pack/tensorflow-test/all_tests_reference.yml
