@@ -173,7 +173,7 @@ def main(unparsed_args, flags):
 
     prepare_environment()
     #fix this one day:
-    subprocess.call(['sh', '/workspace/host/tensorflow-pack/tensorflow-build/additionals.sh']) 
+    #subprocess.call(['sh', '/workspace/host/tensorflow-pack/tensorflow-build/additionals.sh']) 
 
     # get --srcs and --hdrs from arguments
     core_srcs_list = load_list_from_file(flags.srcs)
