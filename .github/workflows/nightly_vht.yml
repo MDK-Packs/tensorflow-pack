@@ -37,9 +37,9 @@ jobs:
 
       - name: Install CMSIS tools
         run:
-          wget https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools/toolbox/0.9.1/cmsis-toolbox_0.9.1.sh
-          && chmod +x ./cmsis-toolbox_0.9.1.sh && ./cmsis-toolbox_0.9.1.sh < tensorflow-pack/tensorflow-test/cmsis-toolbox.options
-          && rm cmsis-toolbox_0.9.1.sh
+          wget https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Ftoolbox%2F0.9.2/cmsis-toolbox.sh
+          && chmod +x ./cmsis-toolbox.sh && ./cmsis-toolbox.sh < tensorflow-pack/tensorflow-test/cmsis-toolbox.options
+          && rm cmsis-toolbox.sh
 
       - name: Install dependencies
         run : |
