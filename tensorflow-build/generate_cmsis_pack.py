@@ -250,7 +250,7 @@ def main(unparsed_args, flags):
     print("Creating zip package... ")
     os.chdir(os.path.dirname(outpath+"/build/"))
 
-    with zipfile.ZipFile(outpath + "tensorflow.tensorflow-lite-micro."+pack_version+".pack", "w", zipfile.ZIP_DEFLATED, allowZip64=True) as zf:
+    with zipfile.ZipFile("tensorflow.tensorflow-lite-micro."+pack_version+".pack", "w", zipfile.ZIP_DEFLATED, allowZip64=True) as zf:
         for root, _, filenames in os.walk(os.path.basename(".")):
             for name in filenames:
                 name = os.path.join(root, name)
