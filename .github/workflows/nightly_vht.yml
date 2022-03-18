@@ -67,25 +67,25 @@ jobs:
         run : |    
           echo "${{github.workspace}}/tensorflow-pack/tensorflow-build/gen/build/utilities" >> $GITHUB_PATH
 
-      - name: Build 3rd Party Pack Flatbuffers 
-        run : |
-          python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/flatbuffers --date_tag
-          cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/flatbuffers/build/*.pack ${{ github.workspace }}/out/
+      #- name: Build 3rd Party Pack Flatbuffers 
+      #  run : |
+      #    python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/flatbuffers --date_tag
+      #    cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/flatbuffers/build/*.pack ${{ github.workspace }}/out/
 
-      - name: Build 3rd Party Pack KissFFT
-        run : |
-          python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/kissfft --date_tag
-          cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/kissfft/build/*.pack ${{ github.workspace }}/out/
+      #- name: Build 3rd Party Pack KissFFT
+      #  run : |
+      #    python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/kissfft --date_tag
+      #    cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/kissfft/build/*.pack ${{ github.workspace }}/out/
 
-      - name: Build 3rd Party Pack gemmlowp
-        run : |
-          python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/gemmlowp --date_tag
-          cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/gemmlowp/build/*.pack ${{ github.workspace }}/out/
+      #- name: Build 3rd Party Pack gemmlowp
+      #  run : |
+      #    python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/gemmlowp --date_tag
+      #    cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/gemmlowp/build/*.pack ${{ github.workspace }}/out/
 
-      - name: Build 3rd Party Pack ruy
-        run : |
-          python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/ruy --date_tag
-          cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ruy/build/*.pack ${{ github.workspace }}/out/
+      #- name: Build 3rd Party Pack ruy
+      #  run : |
+      #    python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/ruy --date_tag
+      #    cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ruy/build/*.pack ${{ github.workspace }}/out/
 
       #- name: Build 3rd Party Pack Ethos-U Driver 
       #  run : |
