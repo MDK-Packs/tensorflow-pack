@@ -102,6 +102,8 @@ jobs:
            cp -R ${{ github.workspace }}/tensorflow-pack/tensorflow-test/vht/* ./vht
            cp -R ${{ github.workspace }}/tensorflow-pack/tensorflow-test/templates/* ./vht/templates
            cp -R ${{ github.workspace }}/out/*.pack ./vht/packs
+           cp -R ${{ github.workspace }}/tensorflow-pack/tensorflow-test/cmsis-toolbox.options ./vht
+           cp -R ${{ github.workspace }}/tensorflow-pack/tensorflow-test/install_cmsis_toolbox.sh ./vht
         #  docker exec build_runtime python3 ./tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Reference --tflm_path=./tensorflow/ --inventory=./tensorflow-pack/tensorflow-test/kernel_tests_reference.yml
         #  docker exec build_runtime python3 ./tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=CMSIS-NN --tflm_path=./tensorflow/ --inventory=./tensorflow-pack/tensorflow-test/kernel_tests_cmsis.yml
         #  docker exec build_runtime python3 ./tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Ethos-U --tflm_path=./tensorflow/ --inventory=./tensorflow-pack/tensorflow-test/kernel_tests_ethos.yml
