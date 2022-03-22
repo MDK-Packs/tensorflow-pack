@@ -1,5 +1,6 @@
-./cmsis-toolbox
-./packs
+/opt/cbuild
+/home/ubuntu/packs
+/opt/armcompiler/bin/armclang
 
+/opt/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc
 
-tensorflow/lite/micro/tools/make/downloads/gcc_embedded
