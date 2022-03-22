@@ -14,85 +14,91 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build-tensorflow:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-  
       - name: Checkout tensorflow-build 
         uses: actions/checkout@v2
         with: 
           repository: MDK-Packs/tensorflow-pack
           path: tensorflow-pack
-         
       - name: Checkout tensorflow
         uses: actions/checkout@v2
         with: 
           repository: tensorflow/tflite-micro
           path: tensorflow
           clean: false  
-
       - name: Install CMSIS tools
         run:
           wget https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Ftoolbox%2F0.9.2/cmsis-toolbox.sh
           && chmod +x ./cmsis-toolbox.sh && ./cmsis-toolbox.sh < tensorflow-pack/tensorflow-test/cmsis-toolbox.options
           && rm cmsis-toolbox.sh
-
       - name: Install dependencies
         run : |
           pip3 install six requests pyyaml junit_xml pillow
           # ./tensorflow-pack/tensorflow-build/.wgetrc /root/.wgetrc 
           mkdir ${{ github.workspace }}/out/
-      
       - name: Prepare list of sources for tensorflow library
         run : 
           ./tensorflow-pack/tensorflow-build/prep.sh
-
       - name: Fix various issues in list of modules
         run : 
           ./tensorflow-pack/tensorflow-build/hotfix.sh
-      
       - name: Build TensorFlow Pack and run PackChk
         run : 
-          ./tensorflow-pack/tensorflow-build/build.sh
-          
+          ./tensorflow-pack/tensorflow-build/build.sh     
       - name: Copy tensorflow-pack to out path
         run : 
           cp ${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/build/*.pack ${{ github.workspace }}/out/
-
       - name: Add PackChk to path
         run : |    
           echo "${{github.workspace}}/tensorflow-pack/tensorflow-build/gen/build/utilities" >> $GITHUB_PATH
-
       #- name: Build 3rd Party Pack Flatbuffers 
       #  run : |
       #    python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/flatbuffers --date_tag
       #    cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/flatbuffers/build/*.pack ${{ github.workspace }}/out/
-
       #- name: Build 3rd Party Pack KissFFT
       #  run : |
       #    python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/kissfft --date_tag
       #    cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/kissfft/build/*.pack ${{ github.workspace }}/out/
-
       #- name: Build 3rd Party Pack gemmlowp
       #  run : |
       #    python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/gemmlowp --date_tag
       #    cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/gemmlowp/build/*.pack ${{ github.workspace }}/out/
-
       #- name: Build 3rd Party Pack ruy
       #  run : |
       #    python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/ruy --date_tag
       #    cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ruy/build/*.pack ${{ github.workspace }}/out/
-
       #- name: Build 3rd Party Pack Ethos-U Driver 
       #  run : |
       #    docker exec build_runtime python3 ./tensorflow-pack/3rdparty-build/gen_pack.py --path=./tensorflow-pack/3rdparty-build/ethos-u-driver --date_tag
       #    cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ethos-u-driver/build/*.pack ${{ github.workspace }}/out/
+      - name: Upload packs
+        uses: actions/upload-artifact@v3
+        with:
+          name: packs-artifacts
+          path: ${{ github.workspace }}/out/ 
       
-      
+
+  test-tensorflow-cm55:
+    needs: [build-tensorflow]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tensorflow-build 
+        uses: actions/checkout@v2
+        with: 
+          repository: MDK-Packs/tensorflow-pack
+          path: tensorflow-pack
+      - name: Checkout tensorflow
+        uses: actions/checkout@v2
+        with: 
+          repository: tensorflow/tflite-micro
+          path: tensorflow
+          clean: false  
+      - name: Download builds from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: packs-artifacts
       - name: Create test projects
         run: | 
            echo "Run tests on Cortex-M55 FVP"
@@ -107,7 +113,6 @@ jobs:
         #  docker exec build_runtime python3 ./tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Reference --tflm_path=./tensorflow/ --inventory=./tensorflow-pack/tensorflow-test/kernel_tests_reference.yml
         #  docker exec build_runtime python3 ./tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=CMSIS-NN --tflm_path=./tensorflow/ --inventory=./tensorflow-pack/tensorflow-test/kernel_tests_cmsis.yml
         #  docker exec build_runtime python3 ./tensorflow-pack/tensorflow-test/testrunner_fvp.py --cvariant=Ethos-U --tflm_path=./tensorflow/ --inventory=./tensorflow-pack/tensorflow-test/kernel_tests_ethos.yml
-
       - name: Execute test suite on Virtual Hardware at AWS
         uses: Arm-Software/VHT-AMI@v2
         with:
@@ -125,29 +130,23 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
           AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}          
- 
       - name: Fetch results from VHT
         run: |
           tar xvzf out.tar
           cat ./home/ubuntu/vhtwork/out/testing_helpers_test.axf.stdio
-
       - name: Create junit Test Reports
         run: |
           docker exec build_runtime python3 ./tensorflow-pack/tensorflow-test/testlog_parser.py ./home/ubuntu/vhtwork/out/
           # mv ./home/ubuntu/vhtwork/out/*.junit ${{ github.workspace }}/tensorflow-pack/
-  
-
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
         if: always()
         with:
           files: ${{ github.workspace }}/home/ubuntu/vhtwork/out/**/*.junit
-    
       - name: Upload Pack
         uses: actions/upload-artifact@v2
         with:
           path: ${{ github.workspace }}/out
-        
       - name: Upload Test Reports
         uses: actions/upload-artifact@v2
         with:
