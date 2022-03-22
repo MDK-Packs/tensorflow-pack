@@ -99,6 +99,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: packs-artifacts
+          path: ${{ github.workspace }}/out/ 
       - name: Create test projects
         run: | 
            echo "Run tests on Cortex-M55 FVP"
