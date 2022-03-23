@@ -153,4 +153,107 @@ jobs:
         with:
           path: ${{ github.workspace }}/out.tar
         
-        
+  test-tensorflow-cm0:
+    needs: [build-tensorflow]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tensorflow-build 
+        uses: actions/checkout@v2
+        with: 
+          repository: MDK-Packs/tensorflow-pack
+          path: tensorflow-pack
+      - name: Checkout tensorflow
+        uses: actions/checkout@v2
+        with: 
+          repository: tensorflow/tflite-micro
+          path: tensorflow
+          clean: false  
+      - name: Download builds from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: packs-artifacts
+          path: ${{ github.workspace }}/out/ 
+          
+  test-tensorflow-cm3:
+    needs: [build-tensorflow]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tensorflow-build 
+        uses: actions/checkout@v2
+        with: 
+          repository: MDK-Packs/tensorflow-pack
+          path: tensorflow-pack
+      - name: Checkout tensorflow
+        uses: actions/checkout@v2
+        with: 
+          repository: tensorflow/tflite-micro
+          path: tensorflow
+          clean: false  
+      - name: Download builds from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: packs-artifacts
+          path: ${{ github.workspace }}/out/
+          
+  test-tensorflow-cm4f:
+    needs: [build-tensorflow]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tensorflow-build 
+        uses: actions/checkout@v2
+        with: 
+          repository: MDK-Packs/tensorflow-pack
+          path: tensorflow-pack
+      - name: Checkout tensorflow
+        uses: actions/checkout@v2
+        with: 
+          repository: tensorflow/tflite-micro
+          path: tensorflow
+          clean: false  
+      - name: Download builds from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: packs-artifacts
+          path: ${{ github.workspace }}/out/ 
+          
+  test-tensorflow-cm7:
+    needs: [build-tensorflow]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tensorflow-build 
+        uses: actions/checkout@v2
+        with: 
+          repository: MDK-Packs/tensorflow-pack
+          path: tensorflow-pack
+      - name: Checkout tensorflow
+        uses: actions/checkout@v2
+        with: 
+          repository: tensorflow/tflite-micro
+          path: tensorflow
+          clean: false  
+      - name: Download builds from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: packs-artifacts
+          path: ${{ github.workspace }}/out/ 
+
+  test-tensorflow-cm33:
+    needs: [build-tensorflow]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tensorflow-build 
+        uses: actions/checkout@v2
+        with: 
+          repository: MDK-Packs/tensorflow-pack
+          path: tensorflow-pack
+      - name: Checkout tensorflow
+        uses: actions/checkout@v2
+        with: 
+          repository: tensorflow/tflite-micro
+          path: tensorflow
+          clean: false  
+      - name: Download builds from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: packs-artifacts
+          path: ${{ github.workspace }}/out/ 
