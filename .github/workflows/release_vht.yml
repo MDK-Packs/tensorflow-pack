@@ -37,7 +37,7 @@ jobs:
     
       - name: Install tools
         run:
-          apt install rsync
+          sudo apt install rsync
           
       - name: Run the pack build with the revision specified
         run : 
