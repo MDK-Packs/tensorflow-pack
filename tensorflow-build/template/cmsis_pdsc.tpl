@@ -9,7 +9,7 @@
   <license>LICENSE</license>
   <releases>
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
-      TensorFlow %{RELEASE_VERSION}%
+      TensorFlow Lite Micro for Arm Cortex-M %{RELEASE_VERSION}%
     </release>
   </releases>
 
@@ -95,10 +95,10 @@
     <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cversion="%{RELEASE_VERSION}%">
       <description>TensorFlow Lite Micro Library</description>
       <files>
-        <file category="sourceCpp" name="tensorflow/lite/kernels/kernel_util.cc"/> 
-        <file category="sourceCpp" name="tensorflow/lite/micro/system_setup.cc" version="1.0" attr="config"/>
-        <file category="sourceCpp" name="tensorflow/lite/micro/cortex_m_generic/micro_time.cc" version="1.0" attr="config"/>
-        <file category="sourceCpp" name="tensorflow/lite/micro/cortex_m_generic/debug_log.cc" version="1.0" attr="config"/>
+        <file category="sourceCpp" name="tensorflow/lite/kernels/kernel_util.cpp"/> 
+        <file category="sourceCpp" name="tensorflow/lite/micro/system_setup.cpp" version="%{RELEASE_VERSION}%" attr="config"/>
+        <file category="sourceCpp" name="tensorflow/lite/micro/cortex_m_generic/micro_time.cpp" version="%{RELEASE_VERSION}%" attr="config"/>
+        <file category="sourceCpp" name="tensorflow/lite/micro/cortex_m_generic/debug_log.cpp" version="%{RELEASE_VERSION}%" attr="config"/>
         %{KERNEL_UTIL_FILES}%
       </files>
     </component>
@@ -116,4 +116,3 @@
 
   </components>
 </package>
-
