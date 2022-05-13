@@ -36,8 +36,9 @@ jobs:
    #       mkdir ${{ github.workspace }}/out/
     
       - name: Install tools
-        run:
+        run: |
           sudo apt install rsync
+          pip3 install pillow
           
       - name: Run the pack build with the revision specified
         run : 
