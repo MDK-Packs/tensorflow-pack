@@ -2,20 +2,17 @@
 
 Directory contains scripts and assets to compile the CMSIS-pack containing the latest TensorFlow Lite Micro. 
 
-Scripts are called in the order:
-prep.sh -> hotfix.sh -> additionals.sh -> build.sh (or build_r.sh for Release builds)
+## build_r.sh
+Entry point to run the full workflow to download, sort, generate source trees and build the pack.
 
-## prep.sh
-Run make from tensorflow repository in various configurations. Extracts sources using the list_library_sources target.
+### The workflow is:
 
-## hotfix.sh
-Patch list of sources if required.
-
-## additionals.sh
-Some files are statically declared in the pack description. They need to be copied manually, as the build script does not know about them.
-
-## build.sh
-Call the generate_cmsis_pack.py and pass all generated lists of sources.
+1. Get the latest root repository from mlplatform.org. It contains a list of json files with an index of release SHAs for a specific release.
+2. Retrieve the repositories for a specified release (e.g. "20.02"). This release is passed to the github workflow as a parameter.
+3. create_tflm_tree.py is used to create the source trees for variants "Reference", "CMSIS-NN", "Ethos-U".
+4. For each source tree a list of files used it written into a srcs.*.lst text file.
+5. Merge determined sources into build directory.
+6. Run generate_cmsis_pack.py and pass the lists of sources.
 
 ## generate_cmsis_pack.py 
 ```
@@ -34,3 +31,6 @@ Parameters are:
   --release               Release version
   --tensorflow_path       Path to root of tensorflow git
 ```
+
+Internally generate_cmsis_pack.py will pull PackChk for the platform the script is executed on. 
+The generated pdsc will be validated and the tensorflow-lite-micro.*.pack will only be generated when validation passes.
