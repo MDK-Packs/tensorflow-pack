@@ -56,7 +56,7 @@ python3 ./tensorflow-pack/tensorflow-build/generate_cmsis_pack.py  \
    --hdrs-ethos=./tensorflow-pack/tensorflow-build/empty.lst \
    --srcs-ethos=./tensorflow-pack/tensorflow-build/srcs.ethos_u.lst \
    --testhdrs=./tensorflow-pack/tensorflow-build/empty.lst \
-   --testsrcs=./tensorflow-pack/tensorflow-build/empty.lst \
+   --testsrcs=./tensorflow-pack/tensorflow-build/testsrcs.lst \
    --util_src=./tensorflow-pack/tensorflow-build/empty.lst  
 
 
