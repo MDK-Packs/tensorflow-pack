@@ -40,8 +40,6 @@ jobs:
           sudo apt install rsync
           pip3 install pillow
           mkdir ${{ github.workspace }}/out/
-          export PATH=$PATH:${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/utilities
-
           
       - name: Run the pack build with the revision specified
         run : 
@@ -52,7 +50,8 @@ jobs:
           cp ${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/build/*.pack ${{ github.workspace }}/out/
 
       - name: Run the 3rdparty pack build with the revision specified
-        run : 
+        run : |
+          export PATH=$PATH:${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/utilities
           ./tensorflow-pack/3rdparty-build/build_r.sh ${{ github.event.inputs.revision }} 
 
       - name: Copy 3rdparty packs to out path
