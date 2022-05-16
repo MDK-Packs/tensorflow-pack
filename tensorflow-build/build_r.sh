@@ -25,7 +25,7 @@ python3 ./tensorflow/lite/micro/tools/project_generation/create_tflm_tree.py  \
    --makefile_options="TARGET=cortex_m_generic OPTIMIZED_KERNEL_DIR=cmsis_nn TARGET_ARCH=cortex-m55" \
    --print_src_files --rename_cc_to_cpp\
    ../../../../../tensorflow-build/src \
-   > ../../../../../tensorflow-build/srcs.cmsis-nn.raw
+   > ../../../../../tensorflow-build/srcs.cmsis_nn.raw
 rsync -a ../../../../../tensorflow-build/src/tensorflow ../../../../../tensorflow-build/gen/build
 
 python3 ./tensorflow/lite/micro/tools/project_generation/create_tflm_tree.py  \
@@ -35,13 +35,15 @@ python3 ./tensorflow/lite/micro/tools/project_generation/create_tflm_tree.py  \
    > ../../../../../tensorflow-build/srcs.ethos_u.raw
 rsync -a ../../../../../tensorflow-build/src/tensorflow ../../../../../tensorflow-build/gen/build
 
+rsync -a ./tensorflow/lite/micro/testing/*.h ../../../../../tensorflow-build/gen/build/tensorflow/lite/micro/testing/ 
+
 rsync -a ../../../../../tensorflow-build/src/third_party/ ../../../../../3rdparty-build/src
 
 cd ../../../../../..
 python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
         ./tensorflow-pack/tensorflow-build/srcs.raw > ./tensorflow-pack/tensorflow-build/srcs.lst
 python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
-        ./tensorflow-pack/tensorflow-build/srcs.cmsis-nn.raw > ./tensorflow-pack/tensorflow-build/srcs.cmsis-nn.lst
+        ./tensorflow-pack/tensorflow-build/srcs.cmsis_nn.raw > ./tensorflow-pack/tensorflow-build/srcs.cmsis_nn.lst
 python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
         ./tensorflow-pack/tensorflow-build/srcs.ethos_u.raw > ./tensorflow-pack/tensorflow-build/srcs.ethos_u.lst
 
@@ -52,7 +54,7 @@ python3 ./tensorflow-pack/tensorflow-build/generate_cmsis_pack.py  \
    --srcs=./tensorflow-pack/tensorflow-build/srcs.lst \
    --hdrs=./tensorflow-pack/tensorflow-build/empty.lst \
    --hdrs-cmsis-nn=./tensorflow-pack/tensorflow-build/empty.lst \
-   --srcs-cmsis-nn=./tensorflow-pack/tensorflow-build/srcs.cmsis-nn.lst \
+   --srcs-cmsis-nn=./tensorflow-pack/tensorflow-build/srcs.cmsis_nn.lst \
    --hdrs-ethos=./tensorflow-pack/tensorflow-build/empty.lst \
    --srcs-ethos=./tensorflow-pack/tensorflow-build/srcs.ethos_u.lst \
    --testhdrs=./tensorflow-pack/tensorflow-build/empty.lst \
