@@ -1,5 +1,5 @@
 name: ethos-u-core-driver
-vendor: ARM
+vendor: Arm
 version: "0.4"
 
 pdsc: ./contributions/merge/Arm.ethos-u-core-driver.pdsc
