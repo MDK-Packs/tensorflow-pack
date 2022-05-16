@@ -40,6 +40,8 @@ jobs:
           sudo apt install rsync
           pip3 install pillow
           mkdir ${{ github.workspace }}/out/
+          export PATH=$PATH:${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/utilities
+
           
       - name: Run the pack build with the revision specified
         run : 

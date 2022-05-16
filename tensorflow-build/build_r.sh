@@ -38,6 +38,7 @@ rsync -a ../../../../../tensorflow-build/src/tensorflow ../../../../../tensorflo
 rsync -a ./tensorflow/lite/micro/testing/*.h ../../../../../tensorflow-build/gen/build/tensorflow/lite/micro/testing/ 
 
 rsync -a ../../../../../tensorflow-build/src/third_party/ ../../../../../3rdparty-build/src
+rsync -a ../core_driver/ ../../../../../3rdparty-build/src/ethos_u_core_driver
 
 cd ../../../../../..
 python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
