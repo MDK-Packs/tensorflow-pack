@@ -8,7 +8,7 @@ build: build
 out: ./
 
 remote_source: #https://github.com/google/flatbuffers/archive/master.zip
-local_source: ../../../tensorflow/tensorflow/lite/micro/tools/make/downloads/flatbuffers
+local_source: ../src/flatbuffers
 src_dest: ./src
 
 

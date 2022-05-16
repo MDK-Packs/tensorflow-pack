@@ -8,7 +8,7 @@ build: build
 out: ./
 
 remote_source: #
-local_source: ../../../tensorflow/tensorflow/lite/micro/tools/make/downloads/gemmlowp
+local_source: ../src/gemmlowp
 src_dest: ./src
 
 

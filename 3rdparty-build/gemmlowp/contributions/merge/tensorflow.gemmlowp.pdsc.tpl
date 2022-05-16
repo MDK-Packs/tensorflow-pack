@@ -4,7 +4,7 @@
   <name>gemmlowp</name>
   <description>a small self-contained low-precision GEMM library</description>
   <!-- web download link -->
-  <url>https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/</url>
+  <url>https://github.com/MDK-Packs/Pack/raw/master/TensorFlow-Pack/</url>
   <license>LICENSE.txt</license>
   <releases>
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
@@ -16,7 +16,7 @@
     <description Cclass="Data Processing" Cgroup="Math">Math Components</description>
   </taxonomy>
   <components>
-    <component Cclass="Data Processing" Cgroup="Math" Csub="gemmlowp fixed-point" Cvariant="tensorflow" Cversion="1.0.0">
+    <component Cclass="Data Processing" Cgroup="Math" Csub="gemmlowp fixed-point" Cvariant="tensorflow" Cversion="%{RELEASE_VERSION}%">
       <description>Jsmn</description>
       <RTE_Components_h>
         <!-- the following content goes into file 'RTE_Components.h' -->

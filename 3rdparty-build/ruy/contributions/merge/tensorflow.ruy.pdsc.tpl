@@ -4,7 +4,7 @@
   <name>ruy</name>
   <description>The ruy matrix multiplication library</description>
   <!-- web download link -->
-  <url>https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/</url>
+  <url>https://github.com/MDK-Packs/Pack/raw/master/TensorFlow-Pack/</url>
   <license>LICENSE.txt</license>
   <releases>
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
@@ -16,7 +16,7 @@
     <description Cclass="Data Processing" Cgroup="Math">Math Components</description>
   </taxonomy>
   <components>
-    <component Cclass="Data Processing" Cgroup="Math" Csub="ruy" Cvariant="tensorflow" Cversion="1.12.0">
+    <component Cclass="Data Processing" Cgroup="Math" Csub="ruy" Cvariant="tensorflow" Cversion="%{RELEASE_VERSION}%">
       <description>Flatbuffers</description>
       <RTE_Components_h>
         <!-- the following content goes into file 'RTE_Components.h' -->

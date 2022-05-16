@@ -4,7 +4,7 @@
   <name>kissfft</name>
   <description>Fast Fourier Transform (FFT) library that tries to Keep it Simple, Stupid</description>
   <!-- web download link -->
-  <url>https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/</url>
+  <url>https://github.com/MDK-Packs/Pack/raw/master/TensorFlow-Pack/</url>
   <license>LICENSE.txt</license>
   <releases>
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
@@ -12,7 +12,7 @@
     </release>
   </releases>
   <components>
-    <component Cclass="Data Processing" Cgroup="Math" Csub="kissfft" Cvariant="tensorflow" Cversion="1.4.5">
+    <component Cclass="Data Processing" Cgroup="Math" Csub="kissfft" Cvariant="tensorflow" Cversion="%{RELEASE_VERSION}%">
       <description>KISS FFT</description>
       <RTE_Components_h>
         <!-- the following content goes into file 'RTE_Components.h' -->

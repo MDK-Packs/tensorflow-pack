@@ -84,7 +84,7 @@ def main(unparsed_args, flags):
   if flags.date_tag:
     pack_version = pack_version + "." + calversion 
   else:
-    pack_version = pack_version + ".0"
+    pack_version = pack_version
   print(">>> Version: ", pack_version)  
 
   if cfg["local_source"] is not None:
