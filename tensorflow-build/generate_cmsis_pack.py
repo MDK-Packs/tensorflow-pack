@@ -231,7 +231,7 @@ def main(unparsed_args, flags):
     if flags.release:
       pack_version = flags.release
     else:    
-      pack_version = "0.4." + calversion  # get_version()  
+      pack_version = "0.9." + calversion  # get_version()  
 
     # load pdsc template from ../templates
     with open(flags.input_template, 'r') as input_template_file:

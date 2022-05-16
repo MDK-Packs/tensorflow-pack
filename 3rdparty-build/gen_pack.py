@@ -43,8 +43,8 @@ def main(unparsed_args, flags):
   with open( os.path.abspath(flags.path + "/config.yml"), "r") as ymlfile:
       cfg = yaml.safe_load(ymlfile)
 
-  if shutil.which("PackChk") is None:
-    print("Error: PackChk is not available on path")
+  if shutil.which("packchk") is None:
+    print("Error: packchk is not available on path")
     exit()
 
   PACK_BUILD = cfg["build"]
@@ -120,8 +120,9 @@ def main(unparsed_args, flags):
     print(template_file_text)
 
   print (">>> Running PackCheck")
-  print (">>> PackChk", pdsc_path, "-nPackName.txt")
-  p = subprocess.check_call(["PackChk", pdsc_path, "-nPackName.txt"], stdin=None, stdout=None, stderr=None, shell=False, timeout=None)
+  command = "packchk -n PackName.txt " + pdsc_path
+  print (">>>", command)
+  os.system(command)
 
   with open (os.getcwd() + "/PackName.txt", "r") as packversion_file:
       packfile_name=packversion_file.readline()
