@@ -28,19 +28,25 @@ jobs:
           repository: MDK-Packs/tensorflow-pack
           path: tensorflow-pack
 
-      - name: Create Container runtime from DockerHub
-        run : |
-          docker run -i -v ${{ github.workspace }}:/workspace/host --mac-address="00:02:F7:FF:55:55" --name build_runtime -d armswdev/cmsis_tools_m55:latest 
-          docker exec build_runtime pip3 install six requests pyyaml junit_xml pillow
-          docker exec build_runtime cp /workspace/host/tensorflow-pack/tensorflow-build/.wgetrc /root/.wgetrc 
+   #   - name: Create Container runtime from DockerHub
+   #     run : |
+   #       docker run -i -v ${{ github.workspace }}:/workspace/host --mac-address="00:02:F7:FF:55:55" --name build_runtime -d armswdev/cmsis_tools_m55:latest 
+   #       docker exec build_runtime pip3 install six requests pyyaml junit_xml pillow
+   #       docker exec build_runtime cp /workspace/host/tensorflow-pack/tensorflow-build/.wgetrc /root/.wgetrc 
+   #       mkdir ${{ github.workspace }}/out/
+    
+      - name: Install tools
+        run: |
+          sudo apt install rsync
+          pip3 install pillow
           mkdir ${{ github.workspace }}/out/
-         
+          
       - name: Run the pack build with the revision specified
         run : 
-          docker exec build_runtime /bin/bash /workspace/host/tensorflow-pack/tensorflow-build/build_r.sh ${{ github.event.inputs.revision }} 
+          ./tensorflow-pack/tensorflow-build/build_r.sh ${{ github.event.inputs.revision }} 
 
       - name: Copy tensorflow-pack to out path
-        run : 
+        run :  
           cp ${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/build/*.pack ${{ github.workspace }}/out/
 
       - name: Upload Pack
@@ -48,8 +54,8 @@ jobs:
         with:
           path: ${{ github.workspace }}/out
         
-      - name: Upload Test Reports
-        uses: actions/upload-artifact@v2
-        with:
-          path: ${{ github.workspace }}/tensorflow-pack/**/*.junit
+    #  - name: Upload Test Reports
+    #    uses: actions/upload-artifact@v2
+    #    with:
+    #      path: ${{ github.workspace }}/tensorflow-pack/**/*.junit
 
