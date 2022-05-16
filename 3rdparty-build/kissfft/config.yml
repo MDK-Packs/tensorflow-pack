@@ -8,7 +8,7 @@ build: build
 out: ./
 
 remote_source: #https://github.com/google/flatbuffers/archive/master.zip
-local_source: ../../../tensorflow/tensorflow/lite/micro/tools/make/downloads/kissfft
+local_source: ../src/kissfft
 src_dest: ./src
 
 
