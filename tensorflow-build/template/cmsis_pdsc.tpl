@@ -84,6 +84,8 @@
       <Pre_Include_Global_h>
         // enabling global pre includes 
         #define TF_LITE_STATIC_MEMORY 1
+        #define TF_LITE_DISABLE_X86_NEON 1
+        //#define TF_LITE_STRIP_ERROR_STRINGS 1
         #define CMSIS_NN
       </Pre_Include_Global_h>
       <files>

@@ -1,6 +1,7 @@
 #!/bin/sh
 
 echo $1
+
 mkdir ./tensorflow-pack/tensorflow-build/rel
 mkdir ./tensorflow-pack/tensorflow-build/rel/mlplatform
 mkdir ./tensorflow-pack/tensorflow-build/gen
@@ -14,6 +15,7 @@ cd ./tensorflow-pack/tensorflow-build/rel/mlplatform/
 python3 fetch_externals.py -c $1.json fetch
 
 cd ./core_software/tflite_micro
+
 python3 ./tensorflow/lite/micro/tools/project_generation/create_tflm_tree.py  \
    --makefile_options="TARGET=cortex_m_generic TARGET_ARCH=cortex-m7" \
    --print_src_files --rename_cc_to_cpp\
