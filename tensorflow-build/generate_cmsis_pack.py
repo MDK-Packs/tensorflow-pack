@@ -230,8 +230,8 @@ def main(unparsed_args, flags):
     tmpl_pdsc_date = now.strftime('%Y-%m-%d')
     if flags.release:
       pack_version = flags.release
-    else:    
-      pack_version = "0.9." + calversion  # get_version()  
+    if flags.candidate_rev:
+      pack_version = flags.release + "-" + flags.candidate_rev 
 
     # load pdsc template from ../templates
     with open(flags.input_template, 'r') as input_template_file:
@@ -333,6 +333,11 @@ def parse_args():
         '--release',
         type=str,
         help='Release versioning')
+    parser.add_argument(
+        '--candidate_rev',
+        type=str,
+        default="",
+        help='Release candidate versioning, e.g. rc1, rc2, etc.')    
     parser.add_argument(
         '--tensorflow_path',
         type=str,

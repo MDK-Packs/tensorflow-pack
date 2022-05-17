@@ -11,6 +11,11 @@ on:
         description: 'mlplatform revision'     
         required: true
         default: '22.02'
+      candidate_rev:
+        description: 'Release candidate revision'
+        required: false
+        default: '' 
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

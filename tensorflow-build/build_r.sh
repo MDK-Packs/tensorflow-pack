@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo $1
+echo $1 $2
 
 mkdir ./tensorflow-pack/tensorflow-build/rel
 mkdir ./tensorflow-pack/tensorflow-build/rel/mlplatform
@@ -51,7 +51,8 @@ python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
         ./tensorflow-pack/tensorflow-build/srcs.ethos_u.raw > ./tensorflow-pack/tensorflow-build/srcs.ethos_u.lst
 
 python3 ./tensorflow-pack/tensorflow-build/generate_cmsis_pack.py  \
-   --release=1.$1-RC \
+   --release=1.$1 \
+   --candidate_rev=$2 \
    --input_template=./tensorflow-pack/tensorflow-build/template/cmsis_pdsc.tpl \
    --tensorflow_path=./tensorflow-pack/tensorflow-build/src \
    --srcs=./tensorflow-pack/tensorflow-build/srcs.lst \
