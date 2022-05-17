@@ -4,7 +4,7 @@
   <name>ruy</name>
   <description>The ruy matrix multiplication library</description>
   <!-- web download link -->
-  <url>https://github.com/MDK-Packs/Pack/raw/master/TensorFlow-Pack/</url>
+  <url>https://github.com/MDK-Packs/tensorflow-pack/releases/download/%{RELEASE_VERSION}%/</url>
   <license>LICENSE.txt</license>
   <releases>
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">

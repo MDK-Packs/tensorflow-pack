@@ -5,7 +5,7 @@
   <name>tensorflow-lite-micro</name>
   <description>Deep learning framework for on-device inference.</description>
   <!-- web download link -->
-  <url>https://github.com/MDK-Packs/Pack/raw/master/TensorFlow-Pack/</url>
+  <url>https://github.com/MDK-Packs/tensorflow-pack/releases/download/%{RELEASE_VERSION}%/</url>
   <license>LICENSE</license>
   <releases>
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
