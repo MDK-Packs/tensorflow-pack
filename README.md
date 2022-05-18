@@ -15,6 +15,7 @@ Packages apt
 
 Packages pip
 - pillow
+- six
 
 ## Start the pack build
 
