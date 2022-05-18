@@ -16,6 +16,7 @@ Packages apt
 Packages pip
 - pillow
 - six
+- requests
 
 ## Start the pack build
 
