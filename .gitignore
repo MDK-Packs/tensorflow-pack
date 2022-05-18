@@ -16,3 +16,6 @@ tensorflow-build/src/
 tensorflow-build/rel
 3rdparty-build/src/
 
+*.pack
+3rdparty-build/PackName.txt
+*.raw
