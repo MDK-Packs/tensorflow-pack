@@ -18,8 +18,8 @@ Packages pip
 
 ## Start the pack build
 
-'''./tensorflow-build/build_r.sh <rev> <rc>'''
+```./tensorflow-build/build_r.sh <rev> <rc>```
 
-'''./3rdparty-build/build_r.sh <rec> '''
+```./3rdparty-build/build_r.sh <rec> ```
   
   
