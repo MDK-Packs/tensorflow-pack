@@ -5,6 +5,7 @@ Build and test environment for CMSIS-Pack containing TensorFlow Lite Micro
 
 ## Requirements:
 (based on 20.04 Ubuntu Linux environment)
+
 Packages apt
 - python3
 - python3_venv
