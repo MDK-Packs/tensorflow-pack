@@ -2,13 +2,14 @@
 <index schemaVersion="1.0.0" xs:noNamespaceSchemaLocation="PackIndex.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
   <vendor>tensorflow</vendor>
   <url>https://raw.githubusercontent.com/MDK-Packs/tensorflow-pack/main/.pack/</url>
-  <timestamp>2021-09-30T12:00:00</timestamp>
+  <timestamp>2022-05-18T12:00:00</timestamp>
   <pindex>
-    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="ARM" name="ethos-u-core-driver" version="0.4.0"/>
-    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" name="gemmlowp" version="0.4.0"/>
-    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" name="kissfft" version="0.4.0"/>
-    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" name="ruy" version="0.4.0"/>
-    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" name="flatbuffers" version="0.4.0"/>
-    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/0.4/" vendor="tensorflow" name="tensorflow-lite-micro" version="0.4.0"/>
+    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="ARM" name="ethos-u-core-driver" version="1.22.02"/>
+    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" name="gemmlowp" version="1.22.02"/>
+    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" name="gemmlowp" version="1.22.02"/>
+    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" name="kissfft" version="1.22.02"/>
+    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" name="ruy" version="1.22.02"/>
+    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" name="flatbuffers" version="1.22.02"/>
+    <pdsc url="https://github.com/MDK-Packs/tensorflow-pack/releases/download/1.22.02/" vendor="tensorflow" name="tensorflow-lite-micro" version="1.22.02"/>
   </pindex>
 </index>
