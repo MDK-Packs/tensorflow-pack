@@ -22,6 +22,7 @@
         <file category="sourceC" name="src/kiss_fft.c"/>
         <file category="sourceC" name="src/tools/kiss_fftr.c"/>
         <file category="include" name="src/"/>
+        <file category="include" name="src/tools/"/>
       </files>
     </component>
   </components>

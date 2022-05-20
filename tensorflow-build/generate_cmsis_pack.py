@@ -73,7 +73,10 @@ def prepare_environment():
     print("Detected Host OS: " + utilities_os)
 
     if utilities_os == "Linux":
-        packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.95/packchk-1.3.95-linux64.zip"
+        if platform.machine() == "aarch64":
+          packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.95/packchk-1.3.95-linux-arm64.zip"
+        else:
+          packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.95/packchk-1.3.95-linux64.zip"
         packcheck_name = "packchk"
     elif utilities_os == "Windows":
         packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.95/packchk-1.3.95-windows64.zip"
