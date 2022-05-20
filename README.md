@@ -2,3 +2,27 @@
 
 # tensorflow-pack
 Build and test environment for CMSIS-Pack containing TensorFlow Lite Micro
+
+## Requirements:
+(based on 20.04 Ubuntu Linux environment)
+
+Packages apt
+- python3
+- python3_venv
+- python3-pip
+- wget
+- rsync
+- git
+
+Packages pip
+- pillow
+- six
+- requests
+
+## Start the pack build
+
+```./tensorflow-build/build_r.sh <rev> <rc>```
+
+```./3rdparty-build/build_r.sh <rec> ```
+  
+  
