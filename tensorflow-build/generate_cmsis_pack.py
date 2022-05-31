@@ -35,6 +35,7 @@ import datetime
 from os import listdir
 from os.path import isfile, join
 import fnmatch
+import semantic_version
 
 
 run_path = os.path.dirname(__file__)
@@ -60,13 +61,12 @@ def sanitize_xml(unsanitized):
     """Uses a whitelist to avoid generating bad XML."""
     return re.sub(r'[^a-zA-Z0-9+_\-/\\.]', '', six.ensure_str(unsanitized))
 
+def sanitize_SemVer(unsanitized):
+    """Uses a whitelist to avoid generating bad SemVer."""
+    return str(semantic_version.Version.coerce(unsanitized))
+
 def prepare_environment():
     global packcheck_name
-    #if os.path.lexists(outpath):
-    #    shutil.rmtree(outpath)
-
- #   shutil.copytree(tf_path, pack_build)
-
     # Pack build utilities Repository
     utilities_os = platform.system()
 
@@ -235,6 +235,8 @@ def main(unparsed_args, flags):
       pack_version = flags.release
     if flags.candidate_rev:
       pack_version = flags.release + "-" + flags.candidate_rev 
+
+    pack_version = sanitize_SemVer(pack_version)
 
     # load pdsc template from ../templates
     with open(flags.input_template, 'r') as input_template_file:

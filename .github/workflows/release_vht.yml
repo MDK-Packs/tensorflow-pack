@@ -43,7 +43,7 @@ jobs:
       - name: Install tools
         run: |
           sudo apt install rsync
-          pip3 install pillow
+          pip3 install pillow semantic-version
           mkdir ${{ github.workspace }}/out/
           
       - name: Run the pack build with the revision specified
