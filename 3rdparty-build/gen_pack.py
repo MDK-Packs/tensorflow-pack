@@ -36,6 +36,11 @@ import re
 import distutils
 from distutils import dir_util
 
+import semantic_version
+
+def sanitize_SemVer(unsanitized):
+    """Uses a whitelist to avoid generating bad SemVer."""
+    return str(semantic_version.Version.coerce(unsanitized))
 
 def main(unparsed_args, flags):
   print (flags)
@@ -83,8 +88,11 @@ def main(unparsed_args, flags):
   tmpl_pdsc_date = now.strftime('%Y-%m-%d')
   if flags.date_tag:
     pack_version = pack_version + "." + calversion 
+  elif flags.candidate_rev:
+    pack_version = pack_version + "-" + flags.candidate_rev 
   else:
     pack_version = pack_version
+  pack_version = sanitize_SemVer(pack_version)
   print(">>> Version: ", pack_version)  
 
   if cfg["local_source"] is not None:
@@ -152,6 +160,11 @@ def parse_args():
       type=str,
       default=None,
       help='Set or override version with custom setting.')
+  parser.add_argument(
+        '--candidate_rev',
+        type=str,
+        default="",
+        help='Release candidate versioning, e.g. rc1, rc2, etc.')  
   parser.add_argument(
       '--date_tag',
       default=False,
