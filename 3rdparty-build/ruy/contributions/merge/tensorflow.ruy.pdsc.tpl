@@ -10,7 +10,8 @@
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
       ruy for TensorFlow %{RELEASE_VERSION}%
     </release>
-  </releases>
+    %{HISTORY}%
+  </releases> 
   <taxonomy>
     <description Cclass="Data Processing">Software Components for Data Processing</description>
     <description Cclass="Data Processing" Cgroup="Math">Math Components</description>

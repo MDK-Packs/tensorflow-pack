@@ -10,6 +10,7 @@
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
       Flatbuffers for TensorFlow %{RELEASE_VERSION}%
     </release>
+    %{HISTORY}%
   </releases>
   <taxonomy>
     <description Cclass="Data Exchange">Software Components for Data Exchange</description>

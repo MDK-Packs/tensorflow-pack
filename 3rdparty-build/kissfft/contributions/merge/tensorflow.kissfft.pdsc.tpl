@@ -10,6 +10,7 @@
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
       kissfft for TensorFlow %{RELEASE_VERSION}%
     </release>
+    %{HISTORY}%
   </releases>
   <components>
     <component Cclass="Data Processing" Cgroup="Math" Csub="kissfft" Cvariant="tensorflow" Cversion="%{RELEASE_VERSION}%">

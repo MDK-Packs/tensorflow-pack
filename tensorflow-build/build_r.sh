@@ -54,6 +54,7 @@ python3 ./tensorflow-pack/tensorflow-build/generate_cmsis_pack.py  \
    --release=1.$1 \
    --candidate_rev=$2 \
    --input_template=./tensorflow-pack/tensorflow-build/template/cmsis_pdsc.tpl \
+   --history=./tensorflow-pack/tensorflow-build/history.txt \
    --tensorflow_path=./tensorflow-pack/tensorflow-build/src \
    --srcs=./tensorflow-pack/tensorflow-build/srcs.lst \
    --hdrs=./tensorflow-pack/tensorflow-build/empty.lst \

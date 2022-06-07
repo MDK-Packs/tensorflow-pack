@@ -7,10 +7,10 @@
   <!-- web download link -->
   <url>https://github.com/MDK-Packs/tensorflow-pack/releases/download/%{RELEASE_VERSION}%/</url>
   <license>LICENSE</license>
+  <repository type="git">https://github/MDK-Packs/tensorflow-pack.git</repository>
   <releases>
-    <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
-      TensorFlow Lite Micro for Arm Cortex-M %{RELEASE_VERSION}%
-    </release>
+    <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%"> Latest release. </release>
+    %{HISTORY}%
   </releases>
 
   <taxonomy>

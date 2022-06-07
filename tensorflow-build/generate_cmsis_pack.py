@@ -187,6 +187,11 @@ def main(unparsed_args, flags):
     #fix this one day:
     #  subprocess.call(['sh', './tensorflow-pack/tensorflow-build/additionals.sh']) 
 
+    # read file into string
+    if flags.history != "":
+      with open(flags.history, "r") as history_file:
+          history_str = history_file.read()
+
     # get --srcs and --hdrs from arguments
     core_srcs_list = load_list_from_file(flags.srcs)
     core_hdrs_list = load_list_from_file(flags.hdrs)
@@ -256,6 +261,8 @@ def main(unparsed_args, flags):
         r'%{RELEASE_VERSION}%', pack_version, template_file_text)
     template_file_text = re.sub(
         r'%{RELEASE_DATE}%', tmpl_pdsc_date, template_file_text)
+    template_file_text = re.sub( 
+        r'%{HISTORY}%', history_str, template_file_text)     
 
     with open(pack_build + "/tensorflow.tensorflow-lite-micro.pdsc", 'w') as output_file:
         output_file.write(template_file_text)
@@ -343,6 +350,11 @@ def parse_args():
         type=str,
         default="",
         help='Release candidate versioning, e.g. rc1, rc2, etc.')    
+    parser.add_argument(
+        '--history',
+        type=str,
+        default="",
+        help='Release history.')    
     parser.add_argument(
         '--tensorflow_path',
         type=str,

@@ -12,19 +12,19 @@ if [ ! -d "./src" ]; then
 fi
 
 # Build Ethos-U driver pack
-python3 gen_pack.py --path ethos-u-driver --version 1.$1  --candidate_rev=$2 
+python3 gen_pack.py --path ethos-u-driver --version 1.$1  --candidate_rev=$2 --history=../../tensorflow-pack/tensorflow-build/history.txt
 cp ./ethos-u-driver/build/*.pack ./
 # Build flatbuffers pack
-python3 gen_pack.py --path flatbuffers --version 1.$1 --candidate_rev=$2 
+python3 gen_pack.py --path flatbuffers --version 1.$1 --candidate_rev=$2 --history=../../tensorflow-pack/tensorflow-build/history.txt
 cp ./flatbuffers/build/*.pack ./
 # Build gemmlowp pack
-python3 gen_pack.py --path gemmlowp --version 1.$1 --candidate_rev=$2 
+python3 gen_pack.py --path gemmlowp --version 1.$1 --candidate_rev=$2 --history=../../tensorflow-pack/tensorflow-build/history.txt
 cp ./gemmlowp/build/*.pack ./
 # Build ruy pack
-python3 gen_pack.py --path ruy --version 1.$1 --candidate_rev=$2 
+python3 gen_pack.py --path ruy --version 1.$1 --candidate_rev=$2 --history=../../tensorflow-pack/tensorflow-build/history.txt
 cp ./ruy/build/*.pack ./
 # Build kissfft pack
-python3 gen_pack.py --path kissfft --version 1.$1 --candidate_rev=$2 
+python3 gen_pack.py --path kissfft --version 1.$1 --candidate_rev=$2 --history=../../tensorflow-pack/tensorflow-build/history.txt
 cp ./kissfft/build/*.pack ./
 
 

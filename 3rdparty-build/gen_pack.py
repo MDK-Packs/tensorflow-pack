@@ -112,7 +112,15 @@ def main(unparsed_args, flags):
   if cfg["add"] is not None:
     print (">>> Merging additions.")
     print (">>> ", add_path, "==>" ,pack_path)
-    distutils.dir_util.copy_tree(add_path, pack_path)    
+    distutils.dir_util.copy_tree(add_path, pack_path)   
+
+  history_str = ""
+   # read file into string
+  if flags.history != "":
+    with open(flags.history, "r") as history_file:
+      history_str = history_file.read()
+      history_str = history_str.replace("tensorflow.tensorflow-lite-micro", cfg["vendor"]+"."+cfg["name"])    
+      print(history_str)
 
   if cfg["pdsc"] is not None:
     print (">>> Merging pdsc.")
@@ -123,6 +131,7 @@ def main(unparsed_args, flags):
     pdsc_path = new_pdsc_path
     template_file_text = re.sub(r'%{RELEASE_VERSION}%', pack_version, template_file_text)
     template_file_text = re.sub(r'%{RELEASE_DATE}%', tmpl_pdsc_date, template_file_text)    
+    template_file_text = re.sub(r'%{HISTORY}%', history_str, template_file_text)
     with open(pdsc_path, 'w') as output_file:
       output_file.write(template_file_text)
     print(template_file_text)
@@ -170,6 +179,11 @@ def parse_args():
       default=False,
       action='store_true',
       help='Tag versions with date.')
+  parser.add_argument(
+        '--history',
+        type=str,
+        default="",
+        help='Release history.')    
 
   flags, unparsed_args = parser.parse_known_args()
 

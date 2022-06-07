@@ -10,6 +10,7 @@
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%">
       gemmlowp for TensorFlow %{RELEASE_VERSION}%
     </release>
+    %{HISTORY}%
   </releases>
   <taxonomy>
     <description Cclass="Data Processing">Software Components for Data Processing</description>
