@@ -21,7 +21,7 @@
       </RTE_Components_h>
       <Pre_Include_Global_h>
         // enabling global pre includes 
-        #define ETHOSU_ARCH U55
+        #define ETHOSU_ARCH u55
       </Pre_Include_Global_h>
       <files>     
         <file category="sourceC" name="ethos_u_core_driver/src/ethosu_device_u55_u65.c"/>
@@ -39,7 +39,7 @@
       </RTE_Components_h>
       <Pre_Include_Global_h>
         // enabling global pre includes 
-        #define ETHOSU_ARCH U65
+        #define ETHOSU_ARCH u65
       </Pre_Include_Global_h>
       <files>     
         <file category="sourceC" name="ethos_u_core_driver/src/ethosu_device_u55_u65.c"/>
