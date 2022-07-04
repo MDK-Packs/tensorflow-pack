@@ -71,6 +71,9 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           path: ${{ github.workspace }}/out
+          
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
         
     #  - name: Upload Test Reports
     #    uses: actions/upload-artifact@v2
