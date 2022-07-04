@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/0.9.1/tools/projmgr/schemas/clayer.schema.json
+
+layer:
+  # type: App
+  # name: CMSIS-RTOS2_Validation
+  description: Validation of TensorFlow Lite Micro CMSIS Pack in Reference implementation
+  # packs:
+  #   - pack: ARM::CMSIS
+  #   - pack: ARM::CMSIS-FreeRTOS
+
+  defines:
+    - PRINT_XML_REPORT=1
+  
+  add-paths:
+    #- ./Config
+    - ../../../Include
+
+  misc:
+    - C*:
+      - -Wno-macro-redefined
+      - -Wno-pragma-pack
+      - -Wno-parentheses-equality
+
+  components:
+    # [Cvendor::]Cclass[&Cbundle]:Cgroup[:Csub][&Cvariant][@[>=]Cversion]
+    - component: tensorflow::Machine Learning:TensorFlow:Kernel&Reference
+    - component: tensorflow::Machine Learning:TensorFlow:Kernel Utils
+    - component: tensorflow::Machine Learning:TensorFlow:Testing
+    - component: tensorflow::Data Exchange:Serialization:flatbuffers&tensorflow
+    - component: tensorflow::Data Processing:Math:gemmlowp fixed-point&tensorflow
+    - component: tensorflow::Data Processing:Math:kissfft&tensorflow
+    - component: tensorflow::Data Processing:Math:ruy&tensorflow
+
+  groups:
+
+    - group: Source files
+      files:
+        - file: ./retarget_stdio.c
