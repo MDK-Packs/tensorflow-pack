@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/0.9.1/tools/projmgr/schemas/clayer.schema.json
+
+layer:
+  # type: Test
+  # name: Tensorflow test sources
+  description: Validation of TensorFlow Lite Micro specific unit test
+  
+  add-paths:
+      - ../../../Include
+
+  misc:
+    - C*:
+      - -Wno-macro-redefined
+      - -Wno-pragma-pack
+      - -Wno-parentheses-equality
+  groups:
+
+    - group: Unit Test Source files
+      files:
+      <-- test_src_files -->

@@ -1,0 +1,12 @@
+test_tests:
+  readable: "Test Tests"
+  report: test_test.junit
+  tests: 
+    - testing_helpers_test:
+      sources:
+        - tensorflow/lite/micro/testing_helpers_test.cc
+
+
+
+    
+

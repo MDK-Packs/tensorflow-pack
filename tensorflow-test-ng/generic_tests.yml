@@ -1,0 +1,44 @@
+generic_tests:
+  readable: "Generic Components Unit Tests"
+  report: generic.junit
+  tests:
+    - memory_arena_threshold_test:
+      sources:
+        - tensorflow/lite/micro/memory_arena_threshold_test.cc 
+        - tensorflow/lite/micro/benchmarks/keyword_scrambled_model_data.cc
+        - tensorflow/lite/micro/testing/test_conv_model.cc
+    - memory_helpers_test:
+      sources:
+        - tensorflow/lite/micro/memory_helpers_test.cc 
+    - micro_allocator_test:
+      sources:
+        - tensorflow/lite/micro/micro_allocator_test.cc 
+        - tensorflow/lite/micro/testing/test_conv_model.cc
+    - micro_error_reporter_test:
+      sources:
+        - tensorflow/lite/micro/micro_error_reporter_test.cc 
+    - micro_interpreter_test:
+      sources:
+        - tensorflow/lite/micro/micro_interpreter_test.cc 
+    - micro_mutable_op_resolver_test:
+      sources:
+        - tensorflow/lite/micro/micro_mutable_op_resolver_test.cc 
+    - micro_string_test:
+      sources:
+        - tensorflow/lite/micro/micro_string_test.cc 
+    - micro_time_test:
+      sources:
+        - tensorflow/lite/micro/micro_time_test.cc 
+    - micro_utils_test:
+      sources:
+        - tensorflow/lite/micro/micro_utils_test.cc 
+    - recording_micro_allocator_test:
+      sources:
+        - tensorflow/lite/micro/recording_micro_allocator_test.cc 
+        - tensorflow/lite/micro/testing/test_conv_model.cc
+    - recording_simple_memory_allocator_test:
+      sources:
+        - tensorflow/lite/micro/recording_simple_memory_allocator_test.cc 
+    - simple_memory_allocator_test:
+      sources:
+        - tensorflow/lite/micro/simple_memory_allocator_test.cc 
