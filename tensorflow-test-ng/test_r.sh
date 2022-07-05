@@ -1,4 +1,4 @@
-
+#!/bin/sh
 # Create string with list of yml inventorys to run
 inventory_list="generic_tests.yml kernel_tests_cmsis.yml test_tests.yml"
 

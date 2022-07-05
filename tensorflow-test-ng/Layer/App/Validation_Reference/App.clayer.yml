@@ -11,9 +11,9 @@ layer:
   defines:
     - PRINT_XML_REPORT=1
   
-  add-paths:
-    - ./Config
-    - ../../../Include
+  #add-paths:
+  #  - ./Config
+  #  - ../../../Include
 
   misc:
     - C*:
