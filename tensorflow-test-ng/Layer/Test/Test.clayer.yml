@@ -5,8 +5,8 @@ layer:
   # name: Tensorflow test sources
   description: Validation of TensorFlow Lite Micro specific unit test
   
-  add-paths:
-      - ../../../Include
+  #add-paths:
+  #    - ../../../Include
 
   misc:
     - C*:
