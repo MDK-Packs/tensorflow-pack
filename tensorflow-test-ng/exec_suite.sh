@@ -11,5 +11,6 @@ for folder in ./gen/*; do
         #find .cprj file in target folder
         cprj_file=$(find $target -name "*.cprj")
         cbuild $cprj_file
+        python3 avh_exec_test.py --project=$cprj_file
     done
 done
