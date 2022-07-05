@@ -44,7 +44,7 @@ def main():
     target_xml = root.findall('./target')[0]
     device_name = target_xml.get('Dname')
     print(device_name, "executed on ", vhtdict[device_name])
-    os.system(vhtdict[device_name] + " -a " + output_path + "/" + executable_name)
+    os.system(vhtdict[device_name] + "	--timelimit -a " + output_path + "/" + executable_name)
 
 if __name__ == '__main__':
     main()
