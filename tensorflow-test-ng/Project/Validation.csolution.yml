@@ -3,11 +3,11 @@
 solution:
   packs:
     - pack: ARM::CMSIS@5.9.0
-    - pack: tensorflow::tensorflow-lite-micro@1.22.5-rc4
-    - pack: tensorflow::flatbuffers@1.22.5-rc4
-    - pack: tensorflow::ruy@1.22.5-rc4
-    - pack: tensorflow::kissfft@1.22.5-rc4
-    - pack: tensorflow::gemmlowp@1.22.5-rc4
+    - pack: tensorflow::tensorflow-lite-micro
+    - pack: tensorflow::flatbuffers
+    - pack: tensorflow::ruy
+    - pack: tensorflow::kissfft
+    - pack: tensorflow::gemmlowp
     - pack: Keil::V2M-MPS2_CMx_BSP@1.8.0
       for-type: 
        - +CM0plus
