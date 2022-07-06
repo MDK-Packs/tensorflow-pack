@@ -15,6 +15,7 @@ tensorflow-build/gen/
 tensorflow-build/src/
 tensorflow-build/rel
 3rdparty-build/src/
+tensorflow-test-ng/gen/
 
 *.pack
 3rdparty-build/PackName.txt
