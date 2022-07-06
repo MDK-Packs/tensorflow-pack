@@ -50,6 +50,8 @@ def main():
             cvariant = project.split("Validation.")[1]
             cvariant = cvariant.split("_")[0]
             print("Cvariant: " + cvariant)
+    # Walk trough results file line by line
+    for line in results.splitlines():
         # Check if line contains "Testing "
         if "Testing " in line:
             test_name = line.split("Testing ")[1]
