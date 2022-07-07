@@ -10,8 +10,8 @@ for folder in ./gen/*; do
     for target in $folder/*; do
         #find .cprj file in target folder
         cprj_file=$(find $target -name "*.cprj")
-        cbuild $cprj_file
-        python3 avh_exec_test.py --project=$cprj_file > $target/test_result.stdio
-        python3 record_test_results.py --results=$target/test_result.stdio
+        cbuild $cprj_file > $target/build.log
+        python3 avh_exec_test.py --project=$cprj_file > $target/test_result.log
+        python3 record_test_results.py --results=$target/test_result.log
     done
 done
