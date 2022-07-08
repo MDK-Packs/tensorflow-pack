@@ -7,7 +7,7 @@ mkdir ./tensorflow-pack/tensorflow-test-ng/Source
 
 for inventory in $inventory_list; do
     python3 ./tensorflow-pack/tensorflow-test-ng/copy_sources.py \
-    --tflm_path=./tensorflow \
+    --tflm_path=./tensorflow-pack/tensorflow-build/rel/mlplatform/core_software/tflite_micro \
     --inventory=./tensorflow-pack/tensorflow-test-ng/$inventory \
     --out_path=./tensorflow-pack/tensorflow-test-ng/Source
 done
