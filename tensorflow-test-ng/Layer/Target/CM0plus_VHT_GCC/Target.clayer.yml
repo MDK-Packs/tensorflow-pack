@@ -19,7 +19,6 @@ layer:
   misc:
     - Link:
       - --specs=nosys.specs
-      - --specs=nano.specs
       - --gc-sections
 
   groups:
