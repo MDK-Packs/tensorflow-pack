@@ -69,7 +69,7 @@ def main():
             db.execute("INSERT INTO results VALUES ('"+package+"','"+test_name+"', '"+compiler+"','"+cvariant+"', '"+cpu+"', '"+test_ok+"')")
     if testcount == 0:
         print("No tests found - package failed")
-        db.execute("INSERT INTO results VALUES ('"+package+"','ALL_TESTS', '"+compiler+"','"+cvariant+"', '"+cpu+"', 'false')")
+        db.execute("INSERT INTO results VALUES ('"+package+"','ALL_TESTS', '"+compiler+"','"+cvariant+"', '"+cpu+"', 'False')")
     #commit changes
     conn.commit()
     #close connection

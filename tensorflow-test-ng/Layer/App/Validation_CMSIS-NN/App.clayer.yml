@@ -20,6 +20,8 @@ layer:
       - -Wno-macro-redefined
       - -Wno-pragma-pack
       - -Wno-parentheses-equality
+      - -fno-rtti 
+      - -fno-exceptions
 
   components:
     # [Cvendor::]Cclass[&Cbundle]:Cgroup[:Csub][&Cvariant][@[>=]Cversion]

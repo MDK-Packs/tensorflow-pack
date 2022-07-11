@@ -8,11 +8,6 @@ layer:
   #add-paths:
   #    - ../../../Include
 
-  misc:
-    - C*:
-      - -Wno-macro-redefined
-      - -Wno-pragma-pack
-      - -Wno-parentheses-equality
   groups:
 
     - group: Unit Test Source files
