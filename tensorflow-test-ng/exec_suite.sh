@@ -12,10 +12,13 @@ done
 for folder in ./gen/*; do
     for target in $folder/*; do
         #find .cprj file in target folder
-        cprj_file=$(find $target -name "*.cprj")  
-        echo "Building: " $cprj_file
-        cbuild $cprj_file > $target/build.log
-        python3 avh_exec_test.py --project=$cprj_file > $target/test_result.log
-        python3 record_test_results.py --results=$target/test_result.log
+        cprj_file=$(find $target -name "*.cprj")
+        #if cprj file exists
+        if [ -f "$cprj_file" ]; then
+          echo "Building: " $cprj_file
+          cbuild $cprj_file > $target/build.log
+          python3 avh_exec_test.py --project=$cprj_file > $target/test_result.log
+          python3 record_test_results.py --results=$target/test_result.log
+        fi
     done
 done
