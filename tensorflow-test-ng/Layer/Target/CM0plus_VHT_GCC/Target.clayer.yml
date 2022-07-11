@@ -16,6 +16,10 @@ layer:
     - component: Keil::Board Support&V2M-MPS2:Common
     - component: Keil::CMSIS Driver:USART
 
+  misc:
+    - Link:
+      - --specs=nosys.specs
+
   groups:
     - group: VHT
       files:
