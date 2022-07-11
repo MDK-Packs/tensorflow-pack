@@ -23,6 +23,7 @@ layer:
       - -fno-unwind-tables
       - -ffunction-sections
       - -fdata-sections
+    - C:
       - -std=c11
     - CPP:
       - -fno-rtti 
