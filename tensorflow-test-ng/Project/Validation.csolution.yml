@@ -152,7 +152,7 @@ solution:
       misc:
         - compiler: GCC
           C: [-O1, -std=gnu99, -mapcs-frame, -mthumb-interwork]
-          Link: [-nostartfiles, -lm, -specs=nano.specs, --entry=Reset_Handler]
+          Link: [-lm, -specs=nosys.specs, --entry=Reset_Handler]
 
     - type: CMSIS-NN_AC6
       compiler: AC6
@@ -166,7 +166,7 @@ solution:
       misc:
         - compiler: GCC
           C: [-O1, -std=gnu99, -mapcs-frame, -mthumb-interwork, -masm-syntax-unified]
-          Link: [-nostartfiles, -lm, -specs=nano.specs, --entry=Reset_Handler]
+          Link: [-lm, -specs=nosys.specs, --entry=Reset_Handler]
 
   projects:
     - project: ./Validation.cproject.yml
