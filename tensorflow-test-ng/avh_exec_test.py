@@ -36,7 +36,7 @@ def main():
     output_xml = root.findall('./target/output')[0]
     executable_name = output_xml.get('name')
     output_path = os.path.join(basepath, output_xml.get('outdir'))
-    compiler_xml = root.findall('./compiler/compiler')[0]
+    compiler_xml = root.findall('./compilers/compiler')[0]
     compiler = compiler_xml.get('name')
     if compiler == "AC6":
         executable_name += ".axf"
