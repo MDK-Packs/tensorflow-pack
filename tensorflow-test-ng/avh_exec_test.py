@@ -34,8 +34,14 @@ def main():
     root = tree.getroot()
     #retrieve output path
     output_xml = root.findall('./target/output')[0]
-    executable_name = output_xml.get('name')+".axf"
+    executable_name = output_xml.get('name')
     output_path = os.path.join(basepath, output_xml.get('outdir'))
+    compiler_xml = root.findall('./compiler/compiler')[0]
+    compiler = compiler_xml.get('name')
+    if compiler == "AC6":
+        executable_name += ".axf"
+    else:
+        executable_name += ".elf"
     print(executable_name)
     # Check if outpath exists
     if not os.path.exists(output_path):
