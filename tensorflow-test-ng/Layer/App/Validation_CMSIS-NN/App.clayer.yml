@@ -34,13 +34,14 @@ layer:
 
   components:
     # [Cvendor::]Cclass[&Cbundle]:Cgroup[:Csub][&Cvariant][@[>=]Cversion]
-    - component: tensorflow::Machine Learning:TensorFlow:Kernel&Reference
+    - component: tensorflow::Machine Learning:TensorFlow:Kernel&CMSIS-NN
     - component: tensorflow::Machine Learning:TensorFlow:Kernel Utils
     - component: tensorflow::Machine Learning:TensorFlow:Testing
     - component: tensorflow::Data Exchange:Serialization:flatbuffers&tensorflow
     - component: tensorflow::Data Processing:Math:gemmlowp fixed-point&tensorflow
     - component: tensorflow::Data Processing:Math:kissfft&tensorflow
     - component: tensorflow::Data Processing:Math:ruy&tensorflow
+
 
   groups:
 
