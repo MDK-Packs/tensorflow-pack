@@ -6,7 +6,7 @@ for folder in ./gen/*; do
     # increment counter
     echo Package $folder
     # Generate test project
-    csolution convert -s $folder/Validation.csolution.yml -o $folder/
+    csolution convert -n -s $folder/Validation.csolution.yml -o $folder/
 done
 
 for folder in ./gen/*; do
