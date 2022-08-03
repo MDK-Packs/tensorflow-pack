@@ -1,0 +1,22 @@
+
+
+
+
+run:
+    sudo wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+    sudo tar -xvf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+    sudo mv gcc-arm-none-eabi-10-2020-q4-major /opt/gcc-arm-none-eabi-10-2020-q4-major
+    sudo ln -s /opt/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc /usr/bin/arm-none-eabi-gcc
+    wget https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Ftoolbox%2F0.10.2/cmsis-toolbox.sh
+    chmod +x cmsis-toolbox.sh
+    sudo ./cmsis-toolbox.sh <<EOI
+    /opt/cbuild
+    /home/ubuntu/packs
+    $(dirname $(which armclang 2>/dev/null))
+    $(dirname $(which armcc 2>/dev/null))
+    $(dirname $(which arm-none-eabi-gcc 2>/dev/null))
+           
+    EOI
+    source /opt/cbuild/etc/setup
+    cpackget -v init --pack-root /home/ubuntu/packs https://www.keil.com/pack/index.pidx
+    

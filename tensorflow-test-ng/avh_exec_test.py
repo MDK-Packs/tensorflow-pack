@@ -17,7 +17,7 @@ vhtdict = {
 def main():
 #get argument from command line
     parser = argparse.ArgumentParser(
-        description="Copy test sources from tensorflow repo to sources in test package.")
+        description="Execute a test package on the correct VHT.")
     # add the --project option
     parser.add_argument("--project", type=str, default=os.path.curdir,
                         help="CPRJ with test")
@@ -34,8 +34,14 @@ def main():
     root = tree.getroot()
     #retrieve output path
     output_xml = root.findall('./target/output')[0]
-    executable_name = output_xml.get('name')+".axf"
+    executable_name = output_xml.get('name')
     output_path = os.path.join(basepath, output_xml.get('outdir'))
+    compiler_xml = root.findall('./compilers/compiler')[0]
+    compiler = compiler_xml.get('name')
+    if compiler == "AC6":
+        executable_name += ".axf"
+    else:
+        executable_name += ".elf"
     print(executable_name)
     # Check if outpath exists
     if not os.path.exists(output_path):
@@ -44,7 +50,7 @@ def main():
     target_xml = root.findall('./target')[0]
     device_name = target_xml.get('Dname')
     print(device_name, "executed on ", vhtdict[device_name])
-    os.system(vhtdict[device_name] + "	--timelimit=10 -a " + output_path + "/" + executable_name)
+    os.system(vhtdict[device_name] + "	--timelimit=5 -a " + output_path + "/" + executable_name)
 
 if __name__ == '__main__':
     main()

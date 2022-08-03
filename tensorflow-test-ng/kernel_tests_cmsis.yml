@@ -195,9 +195,9 @@ kernel_unit_tests:
     - zeros_like_test:
       sources: 
       - tensorflow/lite/micro/kernels/zeros_like_test.cc 
-    - lanner/greedy_memory_planner_test:
+    - greedy_memory_planner_test:
       sources: 
       - tensorflow/lite/micro/memory_planner/greedy_memory_planner_test.cc 
-    - lanner/linear_memory_planner_te:
+    - linear_memory_planner_test:
       sources: 
       - tensorflow/lite/micro/memory_planner/linear_memory_planner_test.c
