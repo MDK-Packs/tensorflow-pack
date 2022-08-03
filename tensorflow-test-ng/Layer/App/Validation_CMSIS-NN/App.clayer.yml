@@ -35,9 +35,12 @@ layer:
   components:
     # [Cvendor::]Cclass[&Cbundle]:Cgroup[:Csub][&Cvariant][@[>=]Cversion]
     - component: tensorflow::Machine Learning:TensorFlow:Kernel&CMSIS-NN
+    - component: ARM::CMSIS:NN Lib
+    - component: ARM::CMSIS:DSP&Source
 
   groups:
 
     - group: Source files
       files:
         - file: ./retarget_stdio.c
+        - file: ./arm_nn_softmax_common_s8.c

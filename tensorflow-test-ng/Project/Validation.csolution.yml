@@ -144,28 +144,28 @@ solution:
       compiler: AC6
       misc:
         - compiler: AC6  
-          C: [-O1, -std=c99, -gdwarf-4, -ffunction-sections]
+          C: [-Os, -std=c99, -gdwarf-4, -ffunction-sections]
           Link: [--entry=Reset_Handler]
 
     - type: Reference_GCC
       compiler: GCC
       misc:
         - compiler: GCC
-          C: [-O1, -std=gnu99, -mapcs-frame, -mthumb-interwork]
+          C: [-Os, -std=gnu99, -mapcs-frame, -mthumb-interwork]
           Link: [-lm, -specs=nosys.specs, --entry=Reset_Handler]
 
     - type: CMSIS-NN_AC6
       compiler: AC6
       misc:
         - compiler: AC6  
-          C: [-O1, -std=c99, -gdwarf-4, -ffunction-sections]
+          C: [-Os, -std=c99, -gdwarf-4, -ffunction-sections]
           Link: [--entry=Reset_Handler]
           
     - type: CMSIS-NN_GCC
       compiler: GCC
       misc:
         - compiler: GCC
-          C: [-O1, -std=gnu99, -mapcs-frame, -mthumb-interwork, -masm-syntax-unified]
+          C: [-Os, -std=gnu99, -mapcs-frame, -mthumb-interwork, -masm-syntax-unified]
           Link: [-lm, -specs=nosys.specs, --entry=Reset_Handler]
 
   projects:
