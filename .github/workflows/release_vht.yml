@@ -85,6 +85,7 @@ jobs:
         run: |
           ./tensorflow-pack/tensorflow-test-ng/test_r.sh
           pip install git+https://github.com/ARM-software/avhclient.git@v0.1
+          mkdir ${{ github.workspace }}/tensorflow-pack/tensorflow-test-ng/out/
           cp ${{ github.workspace }}/out/*.pack ${{ github.workspace }}/tensorflow-pack/tensorflow-test-ng/out/   
           avhclient -b aws execute --specfile tensorflow-pack/tensorflow-test-ng/avh.yml
 
