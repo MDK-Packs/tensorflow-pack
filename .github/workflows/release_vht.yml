@@ -92,5 +92,5 @@ jobs:
       - name: Upload Test Reports
         uses: actions/upload-artifact@v2
         with:
-          path: ${{ github.workspace }}/tensorflow-pack/**/test_results.db
+          path: ${{ github.workspace }}/tensorflow-pack/**/test_results.*
 

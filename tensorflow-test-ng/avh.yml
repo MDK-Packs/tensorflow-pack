@@ -39,10 +39,11 @@ steps:
      cpackget add Keil.V2M-MPS2_IOTKit_BSP.1.5.0 -a
      cpackget add ARM.V2M_MPS3_SSE_300_BSP.1.3.0 -a
 
-     ./exec_suite.sh
+     ./exec_suite.sh > test_results.log
 
 download:
   - tensorflow-pack/tensorflow-test-ng/test_results.db
+  - tensorflow-pack/tensorflow-test-ng/test_results.log
 
 
 
