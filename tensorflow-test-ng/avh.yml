@@ -2,7 +2,7 @@ name: "TensorFlow Lite Micro Unit tests"
 workdir: ./
 backend:
   aws:
-    ami-version: ~=1.3
+    ami-version: ==1.2.3
     instance-type: c5.4xlarge
 upload:
   - tensorflow-pack/tensorflow-test-ng/**/*
