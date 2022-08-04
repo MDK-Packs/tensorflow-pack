@@ -83,7 +83,7 @@ jobs:
           AWS_SUBNET_ID: ${{ secrets.AWS_SUBNET_ID }}
         
         run: |
-          ${{ github.workspace }}/tensorflow-pack/tensorflow-test-ng/test_r.sh
+          ./tensorflow-pack/tensorflow-test-ng/test_r.sh
           pip install git+https://github.com/ARM-software/avhclient.git@v0.1
           cp ${{ github.workspace }}/out ${{ github.workspace }}/tensorflow-pack/tensorflow-test-ng/out/   
           avhclient -b aws execute --specfile tensorflow-pack/tensorflow-test-ng/avh.yml
