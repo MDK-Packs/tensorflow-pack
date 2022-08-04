@@ -43,7 +43,7 @@ steps:
 
 download:
   - tensorflow-pack/tensorflow-test-ng/test_results.db
-  - tensorflow-pack/tensorflow-test-ng/test_results.log
+  - test_results.log
 
 
 
