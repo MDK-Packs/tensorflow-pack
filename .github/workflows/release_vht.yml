@@ -71,12 +71,28 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           path: ${{ github.workspace }}/out
-          
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+
+      - name: Run unit tests on AVH@AWS
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+          AWS_S3_BUCKET_NAME: ${{ secrets.AWS_S3_BUCKET_NAME }}
+          AWS_IAM_PROFILE: ${{ secrets.AWS_IAM_PROFILE }}
+          AWS_SECURITY_GROUP_ID: ${{ secrets.AWS_SECURITY_GROUP_ID }}
+          AWS_SUBNET_ID: ${{ secrets.AWS_SUBNET_ID }}
         
-    #  - name: Upload Test Reports
-    #    uses: actions/upload-artifact@v2
-    #    with:
-    #      path: ${{ github.workspace }}/tensorflow-pack/**/*.junit
+        run: |
+          pip install git+https://github.com/ARM-software/avhclient.git@v0.1
+          avhclient -b aws execute --specfile tensorflow-pack/tensorflow-test-ng/avh.yml
+
+      - name: Upload Test Reports
+        uses: actions/upload-artifact@v2
+        with:
+          path: ${{ github.workspace }}/tensorflow-pack/**/test_results.db
 
