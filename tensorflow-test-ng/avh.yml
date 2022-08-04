@@ -5,8 +5,11 @@ backend:
     ami-version: ==1.2.3
     instance-type: c5.4xlarge
 upload:
-  - tensorflow-pack/tensorflow-test-ng/**/*
-
+  - gen/**/*
+  - out/**/*
+  - avh_exec_test.py
+  - exec_suite.sh
+  - record_test_results.py
 
 steps:
   - run: |
@@ -36,8 +39,6 @@ steps:
      cpackget add Keil.V2M-MPS2_IOTKit_BSP.1.5.0 -a
      cpackget add ARM.V2M_MPS3_SSE_300_BSP.1.3.0 -a
 
-     ./tensorflow-pack/tensorflow-test-ng/test_r.sh 
-     cd tensorflow-pack/tensorflow-test-ng/
      ./exec_suite.sh
 
 download:
