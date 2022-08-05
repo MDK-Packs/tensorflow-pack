@@ -9,6 +9,7 @@ upload:
   - out/**/*
   - Layer/**/*
   - Project/**/*
+  - Source/**/*
   - avh_exec_test.py
   - exec_suite.sh
   - record_test_results.py
