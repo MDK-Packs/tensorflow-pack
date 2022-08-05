@@ -7,6 +7,8 @@ backend:
 upload:
   - gen/**/*
   - out/**/*
+  - Layer/**/*
+  - Project/**/*
   - avh_exec_test.py
   - exec_suite.sh
   - record_test_results.py
