@@ -16,7 +16,7 @@ for folder in ./gen/*; do
         #if cprj file exists
         if [ -f "$cprj_file" ]; then
           echo "Building: " $cprj_file
-          cbuild $cprj_file > $target/build.log
+          cbuild $cprj_file #> $target/build.log
           python3 avh_exec_test.py --project=$cprj_file > $target/test_result.log
           python3 record_test_results.py --results=$target/test_result.log
         fi
