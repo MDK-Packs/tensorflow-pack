@@ -31,15 +31,15 @@ steps:
      EOI
      source /opt/cbuild/etc/setup
      cpackget -v init --pack-root /home/ubuntu/packs https://www.keil.com/pack/index.pidx
-     cpackget add tensorflow.tensorflow-lite-micro.1.22.5-rc4 -a
-     cpackget add tensorflow.flatbuffers.1.22.5-rc4 -a
-     cpackget add tensorflow.ruy.1.22.5-rc4 -a
-     cpackget add tensorflow.gemmlowp.1.22.5-rc4 -a
-     cpackget add tensorflow.kissfft.1.22.5-rc4 -a
-     cpackget add Keil.V2M-MPS2_CMx_BSP.1.8.0 -a
-     cpackget add Keil.V2M-IOTKit_BSP.1.5.0 -a
-     cpackget add Keil.V2M-MPS2_IOTKit_BSP.1.5.0 -a
-     cpackget add ARM.V2M_MPS3_SSE_300_BSP.1.3.0 -a
+     cpackget pack add tensorflow.tensorflow-lite-micro.1.22.5-rc4 -a
+     cpackget pack add tensorflow.flatbuffers.1.22.5-rc4 -a
+     cpackget pack add tensorflow.ruy.1.22.5-rc4 -a
+     cpackget pack add tensorflow.gemmlowp.1.22.5-rc4 -a
+     cpackget pack add tensorflow.kissfft.1.22.5-rc4 -a
+     cpackget pack add Keil.V2M-MPS2_CMx_BSP.1.8.0 -a
+     cpackget pack add Keil.V2M-IOTKit_BSP.1.5.0 -a
+     cpackget pack add Keil.V2M-MPS2_IOTKit_BSP.1.5.0 -a
+     cpackget pack add ARM.V2M_MPS3_SSE_300_BSP.1.3.0 -a
 
      ./exec_suite.sh > test_results.log 2>&1
 
