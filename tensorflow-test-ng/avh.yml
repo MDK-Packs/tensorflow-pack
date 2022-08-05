@@ -4,7 +4,6 @@ backend:
   aws:
     ami-version: ==1.2.3
     instance-type: c5.4xlarge
-    terminate: false
 upload:
   - gen/**/*
   - out/**/*
