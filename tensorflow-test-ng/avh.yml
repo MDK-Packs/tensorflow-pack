@@ -45,7 +45,7 @@ steps:
      ./exec_suite.sh > test_results.log 2>&1
 
 download:
-  - tensorflow-pack/tensorflow-test-ng/test_results.db
+  - test_results.db
   - test_results.log
 
 
