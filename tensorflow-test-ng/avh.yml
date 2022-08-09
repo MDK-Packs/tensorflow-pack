@@ -3,7 +3,7 @@ workdir: ./
 backend:
   aws:
     ami-version: ==1.2.3
-    instance-type: c5.16xlarge
+    instance-type: c5a.16xlarge
 upload:
   - gen/**/*
   - out/**/*
