@@ -88,6 +88,7 @@ jobs:
           mkdir ${{ github.workspace }}/tensorflow-pack/tensorflow-test-ng/out/
           cp ${{ github.workspace }}/out/*.pack ${{ github.workspace }}/tensorflow-pack/tensorflow-test-ng/out/   
           avhclient -b aws execute --specfile tensorflow-pack/tensorflow-test-ng/avh.yml
+          ls tensorflow-pack/tensorflow-test-ng/test_results.db
 
       - name: Upload Test Reports
         uses: actions/upload-artifact@v2
