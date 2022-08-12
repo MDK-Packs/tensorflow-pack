@@ -3,7 +3,7 @@ workdir: ./
 backend:
   aws:
     ami-version: ==1.2.3
-    instance-type: c5a.16xlarge
+    instance-type: c5.4xlarge
 upload:
   - gen/**/*
   - out/**/*
@@ -16,21 +16,20 @@ upload:
 
 steps:
   - run: |
-     sudo wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
-     sudo tar -xvf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
-     sudo mv gcc-arm-none-eabi-10-2020-q4-major /opt/gcc-arm-none-eabi-10-2020-q4-major
-     sudo ln -s /opt/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc /usr/bin/arm-none-eabi-gcc
-     wget https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Ftoolbox%2F0.10.2/cmsis-toolbox.sh
+     wget https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Ftoolbox%2F1.0.0/cmsis-toolbox.sh
      chmod +x cmsis-toolbox.sh
-     sudo ./cmsis-toolbox.sh <<EOI
+     cat <<EOF >>cmsis.in
      /opt/ctools
      /home/ubuntu/packs
-     $(dirname $(which armclang 2>/dev/null))
-     $(dirname $(which armcc 2>/dev/null))
-     /opt/gcc-arm-none-eabi-10-2020-q4-major/bin
-            
-     EOI
-     source /opt/cbuild/etc/setup
+     /opt/armcompiler/bin/
+
+
+     /root/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin]: /opt/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin/
+
+
+     EOF
+     ./cmsis-toolbox.sh < cmsis.in
+     source /opt/ctools/etc/setup
      cpackget -v init --pack-root /home/ubuntu/packs https://www.keil.com/pack/index.pidx
      cpackget pack add tensorflow.tensorflow-lite-micro.1.22.5-rc4 -a
      cpackget pack add tensorflow.flatbuffers.1.22.5-rc4 -a
