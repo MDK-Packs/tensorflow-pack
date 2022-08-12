@@ -16,19 +16,20 @@ upload:
 
 steps:
   - run: |
+     sudo wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+     sudo tar -xvf gcc-arm-none-eabi-10-2020-q4-major-x86_64-linux.tar.bz2
+     sudo mv gcc-arm-none-eabi-10-2020-q4-major /opt/gcc-arm-none-eabi-10-2020-q4-major
+     sudo ln -s /opt/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc /usr/bin/arm-none-eabi-gcc
      wget https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Ftoolbox%2F1.0.0/cmsis-toolbox.sh
      chmod +x cmsis-toolbox.sh
-     cat <<EOF >>cmsis.in
+     sudo ./cmsis-toolbox.sh <<EOI
      /opt/ctools
      /home/ubuntu/packs
-     /opt/armcompiler/bin/
-
-
-     /root/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin]: /opt/gcc-arm-11.2-2022.02-x86_64-arm-none-eabi/bin/
-
-
-     EOF
-     ./cmsis-toolbox.sh < cmsis.in
+     $(dirname $(which armclang 2>/dev/null))
+     $(dirname $(which armcc 2>/dev/null))
+     /opt/gcc-arm-none-eabi-10-2020-q4-major/bin
+            
+     EOI
      source /opt/ctools/etc/setup
      cpackget -v init --pack-root /home/ubuntu/packs https://www.keil.com/pack/index.pidx
      cpackget pack add tensorflow.tensorflow-lite-micro.1.22.5-rc4 -a
