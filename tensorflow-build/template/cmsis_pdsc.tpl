@@ -7,7 +7,7 @@
   <!-- web download link -->
   <url>https://github.com/MDK-Packs/tensorflow-pack/releases/download/%{RELEASE_VERSION}%/</url>
   <license>LICENSE</license>
-  <repository type="git">https://github/MDK-Packs/tensorflow-pack.git</repository>
+  <repository type="git">https://github.com/MDK-Packs/tensorflow-pack.git</repository>
   <releases>
     <release version="%{RELEASE_VERSION}%" date="%{RELEASE_DATE}%"> Latest release. </release>
     %{HISTORY}%
