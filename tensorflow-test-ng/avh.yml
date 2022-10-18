@@ -45,7 +45,6 @@ steps:
      ./exec_suite.sh > test_results.log 2>&1
 
 download:
-  - test_results.db
   - test_results.log
 
 
