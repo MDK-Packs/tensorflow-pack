@@ -49,9 +49,6 @@ jobs:
       - name: Get history of releases from github
         run: 
           python3 ./tensorflow-pack/tensorflow-build/get_releases.py ${{ secrets.GITHUB_TOKEN }} > ./tensorflow-pack/tensorflow-build/history.txt
-    
-      - name: Debug with tmate on failure
-        uses: mxschmitt/action-tmate@v3
 
       - name: Run the pack build with the revision specified
         run : 
