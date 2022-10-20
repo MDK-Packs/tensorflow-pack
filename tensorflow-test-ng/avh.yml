@@ -5,8 +5,7 @@ backend:
     ami-version: ==1.2.3
     instance-type: c5.4xlarge
 upload:
-  - gen/**/*
-  - out/**/*
+  - packs/**/*
   - Layer/**/*
   - Project/**/*
   - Source/**/*

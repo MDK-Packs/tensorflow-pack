@@ -1,0 +1,53 @@
+name: Test CI using Arm Virtual Hardware
+
+# Controls when the action will run. 
+on:
+  workflow_run:
+    workflows: ["Release CI"]
+    types:
+      - completed
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  test-tensorflow:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+
+      - name: Checkout tensorflow-build 
+        uses: actions/checkout@v2
+        with: 
+          repository: MDK-Packs/tensorflow-pack
+          path: tensorflow-pack
+
+      - name: Download artifacts from Release CI
+        uses: actions/download-artifact@v2
+        with:
+          name: tensorflow-pack-pack
+          path: tensorflow-pack/tensorflow-test-ng/packs  
+
+      - name: Run unit tests on AVH@AWS
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+          AWS_S3_BUCKET_NAME: ${{ secrets.AWS_S3_BUCKET }}
+          AWS_IAM_PROFILE: ${{ secrets.AWS_IAM_PROFILE }}
+          AWS_SECURITY_GROUP_ID: ${{ secrets.AWS_EC2_SECURITY_GROUP_ID }}
+          AWS_SUBNET_ID: ${{ secrets.AWS_SUBNET_ID }}
+        
+        run: |
+          ./tensorflow-pack/tensorflow-test-ng/test_r.sh
+          pip install git+https://github.com/ARM-software/avhclient.git@v0.1
+          mkdir ${{ github.workspace }}/tensorflow-pack/tensorflow-test-ng/out/
+          cp ${{ github.workspace }}/out/*.pack ${{ github.workspace }}/tensorflow-pack/tensorflow-test-ng/out/   
+          avhclient -b aws execute --specfile tensorflow-pack/tensorflow-test-ng/avh.yml
+          ls tensorflow-pack/tensorflow-test-ng/test_results.db
+
+      - name: Upload Test Reports
+        uses: actions/upload-artifact@v2
+        with:
+          path: ${{ github.workspace }}/tensorflow-pack/**/test_results.*

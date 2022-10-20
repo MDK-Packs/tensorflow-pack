@@ -1,6 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Release CI using Arm Virtual Hardware
+name: Release CI
 
 # Controls when the action will run. 
 on:
@@ -70,28 +68,7 @@ jobs:
       - name: Upload Pack
         uses: actions/upload-artifact@v2
         with:
+          name: tensorflow-pack-packs
           path: ${{ github.workspace }}/out
 
-      - name: Run unit tests on AVH@AWS
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
-          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
-          AWS_S3_BUCKET_NAME: ${{ secrets.AWS_S3_BUCKET }}
-          AWS_IAM_PROFILE: ${{ secrets.AWS_IAM_PROFILE }}
-          AWS_SECURITY_GROUP_ID: ${{ secrets.AWS_EC2_SECURITY_GROUP_ID }}
-          AWS_SUBNET_ID: ${{ secrets.AWS_SUBNET_ID }}
-        
-        run: |
-          ./tensorflow-pack/tensorflow-test-ng/test_r.sh
-          pip install git+https://github.com/ARM-software/avhclient.git@v0.1
-          mkdir ${{ github.workspace }}/tensorflow-pack/tensorflow-test-ng/out/
-          cp ${{ github.workspace }}/out/*.pack ${{ github.workspace }}/tensorflow-pack/tensorflow-test-ng/out/   
-          avhclient -b aws execute --specfile tensorflow-pack/tensorflow-test-ng/avh.yml
-          ls tensorflow-pack/tensorflow-test-ng/test_results.db
-
-      - name: Upload Test Reports
-        uses: actions/upload-artifact@v2
-        with:
-          path: ${{ github.workspace }}/tensorflow-pack/**/test_results.*
 
