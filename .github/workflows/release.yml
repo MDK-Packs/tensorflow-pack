@@ -66,9 +66,9 @@ jobs:
           cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/*.pack ${{ github.workspace }}/out/
 
       - name: Upload Pack
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact
         with:
-          name: tensorflow-pack-packs
+          name: tensorflow-pack-release
           path: ${{ github.workspace }}/out
 
 
