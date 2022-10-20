@@ -1,6 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Nightly CI using Arm Virtual Hardware
+name: Nightly CI
 
 # Controls when the action will run. 
 on:

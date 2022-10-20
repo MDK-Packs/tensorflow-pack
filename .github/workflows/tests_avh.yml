@@ -26,7 +26,7 @@ jobs:
       - name: Download artifacts from Release CI
         uses: actions/download-artifact@v2
         with:
-          name: tensorflow-pack-pack
+          name: tensorflow-pack-release
           path: tensorflow-pack/tensorflow-test-ng/packs  
 
       - name: Run unit tests on AVH@AWS
