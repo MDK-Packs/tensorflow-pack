@@ -24,7 +24,7 @@ jobs:
           path: tensorflow-pack
 
       - name: Download artifacts from Release CI
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact
         with:
           name: tensorflow-pack-release
           path: tensorflow-pack/tensorflow-test-ng/packs  
@@ -48,6 +48,6 @@ jobs:
           ls tensorflow-pack/tensorflow-test-ng/test_results.db
 
       - name: Upload Test Reports
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact
         with:
           path: ${{ github.workspace }}/tensorflow-pack/**/test_results.*
