@@ -1,2 +1,2 @@
-# ethos-u-core-driver
-Ethos-U Core Driver
+# tflite-er-profiler
+TFLite Micro Event Recorder Profiler
