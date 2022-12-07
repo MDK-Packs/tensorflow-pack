@@ -66,6 +66,10 @@ jobs:
       - name: Copy 3rdparty packs to out path
         run :  
           cp ${{ github.workspace }}/tensorflow-pack/3rdparty-build/*.pack ${{ github.workspace }}/out/
+          
+      - name: Get all generated PDSC files for artifact upload
+        run :
+          find ${{ github.workspace }}/tensorflow-pack/ -name '*.pdsc' -exec cp -prv '{}' '${{ github.workspace }}/out/' ';'
 
       - name: Upload Pack
         uses: actions/upload-artifact@v3
