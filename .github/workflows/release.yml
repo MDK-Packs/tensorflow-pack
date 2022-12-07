@@ -14,7 +14,7 @@ on:
         required: false
         default: '' 
 
-run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
+run-name: mlplatform.org revision build from ${{ inputs.revision }} ${{ inputs.candidate_rev }} launched by @${{ github.actor }}
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
