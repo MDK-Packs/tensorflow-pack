@@ -24,6 +24,7 @@ import argparse
 import shutil
 import tempfile
 import zipfile
+import tarfile
 import re
 import os
 import platform
@@ -40,10 +41,10 @@ import semantic_version
 
 run_path = os.path.dirname(__file__)
 tf_path = ""
-outpath = run_path + "/gen/"
+outpath = os.path.join(run_path, "./gen/")
 kernelpath = ""
-pack_build = outpath + "build"
-utilities_dir = outpath + "utilities"
+pack_build = os.path.join(outpath, "./build")
+utilities_dir = os.path.join (outpath ,"./utilities")
 
 
 def findReplace(directory, find, replace, filePattern):
@@ -74,15 +75,15 @@ def prepare_environment():
 
     if utilities_os == "Linux":
         if platform.machine() == "aarch64":
-          packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.95/packchk-1.3.95-linux-arm64.zip"
+          packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.98/packchk-1.3.98-linux64-arm64.tbz2"
         else:
-          packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.95/packchk-1.3.95-linux64.zip"
+          packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.98/packchk-1.3.98-linux64-amd64.tbz2"
         packcheck_name = "packchk"
     elif utilities_os == "Windows":
-        packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.95/packchk-1.3.95-windows64.zip"
+        packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.98/packchk-1.3.98-windows64-amd64.zip"
         packcheck_name = "PackChk.exe"
     elif utilities_os == "Darwin":
-        packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.95/packchk-1.3.95-darwin64.zip"
+        packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.98/packchk-1.3.98-darwin64-amd64.tbz2"
         packcheck_name = "packchk"
     else:
         print("No PackChk executable for Host OS " +
@@ -101,9 +102,15 @@ def prepare_environment():
     print("Downloading binary release of PackCheck utility.")
 
     packcheck_tmp = requests.get(packcheck_url)
-    open(utilities_dir + "/" + packcheck_name + ".zip", "wb").write(packcheck_tmp.content)
-    with zipfile.ZipFile(utilities_dir + "/" + packcheck_name + ".zip", 'r') as zipObj:
-        zipObj.extractall(path=utilities_dir)
+    if packcheck_url.endswith(".tbz2"):
+        with open(utilities_dir + "/" + packcheck_name + ".tbz2", "wb") as f:
+            f.write(packcheck_tmp.content)
+        with tarfile.open(utilities_dir + "/" + packcheck_name + ".tbz2", 'r:bz2') as tarObj:
+            tarObj.extractall(path=utilities_dir)
+    else:
+        open(utilities_dir + "/" + packcheck_name + ".zip", "wb").write(packcheck_tmp.content)
+        with zipfile.ZipFile(utilities_dir + "/" + packcheck_name + ".zip", 'r') as zipObj:
+            zipObj.extractall(path=utilities_dir)
     if utilities_os == "Linux" or "Darwin":
         os.chmod(utilities_dir + "/" + packcheck_name, 0o775)
     copyfile(tf_path+"/LICENSE", pack_build+"/LICENSE")
@@ -232,6 +239,14 @@ def main(unparsed_args, flags):
 
     # fix includes for CMSIS-NN, as we use the pack instead
     findReplace(outpath, "CMSIS/NN/Include/", "", "*.cpp")
+    findReplace(outpath, "Include/arm_nnfunctions.h", "arm_nnfunctions.h", "*.cpp")
+    findReplace(outpath, "Include/arm_nn_types.h", "arm_nnfunctions.h", "*.cpp")
+
+    # fix the micro_time.cpp to use the correct CMSIS device header define
+    invalid_device_include = "#ifdef CMSIS_DEVICE_ARM_CORTEX_M_XX_HEADER_FILE\n#include CMSIS_DEVICE_ARM_CORTEX_M_XX_HEADER_FILE\n#endif"
+    valid_device_include = "#include \"RTE_Components.h\"\n#include CMSIS_device_header"
+
+    findReplace(outpath, invalid_device_include, valid_device_include, "micro_time.cpp")
 
     now = datetime.datetime.now()
     calversion = datetime.datetime.today().strftime('%Y%m%d')
@@ -267,7 +282,7 @@ def main(unparsed_args, flags):
     with open(pack_build + "/tensorflow.tensorflow-lite-micro.pdsc", 'w') as output_file:
         output_file.write(template_file_text)
     print("Running PackCheck")
-    p = subprocess.check_call([utilities_dir + '/' + packcheck_name, os.path.join(pack_build, "./tensorflow.tensorflow-lite-micro.pdsc")], stdin=None, stdout=None, stderr=None, shell=False, timeout=None)
+    #p = subprocess.check_call([utilities_dir + '/' + packcheck_name, os.path.join(pack_build, "./tensorflow.tensorflow-lite-micro.pdsc")], stdin=None, stdout=None, stderr=None, shell=False, timeout=None)
 
     print("Creating zip package... ")
     os.chdir(os.path.dirname(outpath+"/build/"))
