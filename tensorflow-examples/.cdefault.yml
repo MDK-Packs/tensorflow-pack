@@ -1,0 +1,49 @@
+default:
+  compiler: GCC
+
+  misc:
+    - for-compiler: GCC
+      CPP: 
+        - -std=c++11
+        - -fno-rtti
+        - -fno-threadsafe-statics
+      C:
+        - -std=gnu11
+      C-CPP:
+        - -mlittle-endian
+        - -mthumb
+        - -MD
+        - -Wswitch
+        - -Wvla
+        - -fmessage-length=0
+        - -fdata-sections
+        - -ffunction-sections
+        - -fno-exceptions
+        - -fno-unwind-tables
+        - -fomit-frame-pointer
+        - -funsigned-char
+      Link:
+        - --specs=nano.specs
+        - --specs=rdimon.specs
+        - -Wl,--gc-sections
+
+    - for-compiler: AC6
+      C-CPP:
+        - -ffunction-sections
+        - -Wno-macro-redefined
+        - -Wno-pragma-pack
+        - -Wno-parentheses-equality
+      C:
+        - -std=gnu11
+      ASM:
+        - -masm=auto
+      Link:
+        - --entry=Reset_Handler
+        - --info summarysizes
+        - --map
+
+    - for-compiler: IAR
+      C-CPP:
+        - --dlib_config DLib_Config_Full.h
+      Link:
+        - --semihosting

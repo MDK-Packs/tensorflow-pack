@@ -13,19 +13,19 @@ fi
 
 # Build Ethos-U driver pack
 python3 gen_pack.py --path ethos-u-driver --version 1.$1  --candidate_rev=$2 --history=../../tensorflow-pack/tensorflow-build/history.txt
-cp ./ethos-u-driver/build/*.pack ./
+cp ./ethos-u-driver/build/*.pack ../out
 # Build flatbuffers pack
 python3 gen_pack.py --path flatbuffers --version 1.$1 --candidate_rev=$2 --history=../../tensorflow-pack/tensorflow-build/history.txt
-cp ./flatbuffers/build/*.pack ./
+cp ./flatbuffers/build/*.pack ../out
 # Build gemmlowp pack
 python3 gen_pack.py --path gemmlowp --version 1.$1 --candidate_rev=$2 --history=../../tensorflow-pack/tensorflow-build/history.txt
-cp ./gemmlowp/build/*.pack ./
+cp ./gemmlowp/build/*.pack ../out
 # Build ruy pack
 python3 gen_pack.py --path ruy --version 1.$1 --candidate_rev=$2 --history=../../tensorflow-pack/tensorflow-build/history.txt
-cp ./ruy/build/*.pack ./
+cp ./ruy/build/*.pack ../out
 # Build kissfft pack
 python3 gen_pack.py --path kissfft --version 1.$1 --candidate_rev=$2 --history=../../tensorflow-pack/tensorflow-build/history.txt
-cp ./kissfft/build/*.pack ./
+cp ./kissfft/build/*.pack ../out
 
 
 

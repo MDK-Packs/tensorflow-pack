@@ -22,7 +22,6 @@ from shutil import copyfile
 
 import argparse
 import shutil
-import tempfile
 import zipfile
 import tarfile
 import re
@@ -30,11 +29,8 @@ import os
 import platform
 import six
 import requests
-import subprocess
 import zipfile
 import datetime
-from os import listdir
-from os.path import isfile, join
 import fnmatch
 import semantic_version
 
@@ -44,7 +40,7 @@ tf_path = ""
 outpath = os.path.join(run_path, "./gen/")
 kernelpath = ""
 pack_build = os.path.join(outpath, "./build")
-utilities_dir = os.path.join (outpath ,"./utilities")
+utilities_dir = os.path.join(outpath, "./utilities")
 
 
 def findReplace(directory, find, replace, filePattern):
@@ -53,18 +49,22 @@ def findReplace(directory, find, replace, filePattern):
             filepath = os.path.join(path, filename)
             with open(filepath) as f:
                 s = f.read()
-            s = s.replace(find, replace)
-            with open(filepath, "w") as f:
-                f.write(s)
+            new_s = s.replace(find, replace)
+            if s != new_s:
+                print("Replacing " + find + " with " + replace + " in " + filepath)
+                with open(filepath, "w") as f:
+                    f.write(new_s)
 
 
 def sanitize_xml(unsanitized):
     """Uses a whitelist to avoid generating bad XML."""
     return re.sub(r'[^a-zA-Z0-9+_\-/\\.]', '', six.ensure_str(unsanitized))
 
+
 def sanitize_SemVer(unsanitized):
     """Uses a whitelist to avoid generating bad SemVer."""
     return str(semantic_version.Version.coerce(unsanitized))
+
 
 def prepare_environment():
     global packcheck_name
@@ -75,9 +75,9 @@ def prepare_environment():
 
     if utilities_os == "Linux":
         if platform.machine() == "aarch64":
-          packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.98/packchk-1.3.98-linux64-arm64.tbz2"
+            packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.98/packchk-1.3.98-linux64-arm64.tbz2"
         else:
-          packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.98/packchk-1.3.98-linux64-amd64.tbz2"
+            packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.98/packchk-1.3.98-linux64-amd64.tbz2"
         packcheck_name = "packchk"
     elif utilities_os == "Windows":
         packcheck_url = "https://github.com/Open-CMSIS-Pack/devtools/releases/download/tools%2Fpackchk%2F1.3.98/packchk-1.3.98-windows64-amd64.zip"
@@ -93,11 +93,11 @@ def prepare_environment():
     print("Preparing build environment directories.")
 
     if os.path.lexists(outpath) is False:
-      os.makedirs(outpath)
+        os.makedirs(outpath)
     if os.path.lexists(pack_build) is False:
-      os.makedirs(pack_build)
+        os.makedirs(pack_build)
     if os.path.lexists(utilities_dir) is False:
-      os.mkdir(utilities_dir)
+        os.mkdir(utilities_dir)
 
     print("Downloading binary release of PackCheck utility.")
 
@@ -108,12 +108,14 @@ def prepare_environment():
         with tarfile.open(utilities_dir + "/" + packcheck_name + ".tbz2", 'r:bz2') as tarObj:
             tarObj.extractall(path=utilities_dir)
     else:
-        open(utilities_dir + "/" + packcheck_name + ".zip", "wb").write(packcheck_tmp.content)
+        open(utilities_dir + "/" + packcheck_name +
+             ".zip", "wb").write(packcheck_tmp.content)
         with zipfile.ZipFile(utilities_dir + "/" + packcheck_name + ".zip", 'r') as zipObj:
             zipObj.extractall(path=utilities_dir)
     if utilities_os == "Linux" or "Darwin":
         os.chmod(utilities_dir + "/" + packcheck_name, 0o775)
     copyfile(tf_path+"/LICENSE", pack_build+"/LICENSE")
+
 
 def get_version():
     test_str = open(tf_path + "/tensorflow/tools/pip_package/setup.py").read()
@@ -122,10 +124,11 @@ def get_version():
     ret = matches.group().replace("'", "")
     return ret
 
+
 def make_component_file_list(srcs_list):
     replace_srcs = ""
     srcs_list = set(srcs_list)
-    #create a new list for include pathes
+    # create a new list for include pathes
     include_list = []
     for src in srcs_list:
         src = src.split("\n")[0]
@@ -133,14 +136,14 @@ def make_component_file_list(srcs_list):
             continue
         ext = os.path.splitext(src)[1]
         if ext == '.h':
-            incdir = os.path.dirname (src)
+            incdir = os.path.dirname(src)
             include_list.append(incdir)
         elif ext == '.c':
             category = "sourceC"
-        elif ext == '.cc': 
-          src = src.replace(".cc", ".cpp")
-          category = "sourceCpp"
-          print("Converting .cc to .cpp: " + src)
+        elif ext == '.cc':
+            src = src.replace(".cc", ".cpp")
+            category = "sourceCpp"
+            print("Converting .cc to .cpp: " + src)
         elif ext == '.cpp':
             category = "sourceCpp"
         else:
@@ -149,19 +152,20 @@ def make_component_file_list(srcs_list):
         clean_src = sanitize_xml(src)
         clean_src = clean_src.replace("'", "")
         if ext != ".h" and src != "tensorflow/lite/kernels/kernel_util.cpp" \
-          and src != "tensorflow/lite/micro/system_setup.cpp" \
-          and src != "tensorflow/lite/c/common.c" \
-          and src != "tensorflow/lite/micro/cortex_m_generic/micro_time.cpp" \
-          and src != "tensorflow/lite/micro/cortex_m_generic/debug_log.cpp" \
-          and src.endswith("_test.cc") == False:
+                and src != "tensorflow/lite/micro/system_setup.cpp" \
+                and src != "tensorflow/lite/c/common.c" \
+                and src != "tensorflow/lite/micro/cortex_m_generic/micro_time.cpp" \
+                and src != "tensorflow/lite/micro/cortex_m_generic/debug_log.cpp" \
+                and src != "tensorflow/lite/micro/recording_micro_allocator.cpp" \
+                and src.endswith("_test.cc") == False:
             replace_srcs += '        <file category=\"' + \
                 category + '\" name=\"' + src + '\"/> \n'
         dest_fpath = pack_build+'/'+src
-        #os.makedirs(os.path.dirname(dest_fpath), exist_ok=True)
-        #copyfile(tf_path+'/'+src, dest_fpath)
-        #print ("Copied " + src + " to " + dest_fpath)
+        # os.makedirs(os.path.dirname(dest_fpath), exist_ok=True)
+        # copyfile(tf_path+'/'+src, dest_fpath)
+        # print ("Copied " + src + " to " + dest_fpath)
     include_list = set(include_list)
-    print ("Extracted include directories ", include_list)
+    print("Extracted include directories ", include_list)
     for src in include_list:
         src = src.split("\\n")[0]
         print(src)
@@ -177,8 +181,9 @@ def make_component_file_list(srcs_list):
 def load_list_from_file(filename):
     with open(filename, "r") as lstfile:
         lines = lstfile.readlines()
-    lstfile.close();
+    lstfile.close()
     return lines
+
 
 def main(unparsed_args, flags):
     global tf_path
@@ -191,13 +196,13 @@ def main(unparsed_args, flags):
     print(kernelpath)
 
     prepare_environment()
-    #fix this one day:
-    #  subprocess.call(['sh', './tensorflow-pack/tensorflow-build/additionals.sh']) 
+    # fix this one day:
+    #  subprocess.call(['sh', './tensorflow-pack/tensorflow-build/additionals.sh'])
 
     # read file into string
     if flags.history != "":
-      with open(flags.history, "r") as history_file:
-          history_str = history_file.read()
+        with open(flags.history, "r") as history_file:
+            history_str = history_file.read()
 
     # get --srcs and --hdrs from arguments
     core_srcs_list = load_list_from_file(flags.srcs)
@@ -209,7 +214,7 @@ def main(unparsed_args, flags):
 
     # get --srcs and --hdrs from arguments
     util_srcs_list = load_list_from_file(flags.util_srcs)
-    #util_hdrs_list = load_list_from_file(flags.util_hdrs)
+    # util_hdrs_list = load_list_from_file(flags.util_hdrs)
     all_util_srcs_list = util_srcs_list  # + util_hdrs_list
     all_util_srcs_list.sort()
 
@@ -239,22 +244,25 @@ def main(unparsed_args, flags):
 
     # fix includes for CMSIS-NN, as we use the pack instead
     findReplace(outpath, "CMSIS/NN/Include/", "", "*.cpp")
-    findReplace(outpath, "Include/arm_nnfunctions.h", "arm_nnfunctions.h", "*.cpp")
-    findReplace(outpath, "Include/arm_nn_types.h", "arm_nnfunctions.h", "*.cpp")
+    findReplace(outpath, "Include/arm_nnfunctions.h",
+                "arm_nnfunctions.h", "*.cpp")
+    findReplace(outpath, "Include/arm_nn_types.h",
+                "arm_nnfunctions.h", "*.cpp")
 
     # fix the micro_time.cpp to use the correct CMSIS device header define
     invalid_device_include = "#ifdef CMSIS_DEVICE_ARM_CORTEX_M_XX_HEADER_FILE\n#include CMSIS_DEVICE_ARM_CORTEX_M_XX_HEADER_FILE\n#endif"
     valid_device_include = "#include \"RTE_Components.h\"\n#include CMSIS_device_header"
 
-    findReplace(outpath, invalid_device_include, valid_device_include, "micro_time.cpp")
+    findReplace(outpath, invalid_device_include,
+                valid_device_include, "*.cpp")
 
     now = datetime.datetime.now()
     calversion = datetime.datetime.today().strftime('%Y%m%d')
     tmpl_pdsc_date = now.strftime('%Y-%m-%d')
     if flags.release:
-      pack_version = flags.release
+        pack_version = flags.release
     if flags.candidate_rev:
-      pack_version = flags.release + "-" + flags.candidate_rev 
+        pack_version = flags.release + "-" + flags.candidate_rev
 
     pack_version = sanitize_SemVer(pack_version)
 
@@ -276,23 +284,42 @@ def main(unparsed_args, flags):
         r'%{RELEASE_VERSION}%', pack_version, template_file_text)
     template_file_text = re.sub(
         r'%{RELEASE_DATE}%', tmpl_pdsc_date, template_file_text)
-    template_file_text = re.sub( 
-        r'%{HISTORY}%', history_str, template_file_text)     
+    template_file_text = re.sub(
+        r'%{HISTORY}%', history_str, template_file_text)
 
     with open(pack_build + "/tensorflow.tensorflow-lite-micro.pdsc", 'w') as output_file:
         output_file.write(template_file_text)
     print("Running PackCheck")
-    #p = subprocess.check_call([utilities_dir + '/' + packcheck_name, os.path.join(pack_build, "./tensorflow.tensorflow-lite-micro.pdsc")], stdin=None, stdout=None, stderr=None, shell=False, timeout=None)
+    # p = subprocess.check_call([utilities_dir + '/' + packcheck_name, os.path.join(pack_build, "./tensorflow.tensorflow-lite-micro.pdsc")], stdin=None, stdout=None, stderr=None, shell=False, timeout=None)
 
     print("Creating zip package... ")
     os.chdir(os.path.dirname(outpath+"/build/"))
 
-    with zipfile.ZipFile("tensorflow.tensorflow-lite-micro."+pack_version+".pack", "w", zipfile.ZIP_DEFLATED, allowZip64=True) as zf:
-        for root, _, filenames in os.walk(os.path.basename(".")):
-            for name in filenames:
-                name = os.path.join(root, name)
-                name = os.path.normpath(name)
-                zf.write(name, name)
+    out_dir = "../../../out"
+
+    # Name of the ziped pack file
+    zip_filename = f"tensorflow.tensorflow-lite-micro.{pack_version}.pack"
+
+    # Check if the output directory exists, if not create it
+    if not os.path.exists(os.path.abspath(out_dir)):
+        os.makedirs(os.path.abspath(out_dir))
+
+    def zipdir(path, ziph):
+        # Add all files and folders in the path to the ziph
+        for root, dirs, files in os.walk(path):
+            for file in files:
+                # Exclude the zip file itself, if it is in the same folder
+                if file != zip_filename:
+                    ziph.write(os.path.join(root, file), os.path.relpath(
+                        os.path.join(root, file), path))
+
+    # Create the zip file
+    with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
+        zipdir(".", zipf)
+
+    # Move the zip file to the output directory
+    shutil.move(zip_filename, os.path.join(out_dir, zip_filename))
+
     print("Done.")
 
 
@@ -364,12 +391,12 @@ def parse_args():
         '--candidate_rev',
         type=str,
         default="",
-        help='Release candidate versioning, e.g. rc1, rc2, etc.')    
+        help='Release candidate versioning, e.g. rc1, rc2, etc.')
     parser.add_argument(
         '--history',
         type=str,
         default="",
-        help='Release history.')    
+        help='Release history.')
     parser.add_argument(
         '--tensorflow_path',
         type=str,
