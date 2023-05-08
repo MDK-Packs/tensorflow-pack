@@ -54,9 +54,9 @@ jobs:
         run : 
           ./tensorflow-pack/tensorflow-build/build_r.sh ${{ github.event.inputs.revision }} ${{ github.event.inputs.candidate_rev }}
 
-      - name: Copy tensorflow-pack to out path
-        run :  
-          cp ${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/build/*.pack ${{ github.workspace }}/out/
+      #- name: Copy tensorflow-pack to out path
+      #  run :  
+      #    cp ${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/build/*.pack ${{ github.workspace }}/out/
 
       - name: Run the 3rdparty pack build with the revision specified
         run : |
