@@ -56,7 +56,7 @@ jobs:
 
       #- name: Copy tensorflow-pack to out path
       #  run :  
-      #    cp ${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/build/*.pack ${{ github.workspace }}/out/
+      #    cp ${{ github.workspace }}/tensorflow-pack/out/*.pack ${{ github.workspace }}/out/
 
       - name: Run the 3rdparty pack build with the revision specified
         run : |
