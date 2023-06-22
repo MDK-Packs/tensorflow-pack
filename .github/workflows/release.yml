@@ -43,7 +43,7 @@ jobs:
       - name: Install tools
         run: |
           sudo apt install rsync
-          pip3 install pillow semantic-version six requests junit_xml pyyaml pygithub
+          pip3 install numpy pillow semantic-version six requests junit_xml pyyaml pygithub
           mkdir ${{ github.workspace }}/out/
 
       - name: Get history of releases from github
