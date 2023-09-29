@@ -6,11 +6,11 @@ on:
   workflow_dispatch:
     inputs:
       candidate_rev:
-        description: 'Release candidate revision'
+        description: 'Nightly build revision/date'
         required: false
-        default: '' 
+        default: '$(date +'%y%m%d')' 
 
-run-name: mlplatform.org revision ${{ inputs.revision }} to pack ${{ inputs.revision }}${{ inputs.candidate_rev }} by @${{ github.actor }}
+run-name: mlplatform.org nightly n$(date +'%y%m%d') to pack ${{ inputs.revision }}${{ inputs.candidate_rev }} by @${{ github.actor }}
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -41,7 +41,7 @@ jobs:
 
       - name: Run the pack build with the revision specified
         run : 
-          ./tensorflow-pack/tensorflow-build/build_d.sh $(date +'%y%m%d')
+          ./tensorflow-pack/tensorflow-build/build_d.sh n$(date +'%y%m%d')
 
       #- name: Copy tensorflow-pack to out path
       #  run :  
@@ -50,7 +50,7 @@ jobs:
       - name: Run the 3rdparty pack build with the revision specified
         run : |
           export PATH=$PATH:${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/utilities
-          ./tensorflow-pack/3rdparty-build/build_d.sh $(date +'%y%m%d')
+          ./tensorflow-pack/3rdparty-build/build_d.sh n$(date +'%y%m%d')
 
       - name: Copy packs to out path
         run :  
