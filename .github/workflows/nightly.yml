@@ -63,4 +63,11 @@ jobs:
           name: tensorflow-pack-release
           path: ${{ github.workspace }}/out
 
+      - name: Update nightly release
+        uses: eine/tip@master
+        with:
+          tag: nightly
+          rm: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: ${{ github.workspace }}/out/*.pack
 
