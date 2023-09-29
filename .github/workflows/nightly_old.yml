@@ -1,4 +1,4 @@
-name: Nightly CI
+name: Nightly CI (legacy)
 
 # Controls when the action will run. 
 on:
