@@ -4,11 +4,6 @@ name: Nightly CI
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    inputs:
-      candidate_rev:
-        description: 'Nightly build revision/date'
-        required: false
-        default: '$(date +'%y%m%d')' 
 
 run-name: mlplatform.org nightly n$(date +'%y%m%d') to pack ${{ inputs.revision }}${{ inputs.candidate_rev }} by @${{ github.actor }}
 
