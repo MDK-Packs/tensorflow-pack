@@ -13,6 +13,8 @@ releases = repo.get_releases()
 releases = releases    
 
 for release in releases:
+    if 'nightly' in release.title:
+        continue
     print("<release version=\""+release.title+"\" url=\"https://github.com/MDK-Packs/tensorflow-pack/releases/download/"+release.tag_name+"/tensorflow.tensorflow-lite-micro."+release.tag_name+".pack\" date=\""+release.created_at.strftime('%Y-%m-%d')+"\">" + release.body + "</release>")
 
 
