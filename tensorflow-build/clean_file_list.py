@@ -10,5 +10,5 @@ txt_file.close()
 no_dupes_list = list(dict.fromkeys(content_list))
 
 for filename in no_dupes_list:
-   if not "downloads" in filename and not "LICENSE" in filename:
+   if not filename.startswith("signal") and if not "downloads" in filename and not "LICENSE" in filename:
       print(filename)

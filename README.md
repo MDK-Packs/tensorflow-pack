@@ -13,11 +13,13 @@ Packages apt
 - wget
 - rsync
 - git
+- zip
 
 Packages pip
 - pillow
 - six
 - requests
+- semantic_version
 
 ## Start the pack build
 
