@@ -95,7 +95,7 @@
     </component>
      <!-- this component can be merged into the Kernel components, when duplicate module name issue is solved elsewhere -->
     <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Kernel Utils" Cversion="%{RELEASE_VERSION}%">
-      <description>TensorFlow Lite Micro Library</description>
+      <description>TensorFlow Lite Micro Library - Kernel Utilities</description>
       <files>
         <file category="sourceCpp" name="tensorflow/lite/kernels/kernel_util.cpp"/> 
         <file category="sourceCpp" name="tensorflow/lite/micro/system_setup.cpp" version="%{RELEASE_VERSION}%" attr="config"/>
@@ -105,7 +105,7 @@
       </files>
     </component>
     <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Testing" Cversion="%{RELEASE_VERSION}%">
-      <description>TensorFlow Lite Micro Library</description>
+      <description>TensorFlow Lite Micro Test Utilities</description>
       <RTE_Components_h>
         <!-- the following content goes into file 'RTE_Components.h' -->
         #define RTE_ML_TF_LITE     /* TF */
@@ -115,6 +115,16 @@
         <file category="include" name="./"/>
       </files>
     </component>
-
+    <component Cclass="Machine Learning" Cgroup="TensorFlow" Csub="Signal Library" Cvariant="Reference" Cversion="%{RELEASE_VERSION}%">
+      <description>TensorFlow Lite Micro Signal Library</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+        #define RTE_ML_TF_LITE     /* TF */
+      </RTE_Components_h>
+      <files>
+        %{SIGNAL_FILES_REFERENCE}%
+        <file category="include" name="./"/>
+      </files>
+    </component>
   </components>
 </package>

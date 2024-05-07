@@ -156,7 +156,6 @@ def make_component_file_list(srcs_list):
                 and src != "tensorflow/lite/c/common.c" \
                 and src != "tensorflow/lite/micro/cortex_m_generic/micro_time.cpp" \
                 and src != "tensorflow/lite/micro/cortex_m_generic/debug_log.cpp" \
-                and src != "tensorflow/lite/micro/recording_micro_allocator.cpp" \
                 and src.endswith("_test.cc") == False:
             replace_srcs += '        <file category=\"' + \
                 category + '\" name=\"' + src + '\"/> \n'
@@ -236,6 +235,14 @@ def main(unparsed_args, flags):
     all_test_srcs_list = test_srcs_list + test_hdrs_list
     all_test_srcs_list.sort()
 
+    # get signal library if exists ("signal.lst" alongside flags.srcs)
+    replace_signal_srcs = ""
+    if os.path.exists(flags.srcs.replace("srcs.", "signal.")):
+      signal_srcs_list = load_list_from_file(flags.srcs.replace("srcs.", "signal."))
+    replace_signal_srcs = make_component_file_list(signal_srcs_list)
+
+    print(replace_signal_srcs)
+
     replace_core_srcs = make_component_file_list(all_core_srcs_list)
     replace_util_srcs = make_component_file_list(all_util_srcs_list)
     replace_test_srcs = make_component_file_list(all_test_srcs_list)
@@ -280,6 +287,8 @@ def main(unparsed_args, flags):
         r'%{KERNEL_UTIL_FILES}%', replace_util_srcs, six.ensure_str(template_file_text))
     template_file_text = re.sub(
         r'%{TEST_FILES}%', replace_test_srcs, six.ensure_str(template_file_text))
+    template_file_text = re.sub(
+        r'%{SIGNAL_FILES_REFERENCE}%', replace_signal_srcs, six.ensure_str(template_file_text))
     template_file_text = re.sub(
         r'%{RELEASE_VERSION}%', pack_version, template_file_text)
     template_file_text = re.sub(

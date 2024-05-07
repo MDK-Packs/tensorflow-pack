@@ -1,0 +1,12 @@
+build-idx:
+  generated-by: csolution version 2.1.0
+  cdefault: ${CMSIS_COMPILER_ROOT}/cdefault.yml
+  csolution: HelloWorld.csolution.yml
+  cprojects:
+    - cproject: HelloWorld.cproject.yml
+      clayers:
+        - clayer: $Target-Layer$
+  cbuilds:
+    - cbuild: HelloWorld.size+CM55.cbuild.yml
+      project: HelloWorld
+      configuration: .size+CM55

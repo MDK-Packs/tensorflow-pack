@@ -1,0 +1,47 @@
+project:
+
+  debug: on
+
+  packs:
+    - pack: ARM::CMSIS
+    - pack: ARM::CMSIS-DSP
+    - pack: ARM::CMSIS-NN
+      # path: ../
+    - pack: ARM::Cortex_DFP
+      # path: ../
+    - pack: tensorflow::tensorflow-lite-micro
+    - pack: tensorflow::flatbuffers
+    - pack: tensorflow::gemmlowp
+    - pack: tensorflow::kissfft
+    - pack: tensorflow::ruy
+
+  add-path:
+    - ./hello_world
+
+  define:
+    - PROJECT_GENERATION: 1
+
+  components:
+    - component: ARM::CMSIS:DSP&Source
+    - component: ARM::CMSIS:NN Lib
+    - component: tensorflow::Data Exchange:Serialization:flatbuffers
+    - component: tensorflow::Data Processing:Math:gemmlowp fixed-point&tensorflow
+    - component: tensorflow::Data Processing:Math:kissfft&tensorflow
+    - component: tensorflow::Data Processing:Math:ruy&tensorflow
+    - component: tensorflow::Machine Learning:TensorFlow:Kernel&Reference
+    - component: tensorflow::Machine Learning:TensorFlow:Kernel Utils
+    - component: tensorflow::Machine Learning:TensorFlow:Testing
+    - component: ARM::CMSIS:CORE@6.0.0
+    - component: ARM::Device:Startup&C Startup
+
+  groups:
+    - group: TFL_main
+      files:
+        - file: ./hello_world/hello_world_test.cpp
+    - group: TFL_models
+      files:
+        - file: ./hello_world/models/hello_world_int8_model_data.cpp
+        - file: ./hello_world/models/hello_world_float_model_data.cpp
+
+  layers:
+    - layer: $Target-Layer$

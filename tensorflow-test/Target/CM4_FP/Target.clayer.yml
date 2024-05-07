@@ -1,0 +1,15 @@
+layer:
+  type: Target
+  description: Cortex-M4 with FPU target components and files
+
+  components:
+    - component: ARM::CMSIS:CORE
+    - component: Device:Startup&C Startup
+
+  linker:
+    - regions: ./RTE/Device/ARMCM4/regions_ARMCM4.h
+
+  groups:
+    - group: FVP
+      files:
+        - file: ./fvp_config.txt

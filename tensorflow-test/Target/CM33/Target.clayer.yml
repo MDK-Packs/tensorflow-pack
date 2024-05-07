@@ -1,0 +1,15 @@
+layer:
+  type: Target
+  description: Cortex-M33 target components and files
+
+  components:
+    - component: ARM::CMSIS:CORE
+    - component: Device:Startup&C Startup
+
+  linker:
+    - regions: ./RTE/Device/ARMCM33/regions_ARMCM33.h
+
+  groups:
+    - group: FVP
+      files:
+        - file: ./fvp_config.txt

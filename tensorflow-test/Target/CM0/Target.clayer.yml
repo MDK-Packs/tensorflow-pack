@@ -1,0 +1,15 @@
+layer:
+  type: Target
+  description: Cortex-M0 target components and files
+
+  components:
+    - component: ARM::CMSIS:CORE
+    - component: Device:Startup&C Startup
+
+  linker:
+    - regions: ./RTE/Device/ARMCM0/regions_ARMCM0.h
+
+  groups:
+    - group: FVP
+      files:
+        - file: ./fvp_config.txt

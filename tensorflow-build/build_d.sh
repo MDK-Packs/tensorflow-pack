@@ -1,6 +1,7 @@
 #!/bin/sh
 
-echo Building from latest main branch - nightly build $1
+
+echo Building from latest main branch - nightly build" $1
 
 mkdir ./tensorflow-pack/tensorflow-build/rel
 mkdir ./tensorflow-pack/tensorflow-build/rel/mlplatform
@@ -12,7 +13,10 @@ wget -O ./tensorflow-pack/tensorflow-build/rel/master.tar.gz https://review.mlpl
 tar -xzf ./tensorflow-pack/tensorflow-build/rel/master.tar.gz -C ./tensorflow-pack/tensorflow-build/rel/mlplatform
 # Get ml-platforms srcs
 cd ./tensorflow-pack/tensorflow-build/rel/mlplatform/
+
+echo Fetching ml-platforms sources
 python3 fetch_externals.py fetch
+
 
 cd ./core_software/tflite_micro
 
@@ -22,6 +26,7 @@ python3 ./tensorflow/lite/micro/tools/project_generation/create_tflm_tree.py  \
    ../../../../../tensorflow-build/src \
    > ../../../../../tensorflow-build/srcs.raw
 rsync -a ../../../../../tensorflow-build/src/tensorflow ../../../../../tensorflow-build/gen/build
+
 
 python3 ./tensorflow/lite/micro/tools/project_generation/create_tflm_tree.py  \
    --makefile_options="TARGET=cortex_m_generic OPTIMIZED_KERNEL_DIR=cmsis_nn TARGET_ARCH=cortex-m55" \
@@ -49,6 +54,7 @@ python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
         ./tensorflow-pack/tensorflow-build/srcs.cmsis_nn.raw > ./tensorflow-pack/tensorflow-build/srcs.cmsis_nn.lst
 python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
         ./tensorflow-pack/tensorflow-build/srcs.ethos_u.raw > ./tensorflow-pack/tensorflow-build/srcs.ethos_u.lst
+
 
 python3 ./tensorflow-pack/tensorflow-build/generate_cmsis_pack.py  \
    --release=1.99 \

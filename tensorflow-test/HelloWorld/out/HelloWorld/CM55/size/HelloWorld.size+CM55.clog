@@ -1,0 +1,60 @@
+# CMSIS Build Audit File generated on 2024-05-06T14:39:18
+
+# Project Description File: /workspaces/tensorflow-pack/tensorflow-test/HelloWorld/HelloWorld.size+CM55.cprj
+
+# Toolchain Configuration File: /home/arm_mlops_docker/cmsis-toolbox-linux-amd64/etc/AC6.6.18.0.cmake
+
+# Package: ARM::CMSIS@6.0.0
+  Location: /home/arm_mlops_docker/packs/ARM/CMSIS/6.0.0/
+
+  * Component: ARM::CMSIS:CORE@6.0.0
+
+# Package: ARM::CMSIS-DSP@1.15.0
+  Location: /home/arm_mlops_docker/packs/ARM/CMSIS-DSP/1.15.0/
+
+  * Component: ARM::CMSIS:DSP&Source@1.15.0
+
+# Package: ARM::CMSIS-NN@4.1.0
+  Location: /home/arm_mlops_docker/packs/ARM/CMSIS-NN/4.1.0/
+
+  * Component: ARM::CMSIS:NN Lib@4.1.0
+
+# Package: ARM::Cortex_DFP@1.0.0
+  Location: /home/arm_mlops_docker/packs/ARM/Cortex_DFP/1.0.0/
+
+  * Component: ARM::Device:Startup&C Startup@2.2.0
+    - ConfigFile: /workspaces/tensorflow-pack/tensorflow-test/HelloWorld/RTE/Device/ARMCM55/ARMCM55_ac6.sct:1.1.0
+    - ConfigFile: /workspaces/tensorflow-pack/tensorflow-test/HelloWorld/RTE/Device/ARMCM55/startup_ARMCM55.c:1.1.0
+    - ConfigFile: /workspaces/tensorflow-pack/tensorflow-test/HelloWorld/RTE/Device/ARMCM55/system_ARMCM55.c:1.1.0
+
+# Package: tensorflow::flatbuffers@1.24.2
+  Location: /home/arm_mlops_docker/packs/tensorflow/flatbuffers/1.24.2/
+
+  * Component: tensorflow::Data Exchange:Serialization:flatbuffers&tensorflow@1.24.2
+
+# Package: tensorflow::gemmlowp@1.24.2
+  Location: /home/arm_mlops_docker/packs/tensorflow/gemmlowp/1.24.2/
+
+  * Component: tensorflow::Data Processing:Math:gemmlowp fixed-point&tensorflow@1.24.2
+
+# Package: tensorflow::kissfft@1.24.2
+  Location: /home/arm_mlops_docker/packs/tensorflow/kissfft/1.24.2/
+
+  * Component: tensorflow::Data Processing:Math:kissfft&tensorflow@1.24.2
+
+# Package: tensorflow::ruy@1.24.2
+  Location: /home/arm_mlops_docker/packs/tensorflow/ruy/1.24.2/
+
+  * Component: tensorflow::Data Processing:Math:ruy&tensorflow@1.24.2
+
+# Package: tensorflow::tensorflow-lite-micro@1.24.2
+  Location: /home/arm_mlops_docker/packs/tensorflow/tensorflow-lite-micro/1.24.2/
+
+  * Component: tensorflow::Machine Learning:TensorFlow:Kernel Utils@1.24.2
+    - ConfigFile: /workspaces/tensorflow-pack/tensorflow-test/HelloWorld/RTE/Machine_Learning/debug_log.cpp:1.24.2
+    - ConfigFile: /workspaces/tensorflow-pack/tensorflow-test/HelloWorld/RTE/Machine_Learning/micro_time.cpp:1.24.2
+    - ConfigFile: /workspaces/tensorflow-pack/tensorflow-test/HelloWorld/RTE/Machine_Learning/system_setup.cpp:1.24.2
+
+  * Component: tensorflow::Machine Learning:TensorFlow:Kernel&Reference@1.24.2
+
+  * Component: tensorflow::Machine Learning:TensorFlow:Testing@1.24.2

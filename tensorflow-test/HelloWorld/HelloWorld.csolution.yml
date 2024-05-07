@@ -1,0 +1,95 @@
+solution:
+  created-for: cmsis-toobox@2.0.0
+
+  cdefault:
+  misc:
+    - for-compiler: GCC
+      C-CPP:
+        - -ffunction-sections
+        - -fdata-sections
+      Link:
+        - -Wl,--gc-sections
+    - for-compiler: CLANG
+      C-CPP:
+        - -ffunction-sections
+        - -fdata-sections
+      Link:
+        - -Wl,--gc-sections
+
+  packs:
+    - pack: ARM::Cortex_DFP
+
+  target-types:
+    - type: CM0
+      device: ARMCM0
+      variables:
+        - Target-Layer: ../Target/CM0/Target.clayer.yml
+    - type: CM0plus
+      device: ARMCM0P
+      variables:
+        - Target-Layer: ../Target/CM0plus/Target.clayer.yml
+    - type: CM3
+      device: ARMCM3
+      variables:
+        - Target-Layer: ../Target/CM3/Target.clayer.yml
+    - type: CM4
+      device: ARMCM4
+      processor:
+        fpu: off
+      variables:
+        - Target-Layer: ../Target/CM4/Target.clayer.yml
+    - type: CM4_FP
+      device: ARMCM4
+      variables:
+        - Target-Layer: ../Target/CM4/Target.clayer.yml
+    - type: CM7
+      device: ARMCM7
+      variables:
+        - Target-Layer: ../Target/CM7/Target.clayer.yml
+    - type: CM23
+      device: ARMCM23
+      processor:
+        trustzone: off
+      variables:
+        - Target-Layer: ../Target/CM23/Target.clayer.yml
+    - type: CM33
+      device: ARMCM33
+      processor:
+        trustzone: off
+      variables:
+        - Target-Layer: ../Target/CM33/Target.clayer.yml
+    - type: CM55
+      device: ARMCM55
+      processor:
+        trustzone: off
+      variables:
+        - Target-Layer: ../Target/CM55/Target.clayer.yml
+    - type: CM55_Ethos
+      device: ARMCM55
+      processor:
+        trustzone: off
+      variables:
+        - Target-Layer: ../Target/CM55_Ethos/Target.clayer.yml
+    - type: CM85
+      device: ARMCM85
+      processor:
+        trustzone: off
+      variables:
+        - Target-Layer: ../Target/CM85/Target.clayer.yml
+    - type: CM85_Ethos
+      device: ARMCM85
+      processor:
+        trustzone: off
+      variables:
+        - Target-Layer: ../Target/CM85_Ethos/Target.clayer.yml
+
+  build-types:
+    - type: balanced
+      optimize: balanced
+    - type: size
+      optimize: size
+    - type: speed
+      optimize: speed
+
+  projects:
+    - project: ./HelloWorld.cproject.yml
