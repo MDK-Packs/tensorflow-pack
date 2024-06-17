@@ -1,5 +1,5 @@
 solution:
-  created-for: cmsis-toobox@2.0.0
+  created-for: cmsis-toobox@2.4.0
 
   cdefault:
   misc:
@@ -17,7 +17,7 @@ solution:
         - -Wl,--gc-sections
 
   packs:
-    - pack: ARM::Cortex_DFP
+    - pack: ARM::Cortex_DFP@1.1.0
 
   target-types:
     - type: CM0

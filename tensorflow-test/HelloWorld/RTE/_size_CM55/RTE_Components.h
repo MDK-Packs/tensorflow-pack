@@ -15,17 +15,15 @@
  */
 #define CMSIS_device_header "ARMCM55.h"
 
-/* tensorflow::Data Exchange:Serialization:flatbuffers&tensorflow@1.24.2 */
+/* tensorflow::Data Exchange:Serialization:flatbuffers&tensorflow@1.24.5 */
 #define RTE_DataExchange_Serialization_flatbuffers     /* flatbuffers */
-/* tensorflow::Data Processing:Math:gemmlowp fixed-point&tensorflow@1.24.2 */
+/* tensorflow::Data Processing:Math:gemmlowp fixed-point&tensorflow@1.24.5 */
 #define RTE_DataExchange_Math_gemmlowp     /* gemmlowp */
-/* tensorflow::Data Processing:Math:kissfft&tensorflow@1.24.2 */
+/* tensorflow::Data Processing:Math:kissfft&tensorflow@1.24.5 */
 #define RTE_DataExchange_Math_kissfft     /* kissfft */
-/* tensorflow::Data Processing:Math:ruy&tensorflow@1.24.2 */
+/* tensorflow::Data Processing:Math:ruy&tensorflow@1.24.5 */
 #define RTE_DataProcessing_Math_ruy     /* ruy */
-/* tensorflow::Machine Learning:TensorFlow:Kernel&Reference@1.24.2 */
-#define RTE_ML_TF_LITE     /* TF */
-/* tensorflow::Machine Learning:TensorFlow:Testing@1.24.2 */
+/* tensorflow::Machine Learning:TensorFlow:Kernel&Reference@1.24.5 */
 #define RTE_ML_TF_LITE     /* TF */
 
 

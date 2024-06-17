@@ -3,17 +3,16 @@ project:
   debug: on
 
   packs:
-    - pack: ARM::CMSIS
-    - pack: ARM::CMSIS-DSP
-    - pack: ARM::CMSIS-NN
-      # path: ../
-    - pack: ARM::Cortex_DFP
-      # path: ../
-    - pack: tensorflow::tensorflow-lite-micro
-    - pack: tensorflow::flatbuffers
-    - pack: tensorflow::gemmlowp
-    - pack: tensorflow::kissfft
-    - pack: tensorflow::ruy
+    - pack: ARM::CMSIS@6.0.0
+    - pack: ARM::CMSIS-DSP@1.15.0
+    - pack: ARM::CMSIS-NN@4.1.0
+    - pack: ARM::Cortex_DFP@1.1.0
+    - pack: tensorflow::tensorflow-lite-micro@1.24.5
+    - pack: tensorflow::flatbuffers@1.24.5
+    - pack: tensorflow::gemmlowp@1.24.5
+    - pack: tensorflow::kissfft@1.24.5
+    - pack: tensorflow::ruy@1.24.5
+    - pack: ARM::CMSIS-NN@6.0.0
 
   add-path:
     - ./hello_world
@@ -23,16 +22,17 @@ project:
 
   components:
     - component: ARM::CMSIS:DSP&Source
-    - component: ARM::CMSIS:NN Lib
-    - component: tensorflow::Data Exchange:Serialization:flatbuffers
-    - component: tensorflow::Data Processing:Math:gemmlowp fixed-point&tensorflow
-    - component: tensorflow::Data Processing:Math:kissfft&tensorflow
-    - component: tensorflow::Data Processing:Math:ruy&tensorflow
-    - component: tensorflow::Machine Learning:TensorFlow:Kernel&Reference
-    - component: tensorflow::Machine Learning:TensorFlow:Kernel Utils
-    - component: tensorflow::Machine Learning:TensorFlow:Testing
+    - component: ARM::CMSIS:NN Lib@6.0.0
     - component: ARM::CMSIS:CORE@6.0.0
     - component: ARM::Device:Startup&C Startup
+    - component: tensorflow::Machine Learning:TensorFlow:Kernel&CMSIS-NN
+    - component: tensorflow::Machine Learning:TensorFlow:Kernel&Reference
+    - component: tensorflow::Data Exchange:Serialization:flatbuffers&tensorflow
+    - component: tensorflow::Data Processing:Math:kissfft&tensorflow
+    - component: tensorflow::Data Processing:Math:gemmlowp fixed-point&tensorflow
+    - component: tensorflow::Data Processing:Math:ruy&tensorflow
+    - component: tensorflow::Machine Learning:TensorFlow:Kernel Utils
+    #- component: tensorflow::Machine Learning:TensorFlow:Signal Library&Reference
 
   groups:
     - group: TFL_main

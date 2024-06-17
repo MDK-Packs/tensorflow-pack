@@ -119,11 +119,11 @@ void ethosuIrqHandler0() { ethosu_irq_handler(&ethosu0_driver); }
 #endif
 
 extern "C" {
-void uart_init(void);
+//void uart_init(void);
 }
 
 void InitializeTarget() {
-  uart_init();
+ // uart_init();
 
 #if (!defined(TF_LITE_STRIP_ERROR_STRINGS) && !defined(ARMCM0))
 #ifdef ARMCM55

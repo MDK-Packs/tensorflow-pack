@@ -11,22 +11,22 @@ build:
   packs:
     - pack: ARM::CMSIS-DSP@1.15.0
       path: ${CMSIS_PACK_ROOT}/ARM/CMSIS-DSP/1.15.0
-    - pack: ARM::CMSIS-NN@4.1.0
-      path: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0
+    - pack: ARM::CMSIS-NN@6.0.0
+      path: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0
     - pack: ARM::CMSIS@6.0.0
       path: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.0.0
-    - pack: ARM::Cortex_DFP@1.0.0
-      path: ${CMSIS_PACK_ROOT}/ARM/Cortex_DFP/1.0.0
-    - pack: tensorflow::flatbuffers@1.24.2
-      path: ${CMSIS_PACK_ROOT}/tensorflow/flatbuffers/1.24.2
-    - pack: tensorflow::gemmlowp@1.24.2
-      path: ${CMSIS_PACK_ROOT}/tensorflow/gemmlowp/1.24.2
-    - pack: tensorflow::kissfft@1.24.2
-      path: ${CMSIS_PACK_ROOT}/tensorflow/kissfft/1.24.2
-    - pack: tensorflow::ruy@1.24.2
-      path: ${CMSIS_PACK_ROOT}/tensorflow/ruy/1.24.2
-    - pack: tensorflow::tensorflow-lite-micro@1.24.2
-      path: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2
+    - pack: ARM::Cortex_DFP@1.1.0
+      path: ${CMSIS_PACK_ROOT}/ARM/Cortex_DFP/1.1.0
+    - pack: tensorflow::flatbuffers@1.24.5
+      path: ${CMSIS_PACK_ROOT}/tensorflow/flatbuffers/1.24.5
+    - pack: tensorflow::gemmlowp@1.24.5
+      path: ${CMSIS_PACK_ROOT}/tensorflow/gemmlowp/1.24.5
+    - pack: tensorflow::kissfft@1.24.5
+      path: ${CMSIS_PACK_ROOT}/tensorflow/kissfft/1.24.5
+    - pack: tensorflow::ruy@1.24.5
+      path: ${CMSIS_PACK_ROOT}/tensorflow/ruy/1.24.5
+    - pack: tensorflow::tensorflow-lite-micro@1.24.5
+      path: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5
   optimize: size
   debug: on
   misc:
@@ -60,33 +60,32 @@ build:
     - RTE/_size_CM55
     - ${CMSIS_PACK_ROOT}/ARM/CMSIS-DSP/1.15.0/Include
     - ${CMSIS_PACK_ROOT}/ARM/CMSIS-DSP/1.15.0/PrivateInclude
-    - ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Include
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Include
     - ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.0.0/CMSIS/Core/Include
-    - ${CMSIS_PACK_ROOT}/ARM/Cortex_DFP/1.0.0/Device/ARMCM55/Include
-    - ${CMSIS_PACK_ROOT}/tensorflow/flatbuffers/1.24.2/src/include
-    - ${CMSIS_PACK_ROOT}/tensorflow/gemmlowp/1.24.2/src
-    - ${CMSIS_PACK_ROOT}/tensorflow/kissfft/1.24.2/src
-    - ${CMSIS_PACK_ROOT}/tensorflow/kissfft/1.24.2/src/tools
-    - ${CMSIS_PACK_ROOT}/tensorflow/ruy/1.24.2/src
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/c
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/core
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/core/api
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/core/c
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/kernels
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/kernels/internal
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/kernels/internal/optimized
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/kernels/internal/reference
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/kernels/internal/reference/integer_ops
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/arena_allocator
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/cortex_m_generic
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/memory_planner
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/testing
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/tflite_bridge
-    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/schema
+    - ${CMSIS_PACK_ROOT}/ARM/Cortex_DFP/1.1.0/Device/ARMCM55/Include
+    - ${CMSIS_PACK_ROOT}/tensorflow/flatbuffers/1.24.5/src/include
+    - ${CMSIS_PACK_ROOT}/tensorflow/gemmlowp/1.24.5/src
+    - ${CMSIS_PACK_ROOT}/tensorflow/kissfft/1.24.5/src
+    - ${CMSIS_PACK_ROOT}/tensorflow/kissfft/1.24.5/src/tools
+    - ${CMSIS_PACK_ROOT}/tensorflow/ruy/1.24.5/src
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/c
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/core
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/core/api
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/core/c
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/kernels
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/kernels/internal
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/kernels/internal/optimized
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/kernels/internal/reference
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/kernels/internal/reference/integer_ops
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/arena_allocator
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/cortex_m_generic
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/memory_planner
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/tflite_bridge
+    - ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/schema
   output-dirs:
     intdir: tmp/HelloWorld/CM55/size
     outdir: out/HelloWorld/CM55/size
@@ -160,156 +159,212 @@ build:
           category: source
         - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-DSP/1.15.0/Source/TransformFunctions/TransformFunctionsF16.c
           category: source
-    - component: ARM::CMSIS:NN Lib@4.1.0
+    - component: ARM::CMSIS:NN Lib@6.0.0
       condition: CMSIS-NN
-      from-pack: ARM::CMSIS-NN@4.1.0
-      selected-by: ARM::CMSIS:NN Lib
+      from-pack: ARM::CMSIS-NN@6.0.0
+      selected-by: ARM::CMSIS:NN Lib@6.0.0
       files:
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ActivationFunctions/arm_nn_activation_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ActivationFunctions/arm_nn_activation_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ActivationFunctions/arm_relu6_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ActivationFunctions/arm_relu6_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ActivationFunctions/arm_relu_q15.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ActivationFunctions/arm_relu_q15.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ActivationFunctions/arm_relu_q7.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ActivationFunctions/arm_relu_q7.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/BasicMathFunctions/arm_elementwise_add_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/BasicMathFunctions/arm_elementwise_add_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/BasicMathFunctions/arm_elementwise_add_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/BasicMathFunctions/arm_elementwise_add_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/BasicMathFunctions/arm_elementwise_mul_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/BasicMathFunctions/arm_elementwise_mul_acc_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/BasicMathFunctions/arm_elementwise_mul_s16_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/BasicMathFunctions/arm_elementwise_mul_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/BasicMathFunctions/arm_elementwise_mul_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/BasicMathFunctions/arm_elementwise_mul_s16_batch_offset.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConcatenationFunctions/arm_concatenation_s8_w.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/BasicMathFunctions/arm_elementwise_mul_s16_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConcatenationFunctions/arm_concatenation_s8_x.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/BasicMathFunctions/arm_elementwise_mul_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConcatenationFunctions/arm_concatenation_s8_y.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConcatenationFunctions/arm_concatenation_s8_w.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConcatenationFunctions/arm_concatenation_s8_z.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConcatenationFunctions/arm_concatenation_s8_x.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_convolve_1_x_n_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConcatenationFunctions/arm_concatenation_s8_y.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_convolve_1x1_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConcatenationFunctions/arm_concatenation_s8_z.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_convolve_1x1_s8_fast.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_convolve_1_x_n_s4.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_convolve_fast_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_convolve_1_x_n_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_convolve_get_buffer_sizes_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_convolve_1x1_s4.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_convolve_get_buffer_sizes_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_convolve_1x1_s4_fast.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_convolve_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_convolve_1x1_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_convolve_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_convolve_1x1_s8_fast.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_convolve_wrapper_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_convolve_get_buffer_sizes_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_convolve_wrapper_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_convolve_get_buffer_sizes_s4.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_depthwise_conv_3x3_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_convolve_get_buffer_sizes_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_depthwise_conv_fast_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_convolve_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_depthwise_conv_get_buffer_sizes_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_convolve_s4.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_depthwise_conv_get_buffer_sizes_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_convolve_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_depthwise_conv_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_convolve_wrapper_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_depthwise_conv_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_convolve_wrapper_s4.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_depthwise_conv_s8_opt.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_convolve_wrapper_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_depthwise_conv_wrapper_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_depthwise_conv_3x3_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_depthwise_conv_wrapper_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_depthwise_conv_fast_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_nn_depthwise_conv_s8_core.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_depthwise_conv_get_buffer_sizes_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_nn_mat_mult_kernel_s8_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_depthwise_conv_get_buffer_sizes_s4.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ConvolutionFunctions/arm_nn_mat_mult_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_depthwise_conv_get_buffer_sizes_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/FullyConnectedFunctions/arm_fully_connected_get_buffer_sizes_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_depthwise_conv_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/FullyConnectedFunctions/arm_fully_connected_get_buffer_sizes_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_depthwise_conv_s4.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/FullyConnectedFunctions/arm_fully_connected_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_depthwise_conv_s4_opt.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/FullyConnectedFunctions/arm_fully_connected_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_depthwise_conv_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/LSTMFunctions/arm_lstm_unidirectional_s8_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_depthwise_conv_s8_opt.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_nn_depthwise_conv_nt_t_padded_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_depthwise_conv_wrapper_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_nn_depthwise_conv_nt_t_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_depthwise_conv_wrapper_s4.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_nn_depthwise_conv_nt_t_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_depthwise_conv_wrapper_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_nn_lstm_calculate_gate_s8_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_nn_depthwise_conv_s8_core.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_nn_lstm_step_s8_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_nn_mat_mult_kernel_row_offset_s8_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_nn_lstm_update_cell_state_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_nn_mat_mult_kernel_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_nn_lstm_update_output_s8_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_nn_mat_mult_kernel_s4_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_nn_mat_mul_core_1x_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_nn_mat_mult_kernel_s8_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_nn_mat_mul_core_4x_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_nn_mat_mult_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_nn_mat_mul_kernel_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_transpose_conv_get_buffer_sizes_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_nn_mat_mult_nt_t_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ConvolutionFunctions/arm_transpose_conv_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_nn_vec_mat_mul_result_acc_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/FullyConnectedFunctions/arm_fully_connected_get_buffer_sizes_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_nn_vec_mat_mult_t_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/FullyConnectedFunctions/arm_fully_connected_get_buffer_sizes_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_nn_vec_mat_mult_t_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/FullyConnectedFunctions/arm_fully_connected_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_nn_vec_mat_mult_t_svdf_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/FullyConnectedFunctions/arm_fully_connected_s4.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_nntables.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/FullyConnectedFunctions/arm_fully_connected_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/NNSupportFunctions/arm_q7_to_q15_with_offset.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/FullyConnectedFunctions/arm_vector_sum_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/PoolingFunctions/arm_avgpool_get_buffer_sizes_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/FullyConnectedFunctions/arm_vector_sum_s8_s64.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/PoolingFunctions/arm_avgpool_get_buffer_sizes_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/LSTMFunctions/arm_lstm_unidirectional_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/PoolingFunctions/arm_avgpool_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/LSTMFunctions/arm_lstm_unidirectional_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/PoolingFunctions/arm_avgpool_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_depthwise_conv_nt_t_padded_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/PoolingFunctions/arm_max_pool_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_depthwise_conv_nt_t_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/PoolingFunctions/arm_max_pool_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_depthwise_conv_nt_t_s4.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/ReshapeFunctions/arm_reshape_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_depthwise_conv_nt_t_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/SVDFunctions/arm_svdf_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_lstm_calculate_gate_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/SVDFunctions/arm_svdf_state_s16_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_lstm_calculate_gate_s8_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/SoftmaxFunctions/arm_nn_softmax_common_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_lstm_step_s16.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/SoftmaxFunctions/arm_softmax_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_lstm_step_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/SoftmaxFunctions/arm_softmax_s8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_mat_mul_core_1x_s4.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/SoftmaxFunctions/arm_softmax_s8_s16.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_mat_mul_core_1x_s8.c
           category: source
-        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/4.1.0/Source/SoftmaxFunctions/arm_softmax_u8.c
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_mat_mul_core_4x_s8.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_mat_mult_nt_t_s16.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_mat_mult_nt_t_s4.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_mat_mult_nt_t_s8.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_mat_mult_nt_t_s8_s32.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_vec_mat_mul_result_acc_s16.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_vec_mat_mul_result_acc_s8_s16.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_vec_mat_mult_t_s16.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_vec_mat_mult_t_s4.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_vec_mat_mult_t_s8.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nn_vec_mat_mult_t_svdf_s8.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_nntables.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_q7_to_q15_with_offset.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/NNSupportFunctions/arm_s8_to_s16_unordered_with_offset.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/PoolingFunctions/arm_avgpool_get_buffer_sizes_s16.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/PoolingFunctions/arm_avgpool_get_buffer_sizes_s8.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/PoolingFunctions/arm_avgpool_s16.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/PoolingFunctions/arm_avgpool_s8.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/PoolingFunctions/arm_max_pool_s16.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/PoolingFunctions/arm_max_pool_s8.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/ReshapeFunctions/arm_reshape_s8.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/SVDFunctions/arm_svdf_get_buffer_sizes_s8.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/SVDFunctions/arm_svdf_s8.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/SVDFunctions/arm_svdf_state_s16_s8.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/SoftmaxFunctions/arm_nn_softmax_common_s8.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/SoftmaxFunctions/arm_softmax_s16.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/SoftmaxFunctions/arm_softmax_s8.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/SoftmaxFunctions/arm_softmax_s8_s16.c
+          category: source
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-NN/6.0.0/Source/SoftmaxFunctions/arm_softmax_u8.c
           category: source
     - component: ARM::Device:Startup&C Startup@2.2.0
       condition: ARMCM55 CMSIS
-      from-pack: ARM::Cortex_DFP@1.0.0
+      from-pack: ARM::Cortex_DFP@1.1.0
       selected-by: ARM::Device:Startup&C Startup
       files:
         - file: RTE/Device/ARMCM55/ARMCM55_ac6.sct
@@ -324,337 +379,340 @@ build:
           category: sourceC
           attr: config
           version: 1.1.0
-    - component: tensorflow::Data Exchange:Serialization:flatbuffers&tensorflow@1.24.2
-      from-pack: tensorflow::flatbuffers@1.24.2
-      selected-by: tensorflow::Data Exchange:Serialization:flatbuffers
-    - component: tensorflow::Data Processing:Math:gemmlowp fixed-point&tensorflow@1.24.2
-      from-pack: tensorflow::gemmlowp@1.24.2
+    - component: tensorflow::Data Exchange:Serialization:flatbuffers&tensorflow@1.24.5
+      from-pack: tensorflow::flatbuffers@1.24.5
+      selected-by: tensorflow::Data Exchange:Serialization:flatbuffers&tensorflow
+    - component: tensorflow::Data Processing:Math:gemmlowp fixed-point&tensorflow@1.24.5
+      from-pack: tensorflow::gemmlowp@1.24.5
       selected-by: tensorflow::Data Processing:Math:gemmlowp fixed-point&tensorflow
-    - component: tensorflow::Data Processing:Math:kissfft&tensorflow@1.24.2
-      from-pack: tensorflow::kissfft@1.24.2
+    - component: tensorflow::Data Processing:Math:kissfft&tensorflow@1.24.5
+      from-pack: tensorflow::kissfft@1.24.5
       selected-by: tensorflow::Data Processing:Math:kissfft&tensorflow
       files:
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/kissfft/1.24.2/src/kiss_fft.c
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/kissfft/1.24.5/src/kiss_fft.c
           category: sourceC
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/kissfft/1.24.2/src/tools/kiss_fftr.c
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/kissfft/1.24.5/src/tools/kiss_fftr.c
           category: sourceC
-    - component: tensorflow::Data Processing:Math:ruy&tensorflow@1.24.2
-      from-pack: tensorflow::ruy@1.24.2
+    - component: tensorflow::Data Processing:Math:ruy&tensorflow@1.24.5
+      from-pack: tensorflow::ruy@1.24.5
       selected-by: tensorflow::Data Processing:Math:ruy&tensorflow
-    - component: tensorflow::Machine Learning:TensorFlow:Kernel Utils@1.24.2
-      from-pack: tensorflow::tensorflow-lite-micro@1.24.2
+    - component: tensorflow::Machine Learning:TensorFlow:Kernel Utils@1.24.5
+      from-pack: tensorflow::tensorflow-lite-micro@1.24.5
       selected-by: tensorflow::Machine Learning:TensorFlow:Kernel Utils
       files:
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/kernels/kernel_util.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/kernels/kernel_util.cpp
           category: sourceCpp
         - file: RTE/Machine_Learning/debug_log.cpp
           category: sourceCpp
           attr: config
-          version: 1.24.2
+          version: 1.24.5
         - file: RTE/Machine_Learning/micro_time.cpp
           category: sourceCpp
           attr: config
-          version: 1.24.2
+          version: 1.24.5
         - file: RTE/Machine_Learning/system_setup.cpp
           category: sourceCpp
           attr: config
-          version: 1.24.2
-    - component: tensorflow::Machine Learning:TensorFlow:Kernel&Reference@1.24.2
+          version: 1.24.5
+    - component: tensorflow::Machine Learning:TensorFlow:Kernel&CMSIS-NN@1.24.5
+      condition: CMSIS-NN
+      from-pack: tensorflow::tensorflow-lite-micro@1.24.5
+      selected-by: tensorflow::Machine Learning:TensorFlow:Kernel&CMSIS-NN
+    - component: tensorflow::Machine Learning:TensorFlow:Kernel&Reference@1.24.5
       condition: Reference
-      from-pack: tensorflow::tensorflow-lite-micro@1.24.2
+      from-pack: tensorflow::tensorflow-lite-micro@1.24.5
       selected-by: tensorflow::Machine Learning:TensorFlow:Kernel&Reference
       files:
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/core/api/error_reporter.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/core/api/error_reporter.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/core/api/flatbuffer_conversions.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/core/api/flatbuffer_conversions.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/core/api/tensor_utils.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/core/api/tensor_utils.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/core/c/common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/core/c/common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/kernels/internal/common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/kernels/internal/common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/kernels/internal/portable_tensor_utils.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/kernels/internal/portable_tensor_utils.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/kernels/internal/quantization_util.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/kernels/internal/quantization_util.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/kernels/internal/reference/comparisons.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/kernels/internal/reference/comparisons.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/kernels/internal/reference/portable_tensor_utils.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/kernels/internal/reference/portable_tensor_utils.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/kernels/internal/tensor_ctypes.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/kernels/internal/runtime_shape.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/kernels/internal/tensor_utils.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/kernels/internal/tensor_ctypes.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/arena_allocator/non_persistent_arena_buffer_allocator.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/kernels/internal/tensor_utils.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/arena_allocator/persistent_arena_buffer_allocator.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/arena_allocator/non_persistent_arena_buffer_allocator.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/arena_allocator/recording_single_arena_buffer_allocator.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/arena_allocator/persistent_arena_buffer_allocator.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/arena_allocator/single_arena_buffer_allocator.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/arena_allocator/recording_single_arena_buffer_allocator.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/fake_micro_context.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/arena_allocator/single_arena_buffer_allocator.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/flatbuffer_utils.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/fake_micro_context.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/activations.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/flatbuffer_utils.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/activations_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/activations.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/add.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/activations_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/add_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/add.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/add_n.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/add_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/arg_min_max.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/add_n.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/assign_variable.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/arg_min_max.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/batch_matmul.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/assign_variable.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/batch_to_space_nd.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/batch_matmul.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/broadcast_args.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/batch_to_space_nd.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/broadcast_to.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/broadcast_args.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/call_once.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/broadcast_to.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/cast.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/call_once.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/ceil.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/cast.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/circular_buffer.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/ceil.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/circular_buffer_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/circular_buffer.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/comparisons.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/circular_buffer_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/concatenation.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/comparisons.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/conv.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/concatenation.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/conv_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/conv.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/cumsum.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/conv_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/depth_to_space.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/cumsum.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/depthwise_conv.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/depth_to_space.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/depthwise_conv_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/depthwise_conv.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/dequantize.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/depthwise_conv_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/dequantize_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/dequantize.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/detection_postprocess.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/dequantize_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/div.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/detection_postprocess.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/elementwise.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/div.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/elu.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/elementwise.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/embedding_lookup.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/elu.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/ethosu.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/embedding_lookup.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/exp.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/ethosu.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/expand_dims.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/exp.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/fill.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/expand_dims.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/floor.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/fill.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/floor_div.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/floor.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/floor_mod.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/floor_div.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/fully_connected.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/floor_mod.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/fully_connected_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/fully_connected.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/gather.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/fully_connected_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/gather_nd.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/gather.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/hard_swish.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/gather_nd.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/hard_swish_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/hard_swish.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/if.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/hard_swish_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/kernel_runner.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/if.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/kernel_util.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/kernel_runner.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/l2_pool_2d.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/kernel_util.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/l2norm.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/l2_pool_2d.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/leaky_relu.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/l2norm.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/leaky_relu_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/leaky_relu.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/log_softmax.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/leaky_relu_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/logical.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/log_softmax.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/logical_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/logical.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/logistic.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/logical_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/logistic_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/logistic.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/lstm_eval.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/logistic_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/lstm_eval_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/lstm_eval.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/maximum_minimum.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/lstm_eval_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/micro_tensor_utils.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/maximum_minimum.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/mirror_pad.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/micro_tensor_utils.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/mul.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/mirror_pad.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/mul_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/mul.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/neg.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/mul_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/pack.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/neg.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/pad.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/pack.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/pooling.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/pad.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/pooling_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/pooling.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/prelu.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/pooling_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/prelu_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/prelu.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/quantize.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/prelu_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/quantize_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/quantize.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/read_variable.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/quantize_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/reduce.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/read_variable.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/reduce_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/reduce.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/reshape.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/reduce_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/reshape_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/reshape.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/resize_bilinear.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/reshape_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/resize_nearest_neighbor.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/resize_bilinear.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/round.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/resize_nearest_neighbor.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/select.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/round.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/shape.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/select.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/slice.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/shape.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/softmax.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/slice.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/softmax_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/softmax.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/space_to_batch_nd.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/softmax_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/space_to_depth.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/space_to_batch_nd.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/split.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/space_to_depth.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/split_v.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/split.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/squared_difference.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/split_v.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/squeeze.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/squared_difference.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/strided_slice.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/squeeze.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/strided_slice_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/strided_slice.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/sub.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/strided_slice_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/sub_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/sub.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/svdf.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/sub_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/svdf_common.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/svdf.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/tanh.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/svdf_common.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/transpose.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/tanh.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/transpose_conv.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/transpose.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/unidirectional_sequence_lstm.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/transpose_conv.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/unpack.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/unidirectional_sequence_lstm.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/var_handle.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/unpack.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/while.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/var_handle.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/kernels/zeros_like.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/while.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/memory_helpers.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/kernels/zeros_like.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/memory_planner/greedy_memory_planner.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/memory_helpers.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/memory_planner/linear_memory_planner.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/memory_planner/greedy_memory_planner.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/memory_planner/non_persistent_buffer_planner_shim.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/memory_planner/linear_memory_planner.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/micro_allocation_info.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/memory_planner/non_persistent_buffer_planner_shim.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/micro_allocator.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/micro_allocation_info.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/micro_context.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/micro_allocator.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/micro_interpreter.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/micro_context.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/micro_interpreter_context.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/micro_interpreter.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/micro_interpreter_graph.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/micro_interpreter_context.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/micro_log.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/micro_interpreter_graph.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/micro_op_resolver.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/micro_log.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/micro_profiler.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/micro_op_resolver.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/micro_resource_variable.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/micro_profiler.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/micro_utils.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/micro_resource_variable.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/mock_micro_graph.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/micro_utils.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/recording_micro_allocator.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/mock_micro_graph.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/test_helper_custom_ops.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/recording_micro_allocator.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/test_helpers.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/test_helper_custom_ops.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/test_helpers.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/micro/tflite_bridge/micro_error_reporter.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/tflite_bridge/flatbuffer_conversions_bridge.cpp
           category: sourceCpp
-        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/tensorflow/lite/schema/schema_utils.cpp
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/micro/tflite_bridge/micro_error_reporter.cpp
           category: sourceCpp
-    - component: tensorflow::Machine Learning:TensorFlow:Testing@1.24.2
-      from-pack: tensorflow::tensorflow-lite-micro@1.24.2
-      selected-by: tensorflow::Machine Learning:TensorFlow:Testing
+        - file: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/tensorflow/lite/schema/schema_utils.cpp
+          category: sourceCpp
   linker:
     script: ${CMSIS_COMPILER_ROOT}/ac6_linker_script.sct
     regions: ../Target/CM55/RTE/Device/ARMCM55/regions_ARMCM55.h
@@ -686,51 +744,46 @@ build:
       components:
         - component: ARM::CMSIS:DSP&Source@1.15.0
     - license: <unknown>
-      packs:
-        - pack: ARM::CMSIS-NN@4.1.0
-      components:
-        - component: ARM::CMSIS:NN Lib@4.1.0
-    - license: <unknown>
       license-agreement: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.0.0/LICENSE
       packs:
         - pack: ARM::CMSIS@6.0.0
       components:
         - component: ARM::CMSIS:CORE@6.0.0
     - license: <unknown>
-      license-agreement: ${CMSIS_PACK_ROOT}/ARM/Cortex_DFP/1.0.0/LICENSE
+      license-agreement: ${CMSIS_PACK_ROOT}/tensorflow/flatbuffers/1.24.5/LICENSE.txt
       packs:
-        - pack: ARM::Cortex_DFP@1.0.0
+        - pack: tensorflow::flatbuffers@1.24.5
       components:
+        - component: tensorflow::Data Exchange:Serialization:flatbuffers&tensorflow@1.24.5
+    - license: <unknown>
+      license-agreement: ${CMSIS_PACK_ROOT}/tensorflow/gemmlowp/1.24.5/LICENSE.txt
+      packs:
+        - pack: tensorflow::gemmlowp@1.24.5
+      components:
+        - component: tensorflow::Data Processing:Math:gemmlowp fixed-point&tensorflow@1.24.5
+    - license: <unknown>
+      license-agreement: ${CMSIS_PACK_ROOT}/tensorflow/kissfft/1.24.5/LICENSE.txt
+      packs:
+        - pack: tensorflow::kissfft@1.24.5
+      components:
+        - component: tensorflow::Data Processing:Math:kissfft&tensorflow@1.24.5
+    - license: <unknown>
+      license-agreement: ${CMSIS_PACK_ROOT}/tensorflow/ruy/1.24.5/LICENSE.txt
+      packs:
+        - pack: tensorflow::ruy@1.24.5
+      components:
+        - component: tensorflow::Data Processing:Math:ruy&tensorflow@1.24.5
+    - license: <unknown>
+      license-agreement: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.5/LICENSE
+      packs:
+        - pack: tensorflow::tensorflow-lite-micro@1.24.5
+      components:
+        - component: tensorflow::Machine Learning:TensorFlow:Kernel Utils@1.24.5
+        - component: tensorflow::Machine Learning:TensorFlow:Kernel&Reference@1.24.5
+    - license: Apache-2.0
+      packs:
+        - pack: ARM::CMSIS-NN@6.0.0
+        - pack: ARM::Cortex_DFP@1.1.0
+      components:
+        - component: ARM::CMSIS:NN Lib@6.0.0
         - component: ARM::Device:Startup&C Startup@2.2.0
-    - license: <unknown>
-      license-agreement: ${CMSIS_PACK_ROOT}/tensorflow/flatbuffers/1.24.2/LICENSE.txt
-      packs:
-        - pack: tensorflow::flatbuffers@1.24.2
-      components:
-        - component: tensorflow::Data Exchange:Serialization:flatbuffers&tensorflow@1.24.2
-    - license: <unknown>
-      license-agreement: ${CMSIS_PACK_ROOT}/tensorflow/gemmlowp/1.24.2/LICENSE.txt
-      packs:
-        - pack: tensorflow::gemmlowp@1.24.2
-      components:
-        - component: tensorflow::Data Processing:Math:gemmlowp fixed-point&tensorflow@1.24.2
-    - license: <unknown>
-      license-agreement: ${CMSIS_PACK_ROOT}/tensorflow/kissfft/1.24.2/LICENSE.txt
-      packs:
-        - pack: tensorflow::kissfft@1.24.2
-      components:
-        - component: tensorflow::Data Processing:Math:kissfft&tensorflow@1.24.2
-    - license: <unknown>
-      license-agreement: ${CMSIS_PACK_ROOT}/tensorflow/ruy/1.24.2/LICENSE.txt
-      packs:
-        - pack: tensorflow::ruy@1.24.2
-      components:
-        - component: tensorflow::Data Processing:Math:ruy&tensorflow@1.24.2
-    - license: <unknown>
-      license-agreement: ${CMSIS_PACK_ROOT}/tensorflow/tensorflow-lite-micro/1.24.2/LICENSE
-      packs:
-        - pack: tensorflow::tensorflow-lite-micro@1.24.2
-      components:
-        - component: tensorflow::Machine Learning:TensorFlow:Kernel Utils@1.24.2
-        - component: tensorflow::Machine Learning:TensorFlow:Kernel&Reference@1.24.2
-        - component: tensorflow::Machine Learning:TensorFlow:Testing@1.24.2

@@ -3,7 +3,6 @@
 *.o
 *.d
 *.map
-*.lst
 *.lnp
 *.dep
 *._cc
@@ -20,3 +19,11 @@ tensorflow-test-ng/gen/
 *.pack
 3rdparty-build/PackName.txt
 *.raw
+/tensorflow-examples/gen
+/out
+/tensorflow-examples/out
+/tensorflow-test/HelloWorld/tmp
+/3rdparty-build/flatbuffers/build
+/3rdparty-build/gemmlowp/build
+/3rdparty-build/kissfft/build
+/3rdparty-build/ruy/build
