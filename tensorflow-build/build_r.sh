@@ -26,11 +26,11 @@ fi
 mkdir ./tensorflow-pack/tensorflow-build/gen/build
 
 # Get ml-platforms root
-wget -O ./tensorflow-pack/tensorflow-build/rel/master.tar.gz https://review.mlplatform.org/plugins/gitiles/ml/ethos-u/ethos-u/+archive/refs/heads/master.tar.gz
+wget -O ./tensorflow-pack/tensorflow-build/rel/main.tar.gz https://review.mlplatform.org/plugins/gitiles/ml/ethos-u/ethos-u/+archive/refs/heads/main.tar.gz
 
 
 # Extract tar.gz
-tar -xzf ./tensorflow-pack/tensorflow-build/rel/master.tar.gz -C ./tensorflow-pack/tensorflow-build/rel/mlplatform
+tar -xzf ./tensorflow-pack/tensorflow-build/rel/main.tar.gz -C ./tensorflow-pack/tensorflow-build/rel/mlplatform
 # Get ml-platforms srcs
 cd ./tensorflow-pack/tensorflow-build/rel/mlplatform/
 
