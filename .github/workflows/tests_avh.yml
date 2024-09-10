@@ -56,11 +56,18 @@ jobs:
       run: 
         cd ${{ github.workspace }}/out && cpackget add -a *.pack 
 
+    - name: Diagnosis show directory structure
+      run:
+        tree -d
+
+    - name: Diagnosis where *.yml files are locacted
+      run:
+        tree --prune -P '*.yml'
+
     - name: Patch the csolution to use the latest CMSIS and tensorflow packs
       run: |
         sed -i 's/\(tensorflow::[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
         sed -i 's/\(ARM::CMSIS[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
-
 
     - name: Build project ${{ matrix.target.proj }} for target ${{ matrix.target.board }} with AC6
       run: |
