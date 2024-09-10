@@ -82,7 +82,7 @@ jobs:
           tree --prune -P '*.pdsc'
 
       - name: Get all generated PDSC files for artifact upload
-        run :
+        run : |
           find ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ -name '*.pdsc' -exec cp -prv '{}' '${{ github.workspace }}/out/' ';'
           find ${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/ -name '*.pdsc' -exec cp -prv '{}' '${{ github.workspace }}/out/' ';'
 
