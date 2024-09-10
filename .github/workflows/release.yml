@@ -83,7 +83,8 @@ jobs:
 
       - name: Get all generated PDSC files for artifact upload
         run :
-          find ${{ github.workspace }}/tensorflow-pack/ -name '*.pdsc' -exec cp -prv '{}' '${{ github.workspace }}/out/' ';'
+          find ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ -name '*.pdsc' -exec cp -prv '{}' '${{ github.workspace }}/out/' ';'
+          find ${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/ -name '*.pdsc' -exec cp -prv '{}' '${{ github.workspace }}/out/' ';'
 
       - name: Upload Pack
         uses: actions/upload-artifact@v3
