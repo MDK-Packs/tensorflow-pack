@@ -1,53 +1,87 @@
-name: Test CI using Arm Virtual Hardware
-
-# Controls when the action will run. 
+name: AVH build and execution test
 on:
-  workflow_run:
-    workflows: ["Release CI"]
-    types:
-      - completed
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  schedule:
+    - cron: '00 20 * * 6'
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  test-tensorflow:
-    # The type of runner that the job will run on
+  AVH:
+    strategy:
+
+      matrix:
+        target: [
+          {proj: kws,               board: AVH-SSE-300,      model: FVP_Corstone_SSE-300,            uart: mps3_board.uart0},
+          {proj: kws,               board: AVH-SSE-300-U55,  model: FVP_Corstone_SSE-300_Ethos-U55,  uart: mps3_board.uart0},
+          {proj: kws,               board: AVH-SSE-300-U65,  model: FVP_Corstone_SSE-300_Ethos-U65,  uart: mps3_board.uart0},
+          {proj: kws,               board: AVH-SSE-310,      model: FVP_Corstone_SSE-310,            uart: mps3_board.uart0},
+          {proj: kws,               board: AVH-SSE-310-U55,  model: FVP_Corstone_SSE-310,            uart: mps3_board.uart0},
+          {proj: kws,               board: AVH-SSE-310-U65,  model: FVP_Corstone_SSE-310_Ethos-U65,  uart: mps3_board.uart0},
+          {proj: object-detection,  board: AVH-SSE-300,      model: FVP_Corstone_SSE-300,            uart: mps3_board.uart0},
+          {proj: object-detection,  board: AVH-SSE-300-U55,  model: FVP_Corstone_SSE-300_Ethos-U55,  uart: mps3_board.uart0},
+          {proj: object-detection,  board: AVH-SSE-300-U65,  model: FVP_Corstone_SSE-300_Ethos-U65,  uart: mps3_board.uart0},
+          {proj: object-detection,  board: AVH-SSE-310,      model: FVP_Corstone_SSE-310,            uart: mps3_board.uart0},
+          {proj: object-detection,  board: AVH-SSE-310-U55,  model: FVP_Corstone_SSE-310,            uart: mps3_board.uart0},
+          {proj: object-detection,  board: AVH-SSE-310-U65,  model: FVP_Corstone_SSE-310_Ethos-U65,  uart: mps3_board.uart0}
+        ]
+
+      fail-fast: false
+
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+      with:
+        repository: Arm-Examples/mlek-cmsis-pack-examples
 
-      - name: Checkout tensorflow-build 
-        uses: actions/checkout@v2
-        with: 
-          repository: MDK-Packs/tensorflow-pack
-          path: tensorflow-pack
+    - name: Restore Latest Pack Build from Cache
+      uses: actions/cache@v3
+      with:
+         path: ${{ github.workspace }}/out
+         key: latest-tensorflow-pack-build
+         
+    - name: Install tools
+      uses: ARM-software/cmsis-actions/vcpkg@v1
+      with: 
+        config: ".ci/vcpkg-configuration.json"
 
-      - name: Download artifacts from Release CI
-        uses: actions/download-artifact@v3
-        with:
-          name: tensorflow-pack-release
-          path: tensorflow-pack/tensorflow-test-ng/packs  
+    - name: Activate Arm tool license
+      uses: ARM-software/cmsis-actions/armlm@v1
 
-      - name: Run unit tests on AVH@AWS
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
-          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
-          AWS_S3_BUCKET_NAME: ${{ secrets.AWS_S3_BUCKET }}
-          AWS_IAM_PROFILE: ${{ secrets.AWS_IAM_PROFILE }}
-          AWS_SECURITY_GROUP_ID: ${{ secrets.AWS_EC2_SECURITY_GROUP_ID }}
-          AWS_SUBNET_ID: ${{ secrets.AWS_SUBNET_ID }}
-        
-        run: |
-          ./tensorflow-pack/tensorflow-test-ng/test_r.sh
-          pip install git+https://github.com/ARM-software/avhclient.git@v0.1
-          mkdir ${{ github.workspace }}/tensorflow-pack/tensorflow-test-ng/out/
-          cp ${{ github.workspace }}/out/*.pack ${{ github.workspace }}/tensorflow-pack/tensorflow-test-ng/out/   
-          avhclient -b aws execute --specfile tensorflow-pack/tensorflow-test-ng/avh.yml
-          ls tensorflow-pack/tensorflow-test-ng/test_results.db
+    - name: Unpack and Install Packs
+      run: 
+        cd ${{ github.workspace }}/out && cpackget add -a *.pack 
 
-      - name: Upload Test Reports
-        uses: actions/upload-artifact@v3
-        with:
-          path: ${{ github.workspace }}/tensorflow-pack/**/test_results.*
+    - name: Patch the csolution to use the latest CMSIS and tensorflow packs
+      run: |
+        sed -i 's/\(tensorflow::[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
+        sed -i 's/\(ARM::CMSIS[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
+
+
+    - name: Build project ${{ matrix.target.proj }} for target ${{ matrix.target.board }} with AC6
+      run: |
+         cbuild mlek.csolution.yml --update-rte --packs --context ${{ matrix.target.proj }}+${{ matrix.target.board }}
+
+    - name: Execute project ${{ matrix.target.proj }}, target ${{ matrix.target.board }}, build Release on AVH ${{ matrix.target.model }}
+      if: always()
+      run: |
+          ${{ matrix.target.model }} \
+          -a ./out/${{ matrix.target.proj }}/${{ matrix.target.board }}/Release/${{ matrix.target.proj }}.axf \
+          -f ./FVP/${{ matrix.target.model }}/fvp_config.txt \
+          -C ${{ matrix.target.uart }}.out_file=./out/${{ matrix.target.proj }}/${{ matrix.target.board }}/Release/fvp_stdout.log \
+          --simlimit 60 --stat
+          cat ./out/${{ matrix.target.proj }}/${{ matrix.target.board }}/Release/fvp_stdout.log
+
+    - name: Execute project ${{ matrix.target.proj }}, target ${{ matrix.target.board }}, build Debug on AVH ${{ matrix.target.model }}
+      if: always()
+      run: |
+          ${{ matrix.target.model }} \
+          -a ./out/${{ matrix.target.proj }}/${{ matrix.target.board }}/Debug/${{ matrix.target.proj }}.axf \
+          -f ./FVP/${{ matrix.target.model }}/fvp_config.txt \
+          -C ${{ matrix.target.uart }}.out_file=./out/${{ matrix.target.proj }}/${{ matrix.target.board }}/Debug/fvp_stdout.log \
+          --simlimit 60 --stat
+          cat ./out/${{ matrix.target.proj }}/${{ matrix.target.board }}/Debug/fvp_stdout.log
