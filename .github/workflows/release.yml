@@ -6,13 +6,13 @@ on:
   workflow_dispatch:
     inputs:
       revision:
-        description: 'mlplatform revision'     
+        description: 'mlplatform revision'
         required: true
         default: '22.02'
       candidate_rev:
         description: 'Release candidate revision'
         required: false
-        default: '' 
+        default: ''
 
 run-name: mlplatform.org revision ${{ inputs.revision }} to pack ${{ inputs.revision }}${{ inputs.candidate_rev }} by @${{ github.actor }}
 
@@ -49,6 +49,7 @@ jobs:
       - name: Get history of releases from github
         run: 
           python3 ./tensorflow-pack/tensorflow-build/get_releases.py ${{ secrets.GITHUB_TOKEN }} > ./tensorflow-pack/tensorflow-build/history.txt
+          cat ./tensorflow-pack/tensorflow-build/history.txt
 
       - name: Run the pack build with the revision specified
         run : 
@@ -58,18 +59,32 @@ jobs:
       #  run :  
       #    cp ${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/build/*.pack ${{ github.workspace }}/out/
 
+      - name: Show content of ${{ github.workspace }}/tensorflow-pack/out/* folder after bulding the tensorflow-pack
+        run: |
+          tree  ${{ github.workspace }}/tensorflow-pack/out/
+
       - name: Run the 3rdparty pack build with the revision specified
         run : |
           export PATH=$PATH:${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/utilities
           ./tensorflow-pack/3rdparty-build/build_r.sh ${{ github.event.inputs.revision }} ${{ github.event.inputs.candidate_rev }}
 
+      - name: Show content of ${{ github.workspace }}/tensorflow-pack/out/* folder after bulding the 3rd party pack
+        run: |
+          tree  ${{ github.workspace }}/tensorflow-pack/out/
+          
       - name: Copy packs to out path
         run :  
           cp ${{ github.workspace }}/tensorflow-pack/out/*.pack ${{ github.workspace }}/out/
-          
+
+      - name: Show all available pdsc files
+        working-directory: ${{ github.workspace }}/tensorflow-pack/
+        run :  
+          tree --prune -P '*.pdsc'
+
       - name: Get all generated PDSC files for artifact upload
-        run :
-          find ${{ github.workspace }}/tensorflow-pack/ -name '*.pdsc' -exec cp -prv '{}' '${{ github.workspace }}/out/' ';'
+        run : |
+          find ${{ github.workspace }}/tensorflow-pack/3rdparty-build/ -name '*.pdsc' -exec cp -prv '{}' '${{ github.workspace }}/out/' ';'
+          find ${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/ -name '*.pdsc' -exec cp -prv '{}' '${{ github.workspace }}/out/' ';'
 
       - name: Upload Pack
         uses: actions/upload-artifact@v3
@@ -77,4 +92,8 @@ jobs:
           name: tensorflow-pack-release
           path: ${{ github.workspace }}/out
 
-
+      - name: Cache artifact
+        uses: actions/cache@v3
+        with:
+          path: ${{ github.workspace }}/out
+          key: latest-tensorflow-pack-build
