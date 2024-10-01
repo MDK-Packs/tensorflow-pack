@@ -9,7 +9,6 @@
 *._cxx
 *.map
 *.junit
-.vscode/
 tensorflow-build/gen/
 tensorflow-build/src/
 tensorflow-build/rel

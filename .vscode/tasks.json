@@ -1,0 +1,52 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "tensorflow-pack: Clean build environment",
+            "type": "shell",
+            "command": "../tensorflow-pack/clean.sh",
+            "problemMatcher": []
+        },
+        {
+            "label": "tensorflow-pack: Fetch releases information from github",
+            "type": "shell",
+            "command": "python3 ../tensorflow-pack/tensorflow-build/get_releases.py > ../tensorflow-pack/tensorflow-build/history.txt",
+            "problemMatcher": []
+        },
+        {
+            "label": "tensorflow-pack: Build tensorflow-pack release",
+            "type": "shell",
+            "command": "cd .. && ./tensorflow-pack/tensorflow-build/build_r.sh ${input:ml_revision} ${input:dev_version}",
+            "problemMatcher": []
+        },
+        {
+            "label": "tensorflow-pack: Build Third-Party pack releases",
+            "type": "shell",
+            "command": "cd .. && ./tensorflow-pack/3rdparty-build/build_r.sh ${input:ml_revision} ${input:dev_version}",
+            "problemMatcher": []
+        },
+        {
+            "label": "tensorflow-pack: Build and run Hello World example",
+            "type": "shell",
+            "command": [
+                "cbuild ./tensorflow-test/HelloWorld/HelloWorld.csolution.yml  --packs --context .size+CM55 --toolchain AC6 --update-rte",
+                
+            ],
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+          "description": "Enter the tensorflow-pack release version to build, e.g.: 22.08",
+          "id": "ml_revision",
+          "type": "promptString"
+        },
+        {
+         "description": "Development version suffix, e.g.: rc1",
+            "id": "dev_version",
+            "type": "promptString"
+        }
+    ]
+}
