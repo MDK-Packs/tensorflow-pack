@@ -96,7 +96,7 @@ def main(unparsed_args, flags):
     print (">>> Merging local source:")
     print (">>> ", src_path, "==>" ,src_dest)
     os.mkdir(src_dest)
-    shutil.copytree(src_path, src_dest, verbose=1)    
+    shutil.copytree(src_path, src_dest)    
 
   if cfg["remote_source"] is not None:
     print (">>> Merging remote source:")
