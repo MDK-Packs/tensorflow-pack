@@ -33,9 +33,6 @@ import yaml
 import argparse
 import re
 
-import distutils
-from distutils import dir_util
-
 import semantic_version
 
 def sanitize_SemVer(unsanitized):
@@ -99,7 +96,7 @@ def main(unparsed_args, flags):
     print (">>> Merging local source:")
     print (">>> ", src_path, "==>" ,src_dest)
     os.mkdir(src_dest)
-    distutils.dir_util.copy_tree(src_path, src_dest, verbose=1)    
+    shutil.copy_tree(src_path, src_dest, verbose=1)    
 
   if cfg["remote_source"] is not None:
     print (">>> Merging remote source:")
@@ -112,7 +109,7 @@ def main(unparsed_args, flags):
   if cfg["add"] is not None:
     print (">>> Merging additions.")
     print (">>> ", add_path, "==>" ,pack_path)
-    distutils.dir_util.copy_tree(add_path, pack_path)   
+    shutil.copy_tree(add_path, pack_path)   
 
   history_str = ""
    # read file into string
