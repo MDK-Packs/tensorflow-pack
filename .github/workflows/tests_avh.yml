@@ -85,17 +85,17 @@ jobs:
       run: |
           ${{ matrix.target.model }} \
           -a ./out/${{ matrix.target.proj }}/${{ matrix.target.board }}/Release/${{ matrix.target.proj }}.axf \
-          -f ./FVP/${{ matrix.target.model }}/fvp_config.txt \
-          -C ${{ matrix.target.uart }}.out_file=./out/${{ matrix.target.proj }}/${{ matrix.target.board }}/Release/fvp_stdout.log \
+          -f ./device/corstone/fvp-configs/${{ matrix.target.base }}_fvp_config.txt \
+          -C ${{ matrix.target.base }}_board.${{ matrix.target.uart }}.out_file=./out/${{ matrix.target.proj }}/${{ matrix.target.board }}/Release/fvp_stdout.log \
           --simlimit 60 --stat
           cat ./out/${{ matrix.target.proj }}/${{ matrix.target.board }}/Release/fvp_stdout.log
-
+          
     - name: Execute project ${{ matrix.target.proj }}, target ${{ matrix.target.board }}, build Debug on AVH ${{ matrix.target.model }}
       if: always()
       run: |
           ${{ matrix.target.model }} \
           -a ./out/${{ matrix.target.proj }}/${{ matrix.target.board }}/Debug/${{ matrix.target.proj }}.axf \
-          -f ./FVP/${{ matrix.target.model }}/fvp_config.txt \
-          -C ${{ matrix.target.uart }}.out_file=./out/${{ matrix.target.proj }}/${{ matrix.target.board }}/Debug/fvp_stdout.log \
+          -f ./device/corstone/fvp-configs/${{ matrix.target.base }}_fvp_config.txt \
+          -C ${{ matrix.target.base }}_board.${{ matrix.target.uart }}.out_file=./out/${{ matrix.target.proj }}/${{ matrix.target.board }}/Debug/fvp_stdout.log \
           --simlimit 60 --stat
           cat ./out/${{ matrix.target.proj }}/${{ matrix.target.board }}/Debug/fvp_stdout.log
