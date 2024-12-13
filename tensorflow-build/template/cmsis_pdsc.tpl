@@ -13,6 +13,16 @@
     %{HISTORY}%
   </releases>
 
+  <requirements>
+    <packages>
+      <package name="gemmlowp" vendor="Tensorflow" version="%{RELEASE_VERSION}%":"%{RELEASE_VERSION}%"/>
+      <package name="FlatBuffers" vendor="Tensorflow" version="%{RELEASE_VERSION}%":"%{RELEASE_VERSION}%"/>
+      <package name="kissfft" vendor="Tensorflow" version="%{RELEASE_VERSION}%":"%{RELEASE_VERSION}%"/>
+      <package name="ruy" vendor="Tensorflow" version="%{RELEASE_VERSION}%":"%{RELEASE_VERSION}%"/>
+      <package name="ethos-u-core-driver" vendor="Arm" version="%{RELEASE_VERSION}%:%{RELEASE_VERSION}%"/>
+    </packages>
+  </requirements>
+
   <taxonomy>
     <description Cclass="Machine Learning">Software Components for Machine Learning</description>
   </taxonomy>
