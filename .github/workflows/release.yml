@@ -28,7 +28,7 @@ jobs:
     steps:
   
       - name: Checkout tensorflow-build 
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with: 
           repository: MDK-Packs/tensorflow-pack
           path: tensorflow-pack
@@ -85,13 +85,13 @@ jobs:
           find ${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/ -name '*.pdsc' -exec cp -prv '{}' '${{ github.workspace }}/out/' ';'
 
       - name: Upload Pack
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: tensorflow-pack-release
           path: ${{ github.workspace }}/out
 
       - name: Cache artifact
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ github.workspace }}/out
           key: latest-tensorflow-pack-build
