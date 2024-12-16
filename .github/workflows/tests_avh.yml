@@ -74,9 +74,11 @@ jobs:
       run: |
         cat mlek.csolution.yml
 
-    - name: Patch the csolution to use the latest CMSIS and tensorflow packs
+    - name: Patch the csolution to use the latest CMSIS-NN, Arm ethos-u-core-driver, and tensorflow packs
       run: |
         sed -i 's/\(tensorflow::[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
+        sed -i 's/\(Arm::ethos-u-core-driver[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
+        sed -i 's/\(ARM::CMSIS-NN[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
 
     - name: Show content of mlek.csolution.yml after patch
       run: |
