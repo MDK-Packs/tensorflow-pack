@@ -45,7 +45,7 @@ jobs:
         repository: Arm-Examples/mlek-cmsis-pack-examples
 
     - name: Restore Latest Pack Build from Cache
-      uses: actions/cache@v3
+      uses: actions/cache/restore@v4
       with:
          path: ${{ github.workspace }}/out
          key: latest-tensorflow-pack-build
