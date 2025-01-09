@@ -17,7 +17,7 @@
     <description Cclass="Data Exchange" Cgroup="Serialization">Data Serializer Components</description>
   </taxonomy>
   <components>
-    <component Cclass="Data Exchange" Cgroup="Serialization" Csub="flatbuffers" Cvariant="tensorflow" Cversion="%{RELEASE_VERSION}%" isDefaultVariant="1" >
+    <component Cclass="Data Exchange" Cgroup="Serialization" Csub="flatbuffers" Cvariant="tensorflow" Cversion="%{RELEASE_VERSION}%" isDefaultVariant="true" >
       <description>Flatbuffers</description>
       <RTE_Components_h>
         <!-- the following content goes into file 'RTE_Components.h' -->
