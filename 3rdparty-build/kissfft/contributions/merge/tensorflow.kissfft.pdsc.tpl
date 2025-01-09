@@ -13,7 +13,7 @@
     %{HISTORY}%
   </releases>
   <components>
-    <component Cclass="Data Processing" Cgroup="Math" Csub="kissfft" Cvariant="tensorflow" Cversion="%{RELEASE_VERSION}%">
+    <component Cclass="Data Processing" Cgroup="Math" Csub="kissfft" Cvariant="tensorflow" Cversion="%{RELEASE_VERSION}%" isDefaultVariant="1" >
       <description>KISS FFT</description>
       <RTE_Components_h>
         <!-- the following content goes into file 'RTE_Components.h' -->
