@@ -17,7 +17,7 @@
     <description Cclass="Data Processing" Cgroup="Math">Math Components</description>
   </taxonomy>
   <components>
-    <component Cclass="Data Processing" Cgroup="Math" Csub="gemmlowp fixed-point" Cvariant="tensorflow" Cversion="%{RELEASE_VERSION}%" isDefaultVariant="1" >
+    <component Cclass="Data Processing" Cgroup="Math" Csub="gemmlowp fixed-point" Cvariant="tensorflow" Cversion="%{RELEASE_VERSION}%" isDefaultVariant="true" >
       <description>Jsmn</description>
       <RTE_Components_h>
         <!-- the following content goes into file 'RTE_Components.h' -->
