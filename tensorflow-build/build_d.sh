@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-echo Building from latest main branch - nightly build" $1
+echo "Building from latest main branch - nightly build" $1
 
 mkdir ./tensorflow-pack/tensorflow-build/rel
 mkdir ./tensorflow-pack/tensorflow-build/rel/mlplatform
