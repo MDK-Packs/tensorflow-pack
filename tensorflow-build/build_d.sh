@@ -7,6 +7,7 @@ mkdir ./tensorflow-pack/tensorflow-build/rel
 mkdir ./tensorflow-pack/tensorflow-build/rel/mlplatform
 mkdir ./tensorflow-pack/tensorflow-build/gen
 mkdir ./tensorflow-pack/tensorflow-build/gen/build
+
 # Get artificial-intelligence ethos root
 wget -O ./tensorflow-pack/tensorflow-build/rel/master.tar.gz https://gitlab.arm.com/artificial-intelligence/ethos-u/ethos-u/-/archive/main/ethos-u-main.tar.gz
 # Extract tar.gz
