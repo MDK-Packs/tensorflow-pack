@@ -25,21 +25,30 @@ if [ -d "./tensorflow-pack/tensorflow-build/gen/build" ]; then
 fi
 mkdir ./tensorflow-pack/tensorflow-build/gen/build
 
-echo "========== DIAGNOSIS START =========="
+echo "========== DIAGNOSIS START 1 =========="
 pwd
 tree -d -L 5
-echo "========== DIAGNOSIS END   =========="
+echo "========== DIAGNOSIS END     =========="
 
 
-# Get ml-platforms root
+# Get ethos-u root
 wget -O ./tensorflow-pack/tensorflow-build/rel/main.tar.gz https://gitlab.arm.com/artificial-intelligence/ethos-u/ethos-u/-/archive/main/ethos-u-main.tar.gz
 
 # Extract tar.gz
 tar -xzf ./tensorflow-pack/tensorflow-build/rel/main.tar.gz -C ./tensorflow-pack/tensorflow-build/rel/ethos-u-main
 
 
-# Get ml-platforms srcs
+echo "========== DIAGNOSIS START 2 =========="
+pwd
+tree -d -L 5
+echo "========== DIAGNOSIS END     =========="
+
+
+# Get ethos-u srcs
 cd ./tensorflow-pack/tensorflow-build/rel/ethos-u-main/
+
+echo "List ethos-u-main directory content"
+ls -all
 
 echo "\033[1;33m"
 
