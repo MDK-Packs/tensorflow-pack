@@ -30,6 +30,12 @@ wget -O ./tensorflow-pack/tensorflow-build/rel/main.tar.gz https://gitlab.arm.co
 
 # Extract tar.gz
 tar -xzf ./tensorflow-pack/tensorflow-build/rel/main.tar.gz -C ./tensorflow-pack/tensorflow-build/rel/mlplatform
+
+echo "========== DIAGNOSIS START =========="
+pwd
+tree -d -L 4
+echo "========== DIAGNOSIS END   =========="
+
 # Get ml-platforms srcs
 cd ./tensorflow-pack/tensorflow-build/rel/mlplatform/
 
