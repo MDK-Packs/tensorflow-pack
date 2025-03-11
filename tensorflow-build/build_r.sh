@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "\033[0;32m"
-echo "Building from mlplatforms release: " $1
+echo "Building from ethos-u release: " $1
 echo "Release tag: " $2
 
 # Check if working directories exist and delete if so. Then create new.
@@ -10,10 +10,10 @@ if [ -d "./tensorflow-pack/tensorflow-build/rel" ]; then
 fi
 mkdir ./tensorflow-pack/tensorflow-build/rel
 
-if [ -d "./tensorflow-pack/tensorflow-build/rel/mlplatform" ]; then
-   rm -rf ./tensorflow-pack/tensorflow-build/rel/mlplatform
+if [ -d "./tensorflow-pack/tensorflow-build/rel/ethos-u-main" ]; then
+   rm -rf ./tensorflow-pack/tensorflow-build/rel/ethos-u-main
 fi
-mkdir ./tensorflow-pack/tensorflow-build/rel/mlplatform
+mkdir ./tensorflow-pack/tensorflow-build/rel/ethos-u-main
 
 if [ -d "./tensorflow-pack/tensorflow-build/gen" ]; then
    rm -rf ./tensorflow-pack/tensorflow-build/gen
@@ -35,11 +35,11 @@ echo "========== DIAGNOSIS END   =========="
 wget -O ./tensorflow-pack/tensorflow-build/rel/main.tar.gz https://gitlab.arm.com/artificial-intelligence/ethos-u/ethos-u/-/archive/main/ethos-u-main.tar.gz
 
 # Extract tar.gz
-tar -xzf ./tensorflow-pack/tensorflow-build/rel/main.tar.gz -C ./tensorflow-pack/tensorflow-build/rel/mlplatform
+tar -xzf ./tensorflow-pack/tensorflow-build/rel/main.tar.gz -C ./tensorflow-pack/tensorflow-build/rel/ethos-u-main
 
 
 # Get ml-platforms srcs
-cd ./tensorflow-pack/tensorflow-build/rel/mlplatform/
+cd ./tensorflow-pack/tensorflow-build/rel/ethos-u-main/
 
 echo "\033[1;33m"
 
