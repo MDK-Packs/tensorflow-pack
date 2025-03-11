@@ -8,7 +8,7 @@ on:
       revision:
         description: 'mlplatform revision'
         required: true
-        default: '24.08'
+        default: '25.02'
       candidate_rev:
         description: 'Release candidate revision'
         required: false
@@ -50,7 +50,10 @@ jobs:
           cat ./tensorflow-pack/tensorflow-build/history.txt
 
       - name: Run the pack build with the revision specified
-        run : 
+        run : |
+          pwd
+          tree -d -L 5
+          cat ./tensorflow-pack/tensorflow-build/build_r.sh
           ./tensorflow-pack/tensorflow-build/build_r.sh ${{ github.event.inputs.revision }} ${{ github.event.inputs.candidate_rev }}
 
       #- name: Copy tensorflow-pack to out path
