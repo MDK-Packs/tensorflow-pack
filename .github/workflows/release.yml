@@ -30,7 +30,8 @@ jobs:
       - name: Checkout tensorflow-build 
         uses: actions/checkout@v4
         with: 
-          repository: MDK-Packs/tensorflow-pack
+          # repository: MDK-Packs/tensorflow-pack
+          repository: Evagan2018/tensorflow-pack          
           path: tensorflow-pack
      
       - name: Setup Python environment
