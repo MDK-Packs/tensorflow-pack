@@ -48,7 +48,7 @@ jobs:
       uses: actions/cache/restore@v4
       with:
          path: ${{ github.workspace }}/out
-         key: latest-tensorflow-pack-build
+         key: latest-tensorflow-pack-build_${{ inputs.revision }}${{ inputs.candidate_rev }}
          
     - name: Install tools
       uses: ARM-software/cmsis-actions/vcpkg@v1
