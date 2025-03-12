@@ -40,6 +40,10 @@ python3 fetch_externals.py -c $1.json fetch
 
 echo "\033[0;32m"
 
+echo " Show directory structure before pack build "
+tree -d -L 8
+
+
 cd ./core_software/tflite_micro
 
 python3 ./tensorflow/lite/micro/tools/project_generation/create_tflm_tree.py  \
