@@ -1,6 +1,16 @@
 name: AVH build and execution test
 on:
   workflow_dispatch:
+    inputs:
+      revision:
+        description: 'gitlab revision'
+        required: false
+        default: '25.02'
+      candidate_rev:
+        description: 'Release candidate revision'
+        required: true
+        default: ''  
+
   #pull_request:
   #  branches: [main]
   #push:
