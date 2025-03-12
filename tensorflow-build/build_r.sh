@@ -43,7 +43,6 @@ echo "\033[0;32m"
 echo " Show directory structure before pack build "
 tree -d -L 8
 
-
 cd ./core_software/tflite_micro
 
 python3 ./tensorflow/lite/micro/tools/project_generation/create_tflm_tree.py  \
@@ -82,6 +81,11 @@ python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
         ./tensorflow-pack/tensorflow-build/srcs.cmsis_nn.raw > ./tensorflow-pack/tensorflow-build/srcs.cmsis_nn.lst
 python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
         ./tensorflow-pack/tensorflow-build/srcs.ethos_u.raw > ./tensorflow-pack/tensorflow-build/srcs.ethos_u.lst
+
+echo "================================================="
+echo "Show directory structure before applying patches."
+pwd 
+tree -d -L 8
 
 echo "\033[0;33m"
 
