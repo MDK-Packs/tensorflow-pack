@@ -85,7 +85,7 @@ python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
 echo "================================================="
 echo "Show directory structure before applying patches."
 pwd 
-tree -d -L 8
+tree
 
 echo "\033[0;33m"
 
