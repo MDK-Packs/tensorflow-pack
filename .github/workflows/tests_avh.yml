@@ -11,6 +11,8 @@ on:
         required: true
         default: ''  
 
+  run-name: AVH build and execution test with tensorflow pack ${{ inputs.revision }}_${{ inputs.candidate_rev }}
+  
   #pull_request:
   #  branches: [main]
   #push:
