@@ -82,6 +82,27 @@ python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
 python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
         ./tensorflow-pack/tensorflow-build/srcs.ethos_u.raw > ./tensorflow-pack/tensorflow-build/srcs.ethos_u.lst
 
+
+echo "================================================="
+echo "Show file lists"
+echo "  "
+echo "  "
+echo "File list srcs.lst"
+cat ./tensorflow-pack/tensorflow-build/srcs.lst
+
+echo "  "
+echo "  "
+echo "File list srcs.cmsis_nn.lst"
+cat ./tensorflow-pack/tensorflow-build/srcs.cmsis_nn.lst
+
+echo "  "
+echo "  "
+echo "File list srcs.ethos_u.lst"
+cat ./tensorflow-pack/tensorflow-build/srcs.ethos_u.lst
+
+
+echo "  "
+echo "  "
 echo "================================================="
 echo "Show directory structure before applying patches."
 pwd 
