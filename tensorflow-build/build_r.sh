@@ -40,9 +40,6 @@ python3 fetch_externals.py -c $1.json fetch
 
 echo "\033[0;32m"
 
-echo " Show directory structure before pack build "
-tree -d -L 8
-
 cd ./core_software/tflite_micro
 
 python3 ./tensorflow/lite/micro/tools/project_generation/create_tflm_tree.py  \
@@ -82,31 +79,6 @@ python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
 python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
         ./tensorflow-pack/tensorflow-build/srcs.ethos_u.raw > ./tensorflow-pack/tensorflow-build/srcs.ethos_u.lst
 
-
-echo "================================================="
-echo "Show file lists"
-echo "  "
-echo "  "
-echo "File list srcs.lst"
-cat ./tensorflow-pack/tensorflow-build/srcs.lst
-
-echo "  "
-echo "  "
-echo "File list srcs.cmsis_nn.lst"
-cat ./tensorflow-pack/tensorflow-build/srcs.cmsis_nn.lst
-
-echo "  "
-echo "  "
-echo "File list srcs.ethos_u.lst"
-cat ./tensorflow-pack/tensorflow-build/srcs.ethos_u.lst
-
-
-echo "  "
-echo "  "
-echo "================================================="
-echo "Show directory structure before applying patches."
-pwd 
-tree
 
 echo "\033[0;33m"
 
