@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package schemaVersion="1.6" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
-  <vendor>Arm</vendor>
+  <vendor>ARM</vendor>
   <name>ethos-u-core-driver</name>
   <description>Device Driver for the Arm(R) Ethos(TM)-U NPU.</description>
   <!-- web download link -->
