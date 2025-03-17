@@ -67,7 +67,6 @@ jobs:
       run: 
         cd ${{ github.workspace }}/out && cpackget add -a *.pack 
 
-
     - name: Diagnosis where *.yml files are locacted
       run:
         tree --prune -P '*.yml'
@@ -86,6 +85,14 @@ jobs:
     - name: Show content of mlek.csolution.yml after patch
       run: |
         cat mlek.csolution.yml
+
+    - name: Show content other yml files
+      run: |
+        cat ./device/alif-ensemble/alif-ensemble-E7-device.clayer.yml
+        cat ./device/corstone/corstone-device.clayer.yml
+        cat ./device/corstone/vsi/vsi.clayer.yml
+        cat ./device/frdm-k64f/frdm-k64f-device.clayer.yml
+        cat ./device/stm32f746-discovery/stm32f746-discovery-device.clayer.yml
 
     - name: Build project ${{ matrix.target.proj }} for target ${{ matrix.target.board }} with AC6
       run: |
