@@ -1,12 +1,17 @@
 name: AVH build and execution test
 on:
   workflow_dispatch:
-  #pull_request:
-  #  branches: [main]
-  #push:
-  #  branches: [main]
-  #schedule:
-  #  - cron: '00 20 * * 6'
+    inputs:
+      revision:
+        description: 'gitlab revision'
+        required: false
+        default: '25.02'
+      candidate_rev:
+        description: 'Release candidate revision'
+        required: true
+        default: ''  
+
+run-name: AVH build and execution test with tensorflow pack ${{ inputs.revision }}_${{ inputs.candidate_rev }}
 
 jobs:
   AVH:
@@ -36,7 +41,7 @@ jobs:
 
       fail-fast: false
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
     - name: Checkout repo
@@ -48,7 +53,7 @@ jobs:
       uses: actions/cache/restore@v4
       with:
          path: ${{ github.workspace }}/out
-         key: latest-tensorflow-pack-build
+         key: latest-tensorflow-pack-build_${{ inputs.revision }}${{ inputs.candidate_rev }}
          
     - name: Install tools
       uses: ARM-software/cmsis-actions/vcpkg@v1
@@ -62,9 +67,6 @@ jobs:
       run: 
         cd ${{ github.workspace }}/out && cpackget add -a *.pack 
 
-    - name: Diagnosis show directory structure
-      run:
-        tree -d
 
     - name: Diagnosis where *.yml files are locacted
       run:

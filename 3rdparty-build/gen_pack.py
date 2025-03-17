@@ -147,9 +147,10 @@ def main(unparsed_args, flags):
   with zipfile.ZipFile(packfile_name,"w",zipfile.ZIP_DEFLATED,allowZip64=True) as zf:
     for root, _, filenames in os.walk('./'):
         for name in filenames:
-            name = os.path.join(root, name)
-            name = os.path.normpath(name)
-            zf.write(name, name)
+            if name != packfile_name:
+                name = os.path.join(root, name)
+                name = os.path.normpath(name)
+                zf.write(name, name)
 
 
 def parse_args():
