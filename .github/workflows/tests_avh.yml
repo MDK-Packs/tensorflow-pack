@@ -79,9 +79,11 @@ jobs:
     - name: Patch the csolution to use the latest CMSIS-NN, Arm ethos-u-core-driver, and tensorflow packs
       run: |
         sed -i 's/\(tensorflow::[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
-        # sed -i 's/\(Arm::ethos-u-core-driver[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
         sed -i 's/\(Arm::ethos-u-core-driver[^@]*\)@[^ ]*/\1/g; s/\bArm\b/ARM/g' mlek.csolution.yml
         sed -i 's/\(ARM::CMSIS-NN[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
+
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3.19
 
     - name: Show content of mlek.csolution.yml after patch
       run: |
