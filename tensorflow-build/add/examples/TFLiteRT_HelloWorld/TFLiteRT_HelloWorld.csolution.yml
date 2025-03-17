@@ -1,0 +1,22 @@
+solution:
+  description: TFLiteRT examples
+  created-for: CMSIS-Toolbox@2.7.0
+  cdefault:
+
+  select-compiler:  # list of tested compilers that can be selected
+    - compiler: AC6
+    - compiler: GCC
+    - compiler: CLANG
+
+  target-types: 
+
+  build-types:
+    - type: Debug
+      debug: on
+      optimize: debug
+    - type: Release
+      debug: off
+      optimize: balanced
+
+  projects:
+    - project: TFLiteRT_HelloWorld.cproject.yml

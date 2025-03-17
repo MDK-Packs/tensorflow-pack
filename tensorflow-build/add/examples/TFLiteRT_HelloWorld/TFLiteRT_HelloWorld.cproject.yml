@@ -1,0 +1,34 @@
+project:
+  description: TensorFlow LiteRT HelloWorld Example
+
+  packs:
+    - pack: ARM::CMSIS@6.1.0
+    - pack: ARM::CMSIS-DSP@1.16.0
+    - pack: ARM::CMSIS-NN@7.0.0
+    - pack: ARM::CMSIS-Compiler@>=2.1.0
+
+  connections:
+    - connect: TFLiteRT
+      consumes:
+        - STDOUT
+        # Enable Heap and Stack requirements in future versions
+        #- HEAP: +64000
+        #- STACK: +64000
+
+  groups:
+    - group: Documentation
+      files:
+        - file: README.md
+    - group: Example Source
+      files:
+        - file: ./Source/hello_world_test.cpp
+
+  components:
+    - component: ARM::CMSIS:DSP&Source
+    - component: ARM::CMSIS:NN Lib
+
+
+  layers:
+    - layer: $Board-Layer$
+      type: Board
+    - layer: ./Model/model.clayer.yml

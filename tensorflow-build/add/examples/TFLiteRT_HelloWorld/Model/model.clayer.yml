@@ -1,0 +1,27 @@
+layer:
+  description: "TensorFlow Lite Quantized Model Integration"
+
+  packs:
+    - pack: tensorflow::flatbuffers
+    - pack: tensorflow::gemmlowp
+    - pack: tensorflow::kissfft
+    - pack: tensorflow::ruy
+    - pack: tensorflow::tensorflow-lite-micro
+
+  define:
+    - TF_LITE_STATIC_MEMORY: 1
+
+  groups:
+    - group: Model
+      files:
+        - file: model_int8.c
+        - file: model_float.c 
+
+  components:
+    - component: tensorflow::Data Exchange:Serialization:flatbuffers
+    - component: tensorflow::Data Processing:Math:gemmlowp fixed-point
+    - component: tensorflow::Data Processing:Math:kissfft
+    - component: tensorflow::Data Processing:Math:ruy
+    - component: tensorflow::Machine Learning:TensorFlow:Kernel&CMSIS-NN
+    - component: tensorflow::Machine Learning:TensorFlow:Kernel Utils
+    - component: tensorflow::Machine Learning:TensorFlow:Testing

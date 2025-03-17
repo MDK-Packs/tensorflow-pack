@@ -138,4 +138,14 @@
       </files>
     </component>
   </components>
+
+  <examples>
+    <example name="Tensorflow LiteRT HelloWorld" doc="README.md" folder="examples/TFLiteRT_HelloWorld">
+      <description>TensorFlow LiteRT HelloWorld Example</description>
+      <project>
+        <environment name="csolution" load="TFLiteRT_HelloWorld.csolution.yml"/>
+      </project>
+    </example>
+  </examples>
+
 </package>
