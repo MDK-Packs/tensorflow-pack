@@ -20,7 +20,7 @@
       <package name="flatbuffers" vendor="tensorflow" version="%{RELEASE_VERSION}%:%{RELEASE_VERSION}%"/>
       <package name="kissfft" vendor="tensorflow" version="%{RELEASE_VERSION}%:%{RELEASE_VERSION}%"/>
       <package name="ruy" vendor="tensorflow" version="%{RELEASE_VERSION}%:%{RELEASE_VERSION}%"/>
-      <package name="ethos-u-core-driver" vendor="Arm" version="%{RELEASE_VERSION}%:%{RELEASE_VERSION}%"/>
+      <package name="ethos-u-core-driver" vendor="ARM" version="%{RELEASE_VERSION}%:%{RELEASE_VERSION}%"/>
     </packages>
   </requirements>
 

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "\033[0;32m"
-echo "Building from mlplatforms release: " $1
+echo "Building from ethos-u release: " $1
 echo "Release tag: " $2
 
 # Check if working directories exist and delete if so. Then create new.
@@ -10,10 +10,10 @@ if [ -d "./tensorflow-pack/tensorflow-build/rel" ]; then
 fi
 mkdir ./tensorflow-pack/tensorflow-build/rel
 
-if [ -d "./tensorflow-pack/tensorflow-build/rel/mlplatform" ]; then
-   rm -rf ./tensorflow-pack/tensorflow-build/rel/mlplatform
+if [ -d "./tensorflow-pack/tensorflow-build/rel/ethos-u-main" ]; then
+   rm -rf ./tensorflow-pack/tensorflow-build/rel/ethos-u-main
 fi
-mkdir ./tensorflow-pack/tensorflow-build/rel/mlplatform
+mkdir ./tensorflow-pack/tensorflow-build/rel/ethos-u-main
 
 if [ -d "./tensorflow-pack/tensorflow-build/gen" ]; then
    rm -rf ./tensorflow-pack/tensorflow-build/gen
@@ -25,13 +25,14 @@ if [ -d "./tensorflow-pack/tensorflow-build/gen/build" ]; then
 fi
 mkdir ./tensorflow-pack/tensorflow-build/gen/build
 
-# Get ml-platforms root
+# Get ethos-u root
 wget -O ./tensorflow-pack/tensorflow-build/rel/main.tar.gz https://gitlab.arm.com/artificial-intelligence/ethos-u/ethos-u/-/archive/main/ethos-u-main.tar.gz
 
 # Extract tar.gz
-tar -xzf ./tensorflow-pack/tensorflow-build/rel/main.tar.gz -C ./tensorflow-pack/tensorflow-build/rel/mlplatform
-# Get ml-platforms srcs
-cd ./tensorflow-pack/tensorflow-build/rel/mlplatform/
+tar -xzf ./tensorflow-pack/tensorflow-build/rel/main.tar.gz -C ./tensorflow-pack/tensorflow-build/rel
+
+# Get ethos-u srcs
+cd ./tensorflow-pack/tensorflow-build/rel/ethos-u-main/
 
 echo "\033[1;33m"
 
@@ -78,6 +79,7 @@ python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
 python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
         ./tensorflow-pack/tensorflow-build/srcs.ethos_u.raw > ./tensorflow-pack/tensorflow-build/srcs.ethos_u.lst
 
+
 # Add ./tensorflow-pack/tensorflow-build/add/examples to /tensorflow-build/gen/build with rsync
 rsync -a ./tensorflow-pack/tensorflow-build/add/examples/ ./tensorflow-pack/tensorflow-build/gen/build/examples/
 
@@ -106,28 +108,3 @@ python3 ./tensorflow-pack/tensorflow-build/generate_cmsis_pack.py  \
    --testhdrs=./tensorflow-pack/tensorflow-build/empty.lst \
    --testsrcs=./tensorflow-pack/tensorflow-build/testsrcs.lst \
    --util_src=./tensorflow-pack/tensorflow-build/kernelutil.lst  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
