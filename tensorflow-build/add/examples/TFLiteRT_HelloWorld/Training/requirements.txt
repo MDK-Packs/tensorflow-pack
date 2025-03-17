@@ -1,0 +1,4 @@
+tensorflow==2.17.0
+pandas
+matplotlib
+ethos_u_vela
