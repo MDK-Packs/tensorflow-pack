@@ -8,7 +8,16 @@ solution:
     - compiler: GCC
     - compiler: CLANG
 
-  target-types: 
+  misc:
+    - for-compiler: AC6
+      C-CPP:
+        - -gdwarf-5
+      ASM:
+        - -gdwarf-5
+      Link:
+        - --entry=Reset_Handler
+
+  target-types:
 
   build-types:
     - type: Debug
