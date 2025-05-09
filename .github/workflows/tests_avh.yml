@@ -8,7 +8,7 @@ on:
         default: '25.02'
       candidate_rev:
         description: 'Release candidate revision'
-        required: true
+        required: false
         default: ''  
 
 run-name: AVH build and execution test with tensorflow pack ${{ inputs.revision }}_${{ inputs.candidate_rev }}
