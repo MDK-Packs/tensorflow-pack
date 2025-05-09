@@ -49,7 +49,7 @@ This Reference Application provides a clear starting point for developers integr
 
 #### API Interfaces
 
-The LiteRT Reference Applications are hardware agnostic but requires API interfaces that are expressed using the csolution project connections: node. The reference applications in this pack consume the following API Interfaces. These interfaces should be provided by the board layer that is part of the Board Support Pack (BSP).
+The LiteRT Reference Applications are hardware agnostic, but require API interfaces that are expressed using the csolution project connections: node. The reference applications in this pack consume the following API Interfaces. These interfaces should be provided by the board layer that is part of the Board Support Pack (BSP).
 
 
 | Consumed API Interface | Description                                           |
