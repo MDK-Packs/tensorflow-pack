@@ -83,6 +83,9 @@ python3 ./tensorflow-pack/tensorflow-build/clean_file_list.py \
 # Add ./tensorflow-pack/tensorflow-build/add/examples to /tensorflow-build/gen/build with rsync
 rsync -a ./tensorflow-pack/tensorflow-build/add/examples/ ./tensorflow-pack/tensorflow-build/gen/build/examples/
 
+# Add ./tensorflow-pack/tensorflow-build/add/Documenation to /tensorflow-build/gen/build with rsync
+rsync -a ./tensorflow-pack/tensorflow-build/add/Documentation/ ./tensorflow-pack/tensorflow-build/gen/build/Documentation/
+
 echo "\033[0;33m"
 
 # If a folder ./patches/$1 exists, call the patch.sh in this folder
