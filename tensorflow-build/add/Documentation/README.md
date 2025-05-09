@@ -30,9 +30,9 @@ The LiteRT CMSIS Pack relies on the following key software components - all are 
 
 *   **CMSIS-DSP**: A collection of optimized digital signal processing functions, potentially utilized by machine learning models for tasks such as feature extraction.
 *   **CMSIS-NN**: Provides highly optimized neural network kernels for ARM Cortex-M processors, crucial for achieving high-performance machine learning inference.
-*   **Flatbuffers**: An efficient cross-platform serialization utility used for handling LiteRT models. (Available as a CMSIS Pack)
-*   **KissFFT**: A compact Fast Fourier Transform (FFT) component, sometimes used in audio processing or other signal processing tasks within ML applications. (Available as a CMSIS Pack)
-*   **Ruy**: A matrix multiplication component, essential for many neural network operations. (Available as a CMSIS Pack)
+*   **Flatbuffers**: An efficient cross-platform serialization utility used for handling LiteRT models. 
+*   **KissFFT**: A compact Fast Fourier Transform (FFT) component, sometimes used in audio processing or other signal processing tasks within ML applications.
+*   **Ruy**: A matrix multiplication component, essential for many neural network operations.
 *   **Ethos-U Driver (Optional)**: For systems incorporating an Arm Ethos-U NPU, this driver facilitates hardware-accelerated machine learning, enhancing performance and reducing power consumption.
 
 ## Examples
