@@ -3,8 +3,8 @@
   xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
   <vendor>tensorflow</vendor>
   <name>tensorflow-lite-micro</name>
-  <description>Deep learning framework for on-device inference.</description>
-  <!-- web download link -->
+  <description overview="Documentation/README.md">LiteRT, formerly known as TensorFlow Lite, is Google's high-performance runtime for on-device AI.</description>
+
   <url>https://github.com/MDK-Packs/tensorflow-pack/releases/download/%{RELEASE_VERSION}%/</url>
   <license>LICENSE</license>
   <repository type="git">https://github.com/MDK-Packs/tensorflow-pack.git</repository>
