@@ -5,9 +5,7 @@ This reference application demonstrates how to use TensorFlow Lite for Microcont
 ## Prerequisites
 
 - Visual Studio Code
-- CMSIS Extensions for VSCode:
-  - [CMSIS csolution](https://marketplace.visualstudio.com/items?itemName=ARM.cmsis-csolution)
-  - [CMSIS Build](https://marketplace.visualstudio.com/items?itemName=ARM.cmsis-build)
+- [Keil Studio Extensions](https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack) for VSCode
 - Python 3.11.5 with Jupyter support and VSCode extension.
 - Compatible development board providing STDIO interface
 
@@ -22,11 +20,10 @@ This reference application demonstrates how to use TensorFlow Lite for Microcont
 ### Memory Configuration
 
 The application requires:
-- 64KB Stack 
+- **192KB Stack** 
 - 64KB Heap
 
-To configure these requirements you typically find Stack and Heap settings in either the startup code (Assembler Startup Code) or the linker script (C Startup Code).
-
+To **configure these requirements** you typically find Stack and Heap settings in either the startup code (Assembler Startup Code) or the linker script (C Startup Code).
 
 ## Training the Model
 
