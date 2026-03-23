@@ -28,12 +28,12 @@ jobs:
     steps:
   
       - name: Checkout tensorflow-build 
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with: 
           path: tensorflow-pack
      
       - name: Setup Python environment
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
          python-version: '3.12' 
     
@@ -80,13 +80,13 @@ jobs:
           find ${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/ -name '*.pdsc' -exec cp -prv '{}' '${{ github.workspace }}/out/' ';'
 
       - name: Upload Pack
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: tensorflow-pack-release
           path: ${{ github.workspace }}/out
 
       - name: Cache artifact
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: ${{ github.workspace }}/out
           key: latest-tensorflow-pack-build_${{ inputs.revision }}${{ inputs.candidate_rev }}
