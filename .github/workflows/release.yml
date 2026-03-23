@@ -46,12 +46,19 @@ jobs:
           pip install numpy pillow semantic-version six requests junit_xml pyyaml pygithub
           mkdir ${{ github.workspace }}/out/
 
-      - name: Delete old pack cache if present
+      - name: Check and delete cache key
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh cache delete latest-tensorflow-pack-build_${{ inputs.revision }}${{ inputs.candidate_rev }} \
-            --ref "${{ github.ref }}" || true
+          KEY="latest-tensorflow-pack-build_26.02"
+          REF="refs/heads/1.26.2"
+          REPO="${{ github.repository }}"
+      
+          if gh cache list --repo "$REPO" --ref "$REF" --key "$KEY" | grep -Fq "$KEY"; then
+            gh cache delete "$KEY" --repo "$REPO" --ref "$REF"
+          else
+            echo "Cache not found: $KEY"
+          fi
 
       - name: Get history of releases from github
         run: 
