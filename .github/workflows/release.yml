@@ -51,8 +51,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh cache delete latest-tensorflow-pack-build_${{ inputs.revision }}${{ inputs.candidate_rev }} \
-            --ref "${{ github.ref }}" \
-            --succeed-on-no-caches            
+            --ref "${{ github.ref }}" || true
 
       - name: Get history of releases from github
         run: 
