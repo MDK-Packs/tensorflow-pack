@@ -23,6 +23,9 @@ jobs:
   build-tensorflow:
     # The type of runner that the job will run on
     runs-on: ubuntu-24.04
+    permissions:
+      actions: write
+      contents: read
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -42,6 +45,14 @@ jobs:
           sudo apt install rsync
           pip install numpy pillow semantic-version six requests junit_xml pyyaml pygithub
           mkdir ${{ github.workspace }}/out/
+
+      - name: Delete old pack cache if present
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh cache delete latest-tensorflow-pack-build_${{ inputs.revision }}${{ inputs.candidate_rev }} \
+            --ref "${{ github.ref }}" \
+            --succeed-on-no-caches            
 
       - name: Get history of releases from github
         run: 
