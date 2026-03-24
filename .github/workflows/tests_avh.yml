@@ -45,12 +45,12 @@ jobs:
 
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         repository: Arm-Examples/mlek-cmsis-pack-examples
 
     - name: Restore Latest Pack Build from Cache
-      uses: actions/cache/restore@v4
+      uses: actions/cache/restore@v5
       with:
          path: ${{ github.workspace }}/out
          key: latest-tensorflow-pack-build_${{ inputs.revision }}${{ inputs.candidate_rev }}
@@ -65,7 +65,7 @@ jobs:
 
     - name: Unpack and Install Packs
       run: 
-        cd ${{ github.workspace }}/out && cpackget add -a *.pack 
+        cd ${{ github.workspace }}/out && cpackget add *.pack -a
 
     - name: Diagnosis where *.yml files are locacted
       run:
@@ -78,8 +78,12 @@ jobs:
     - name: Patch the csolution to use the latest CMSIS-NN, Arm ethos-u-core-driver, and tensorflow packs
       run: |
         sed -i 's/\(tensorflow::[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
-        sed -i 's/\(Arm::ethos-u-core-driver[^@]*\)@[^ ]*/\1/g; s/\bArm\b/ARM/g' mlek.csolution.yml
+        sed -i 's/\(ARM::ethos-u-core-driver[^@]*\)@[^ ]*/\1/g; s/\bArm\b/ARM/g' mlek.csolution.yml
         sed -i 's/\(ARM::CMSIS-NN[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
+        sed -i 's/\(ARM::CMSIS[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
+        sed -i 's/\(ARM::CMSIS-DSP[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
+        sed -i 's/\(ARM::SSE_320_BSP[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
+        sed -i 's/\(AlifSemiconductor::Ensemble[^@]*\)@[^ ]*/\1/g' mlek.csolution.yml
         sed -i 's/component: Arm::/component: ARM::/g' ./device/alif-ensemble/alif-ensemble-E7-device.clayer.yml
         sed -i 's/component: Arm::/component: ARM::/g' ./device/corstone/corstone-device.clayer.yml
 

@@ -21,7 +21,7 @@ jobs:
     steps:
   
       - name: Checkout tensorflow-build 
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with: 
           repository: MDK-Packs/tensorflow-pack
           path: tensorflow-pack
@@ -58,7 +58,7 @@ jobs:
           find ${{ github.workspace }}/tensorflow-pack/ -name '*.pdsc' -exec cp -prv '{}' '${{ github.workspace }}/out/' ';'
 
       - name: Upload Pack
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: tensorflow-pack-release
           path: ${{ github.workspace }}/out

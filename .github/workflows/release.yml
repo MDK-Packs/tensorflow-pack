@@ -23,17 +23,20 @@ jobs:
   build-tensorflow:
     # The type of runner that the job will run on
     runs-on: ubuntu-24.04
+    permissions:
+      actions: write
+      contents: read
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
   
       - name: Checkout tensorflow-build 
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with: 
           path: tensorflow-pack
      
       - name: Setup Python environment
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
          python-version: '3.12' 
     
@@ -42,6 +45,20 @@ jobs:
           sudo apt install rsync
           pip install numpy pillow semantic-version six requests junit_xml pyyaml pygithub
           mkdir ${{ github.workspace }}/out/
+
+      - name: Check and delete cache key
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          KEY="latest-tensorflow-pack-build_26.02"
+          REF="refs/heads/1.26.2"
+          REPO="${{ github.repository }}"
+      
+          if gh cache list --repo "$REPO" --ref "$REF" --key "$KEY" | grep -Fq "$KEY"; then
+            gh cache delete "$KEY" --repo "$REPO" --ref "$REF"
+          else
+            echo "Cache not found: $KEY"
+          fi
 
       - name: Get history of releases from github
         run: 
@@ -80,13 +97,13 @@ jobs:
           find ${{ github.workspace }}/tensorflow-pack/tensorflow-build/gen/ -name '*.pdsc' -exec cp -prv '{}' '${{ github.workspace }}/out/' ';'
 
       - name: Upload Pack
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: tensorflow-pack-release
           path: ${{ github.workspace }}/out
 
       - name: Cache artifact
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: ${{ github.workspace }}/out
           key: latest-tensorflow-pack-build_${{ inputs.revision }}${{ inputs.candidate_rev }}
