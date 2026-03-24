@@ -65,7 +65,7 @@ jobs:
 
     - name: Unpack and Install Packs
       run: 
-        cd ${{ github.workspace }}/out && cpackget add -a *.pack 
+        cd ${{ github.workspace }}/out && cpackget add *.pack -a
 
     - name: Diagnosis where *.yml files are locacted
       run:
