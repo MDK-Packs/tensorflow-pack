@@ -15,13 +15,13 @@ jobs:
   # This workflow contains a single job called "build"
   build-tensorflow:
     # The type of runner that the job will run on
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
   
       - name: Checkout tensorflow-build 
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with: 
           repository: MDK-Packs/tensorflow-pack
           path: tensorflow-pack
@@ -58,7 +58,7 @@ jobs:
           find ${{ github.workspace }}/tensorflow-pack/ -name '*.pdsc' -exec cp -prv '{}' '${{ github.workspace }}/out/' ';'
 
       - name: Upload Pack
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: tensorflow-pack-release
           path: ${{ github.workspace }}/out
