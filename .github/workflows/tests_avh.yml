@@ -41,16 +41,16 @@ jobs:
 
       fail-fast: false
 
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         repository: Arm-Examples/mlek-cmsis-pack-examples
 
     - name: Restore Latest Pack Build from Cache
-      uses: actions/cache/restore@v5
+      uses: actions/cache/restore@v6
       with:
          path: ${{ github.workspace }}/out
          key: latest-tensorflow-pack-build_${{ inputs.revision }}${{ inputs.candidate_rev }}
